@@ -1,0 +1,22 @@
+﻿body {
+    background-image: url('../images/background/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.dropdown-button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+    .dropdown-button img {
+        margin-right: 10px; /* Ajusta el espacio entre la imagen y el texto */
+    }
+
+    .dropdown-button h1 {
+        margin: 0;
+        font-size: 1.5rem; /* Ajusta el tamaño de fuente según sea necesario */
+    }

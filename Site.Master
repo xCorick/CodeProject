@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CodeProject.SiteMaster" %>
+
+
+<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+    <link href="Estilos/Default.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/Content/carousel.css" rel="stylesheet" />
+    
+    <!-- Placeholder para scripts adicionales si es necesario -->
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    
+    <!-- Scripts de ASP.NET (puedes dejarlos como están si no necesitas cambiarlos) -->
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- Navbar de Bootstrap -->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" runat="server" href="~/">
+                    <img src="Images/Items/HomeIcon.png" width="60" height="40" alt="Logo"/>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contacto</a></li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Catálogo
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Acción</a></li>
+                                    <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                                    <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="basic-addon1"/>
+                            <button class="btn btn-outline-secondary" type="button">
+                                <span class="visually-hidden">Buscar</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="btn-group dropstart">
+                        <button runat="server" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="background-color: transparent; border: none;">
+                            <img src="Images/Items/UserImage.png" width="40" height="40" alt="Imagen de usuario"/>
+                            <asp:Label ID="lbUserName" runat="server" Text="" Font-Bold="true" Font-Size="small"></asp:Label>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="alogin" runat="server" href="~/Login">Log in</a></li>
+                            <li><a class="dropdown-item" href="Profile.aspx">Perfil</a></li>
+                            <li><asp:LinkButton CssClass="dropdown-item" ID="logOut" runat="server">Log out</asp:LinkButton></li>
+                        </ul>
+                    </div>
+                </div>          
+            </div>
+
+               <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+               <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+               <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        </nav>
+
+        <!-- Contenido principal -->
+        <div class="container-fluid body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <!-- Aquí se insertará el contenido específico de cada página -->
+            </asp:ContentPlaceHolder>
+            <hr />
+            <!-- FOOTER -->
+            <footer class="container">
+                <p class="float-end"><a href="#">Volver arriba</a></p>
+                <p>&copy; <%: DateTime.Now.Year %> CodeCrafters Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Términos</a></p>
+            </footer>
+        </div>
+
+        <!-- Scripts adicionales de Bootstrap -->
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        </asp:PlaceHolder>
+    </form>
+</body>
+</html>
