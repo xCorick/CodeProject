@@ -61,7 +61,7 @@
                                                      </div>
                                                     <div class="col-12">
                                                         <div class="d-grid d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
-                                                            <asp:Button ID="Entrar" runat="server" class="btn btn-dark btn-lg" Style="text-align: center" type="submit" Text="Iniciar sesión" />
+                                                            <asp:Button ID="Entrar" runat="server" class="btn btn-dark btn-lg" Style="text-align: center" type="submit" Text="Iniciar sesión" OnClick="Entrar_Click" />
                                                         </div>
                                                         <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
                                                             <a href="SingUp.aspx" class="link-secondary text-decoration-none">Crear cuenta nueva</a>

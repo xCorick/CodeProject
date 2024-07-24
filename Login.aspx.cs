@@ -13,5 +13,10 @@ namespace CodeProject
         {
 
         }
+
+        protected void Entrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
