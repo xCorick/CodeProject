@@ -26,8 +26,6 @@ namespace CodeProject
 
             comando.Connection = conn;
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Connection = conn;
-            comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = sp;
             comando.Parameters.AddWithValue(Argumento, lbText);
             adaptador.SelectCommand = comando;
@@ -47,8 +45,6 @@ namespace CodeProject
                 conn.Open();
             }
 
-            comando.Connection = conn;
-            comando.CommandType = CommandType.StoredProcedure;
             comando.Connection = conn;
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = sp;
