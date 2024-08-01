@@ -13,5 +13,19 @@ namespace CodeProject
         {
 
         }
+
+        protected void Create_Click(object sender, EventArgs e)
+        {
+            var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "Bus_Cliente", "@Cli_Correo", email.Text);
+            message.Visible = true;
+            if (datos.Rows.Count > 0)
+            {
+                message.Text = "Correo previamente registrado.";
+            }
+            else
+            {
+                
+            }
+        }
     }
 }

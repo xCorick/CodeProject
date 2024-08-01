@@ -1,6 +1,6 @@
 ﻿* {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -9,38 +9,38 @@ body {
 .tabla {
     display: flex;
     flex-direction: column;
-    width:375px;
+    width: 375px;
 }
 
 div#Contenedor-Tabla {
     display: flex;
     justify-content: center;
-    width:375px;
-    margin:auto;
+    width: 375px;
+    margin: auto;
 }
 
 .fila {
     display: flex;
-    width:auto;
+    width: auto;
 }
 
 .celda {
     border: 1px solid #ccc;
     padding: 10px;
-    width:33.3%;
-    text-align:right;
+    width: 33.3%;
+    text-align: right;
 }
 
-div#general{
-    margin:auto;
-    background-color:white;
-    width:75%
+div#general {
+    margin: auto;
+    background-color: white;
+    width: 75%
 }
 
 .celdacolspan2 {
     border: 1px solid #ccc;
     padding: 10px;
-    width:66.6%;
+    width: 66.6%;
 }
 
 .celdacolspan3 {
@@ -49,9 +49,9 @@ div#general{
     width: 100%;
 }
 
-.celdacolspan3 img {
-    width: 45%;
-    height: auto;
-    display: block;
-    margin: auto;
-}
+    .celdacolspan3 img {
+        width: 45%;
+        height: auto;
+        display: block;
+        margin: auto;
+    }

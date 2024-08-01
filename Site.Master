@@ -89,7 +89,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" id="alogin" runat="server" href="~/Login">Log in</a></li>
                             <li><a class="dropdown-item" href="Profile.aspx">Perfil</a></li>
-                            <li><asp:LinkButton CssClass="dropdown-item" ID="logOut" runat="server">Log out</asp:LinkButton></li>
+                            <li><asp:LinkButton CssClass="dropdown-item" ID="logOut" runat="server" OnClick="logOut_Click">Log out</asp:LinkButton></li>
                         </ul>
                     </div>
                 </div>          

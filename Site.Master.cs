@@ -13,5 +13,10 @@ namespace CodeProject
         {
 
         }
+        protected void logOut_Click(object sender, EventArgs e)
+        {
+            Session["user"] = null;
+            Response.Redirect("Default");
+        }
     }
 }

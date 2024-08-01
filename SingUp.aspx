@@ -41,30 +41,58 @@
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <label for="name" class="form-label">Nombre:</label>
-                                                        <input type="text" class="form-control" id="name" placeholder="Nombre"/>
+                                                        <asp:TextBox ID="name" type="text" class="form-control" runat="server" placeholder="Nombre" ></asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                                            ControlToValidate="name"
+                                                            ErrorMessage="El nombre de usuario es obligatorio." 
+                                                            ForeColor="Red" 
+                                                            Display="Dynamic"> </asp:RequiredFieldValidator>
                                                     </div>
                                                     <div class="form-row">
                                                     <div class="col-7">
-                                                        <label for="lastname" class="form-label">Apellido:</label>
-                                                        <input type="text" class="form-control" id="lastname" placeholder="Apellido"/>
+                                                        <label for="lastname" class="form-label">Apellidos:</label>
+                                                        <asp:TextBox ID="lastname" type="text" class="form-control" runat="server" placeholder="Apellidos"></asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                                            ControlToValidate="lastname"
+                                                            ErrorMessage="El apellido es obligatorio."
+                                                            ForeColor="Red" 
+                                                            Display="Dynamic"></asp:RequiredFieldValidator>
                                                     </div>
                                                     <div class="col">
-                                                        <label for="apellido" class="form-label">Sexo:</label>
-                                                        <input type="text" class="form-control" id="sex" placeholder="Sexo"/>
+                                                        <label for="cellphone" class="form-label">Teléfono:</label>
+                                                        <asp:TextBox ID="cellphone" class="form-control" runat="server" placeholder="+52"></asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                                            ControlToValidate="cellphone"
+                                                            ErrorMessage="El número de teléfono es obligatorio."
+                                                            ForeColor="Red" 
+                                                            Display="Dynamic"></asp:RequiredFieldValidator>
                                                     </div>
                                                 </div>
                                                     <div class="form-floating mb-3">
                                                         <label for="email" class="form-label">Correo electrónico:</label>
-                                                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" />
+                                                        <asp:TextBox ID="email" runat="server" class="form-control" name="email" placeholder="Correo@example.com"  > </asp:TextBox>
+                                                        <asp:Label ID="message" runat="server" Text="message" visible="false" ForeColor="Red"></asp:Label>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                                            ControlToValidate="email"
+                                                            ErrorMessage="Favor de ingresar un correo válido"
+                                                            ForeColor="Red" 
+                                                            Display="Dynamic"></asp:RequiredFieldValidator>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
                                                         <label for="password" class="form-label">Contraseña:</label>
-                                                        <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" />
+                                                        <asp:TextBox ID="password" type="password" class="form-control" runat="server" placeholder="Contraseña" ></asp:TextBox>
+                                                        <asp:Label ID="messPass" runat="server" Text="message" visible="false" ForeColor="Red"></asp:Label>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                                            ControlToValidate="password"
+                                                            ErrorMessage="Contraseña inválida. Favor de ingresar el dato."
+                                                            ForeColor="Red" 
+                                                            Display="Dynamic"></asp:RequiredFieldValidator>
                                                     </div>
+                                                    <div><asp:Label style="text-align:center" ID="lbMensaje" runat="server" Text="Label" ForeColor="Green" Visible="False" Font-Bold="True">Error</asp:Label></div>
                                                     <div class="d-grid d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
-                                                        <button class="btn btn-dark btn-lg" type="submit">Crear cuenta</button>
+                                                        <asp:Button class="btn btn-dark btn-lg" ID="Create" type="submit" runat="server" Text="Crear cuenta" OnClick="Create_Click" />
                                                     </div>
                                                     <div class="text-center mt-3">
                                                         <span>¿Ya tienes una cuenta?</span><a href="Login.aspx" class="link-secondary text-decoration-none"> Iniciar sesión</a>
