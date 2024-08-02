@@ -92,7 +92,8 @@
                                                     </div>
                                                     <div><asp:Label style="text-align:center" ID="lbMensaje" runat="server" Text="Label" ForeColor="Green" Visible="False" Font-Bold="True">Error</asp:Label></div>
                                                     <div class="d-grid d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
-                                                        <asp:Button class="btn btn-dark btn-lg" ID="Create" type="submit" runat="server" Text="Crear cuenta" OnClick="Create_Click" />
+                                                        <asp:Button class="btn btn-dark btn-lg" 
+                                                            ID="Create" type="submit" runat="server" Text="Crear cuenta" OnClick="Create_Click" />
                                                     </div>
                                                     <div class="text-center mt-3">
                                                         <span>¿Ya tienes una cuenta?</span><a href="Login.aspx" class="link-secondary text-decoration-none"> Iniciar sesión</a>

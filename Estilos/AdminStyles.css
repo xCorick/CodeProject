@@ -4,24 +4,24 @@
 }
 
 body {
+    background-color: #f0f0f0;
 }
 
-.tabla {
+.tabla, .tabla2 {
     display: flex;
     flex-direction: column;
-    width: 375px;
+    width: 100%;
 }
 
-div#Contenedor-Tabla {
+.Contenedor-Tabla, .Contenedor-Tabla2 {
     display: flex;
-    justify-content: center;
-    width: 375px;
-    margin: auto;
+    width: 50%;
+    min-width:350px;
 }
 
 .fila {
     display: flex;
-    width: auto;
+    width: 100%;
 }
 
 .celda {
@@ -31,10 +31,21 @@ div#Contenedor-Tabla {
     text-align: right;
 }
 
+.celda2 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 33.3%;
+    text-align: center;
+}
+
 div#general {
     margin: auto;
     background-color: white;
-    width: 75%
+    width: 75%;
+    border-radius: 2%;
+    padding: 20px;
+    display:flex;
+    flex-wrap: wrap;
 }
 
 .celdacolspan2 {
@@ -49,9 +60,13 @@ div#general {
     width: 100%;
 }
 
-    .celdacolspan3 img {
-        width: 45%;
-        height: auto;
-        display: block;
-        margin: auto;
-    }
+.celdacolspan3 img {
+    width: 35%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.gridinfo {
+    width:100%;
+}
