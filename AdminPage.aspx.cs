@@ -11,7 +11,19 @@ namespace CodeProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LlenarGrid();
+        }
 
+        void LlenarGrid()
+        {
+            var (conn, comando, adaptador, datos) = Conector.LstTable(Conector.strConexion, "Lst_Productos");
+            grid.DataSource = datos;
+            grid.DataBind();
+            conn.Close();
+        }
+        protected void CVInputFile_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = InputFile.PostedFile != null && InputFile.PostedFile.ContentLength > 0;
         }
     }
 }
