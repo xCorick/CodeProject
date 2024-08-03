@@ -15,7 +15,7 @@ body {
 
 .Contenedor-Tabla, .Contenedor-Tabla2 {
     display: flex;
-    width: 50%;
+    width: 45%;
     min-width:350px;
 }
 
@@ -37,14 +37,24 @@ body {
     width: 33.3%;
     text-align: center;
 }
-
-div#general {
+div#formusuario, div#formpedidos {
     margin: auto;
     background-color: white;
-    width: 75%;
+    width: 65%;
     border-radius: 2%;
     padding: 20px;
-    display:flex;
+    display: flex;
+    flex-wrap: wrap;
+    display:none;
+}
+
+div#formproductos {
+    margin: auto;
+    background-color: white;
+    width: 65%;
+    border-radius: 2%;
+    padding: 20px;
+    display: flex;
     flex-wrap: wrap;
 }
 
@@ -69,4 +79,13 @@ div#general {
 
 .gridinfo {
     width:100%;
+}
+
+.ContenedorNavegacion {
+    margin: auto;
+    background-color: white;
+    width:50%;
+    border-radius: 2%;
+    padding: 20px;
+    display: flex;
 }

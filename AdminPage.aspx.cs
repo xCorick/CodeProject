@@ -17,9 +17,17 @@ namespace CodeProject
         void LlenarGrid()
         {
             var (conn, comando, adaptador, datos) = Conector.LstTable(Conector.strConexion, "Lst_Productos");
-            grid.DataSource = datos;
-            grid.DataBind();
-            conn.Close();
+            try
+            {
+                grid.DataSource = datos;
+                grid.DataBind();
+                conn.Close();
+            }
+            catch
+            {
+
+            }
+
         }
         protected void CVInputFile_ServerValidate(object source, ServerValidateEventArgs args)
         {

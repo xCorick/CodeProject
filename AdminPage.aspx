@@ -5,7 +5,16 @@
             <link href="Estilos/AdminStyles.css" rel="stylesheet" />
         </head>
         <body>
-            <div id ="general">
+            <div class ="ContenedorNavegacion">
+                <div class="tabla">
+                    <div class="fila">
+                        <div class="celda2"><button type="button" onclick="MostrarProductos();" id="Produc">Productos</button></div>
+                        <div class="celda2"><button type="button" onclick="MostrarUsuarios();" id="Usuario">Usuarios</button></div>
+                        <div class="celda2"><button type="button" onclick="MostrarPedidos();" id="Pedidos">Pedidos</button></div>
+                    </div>
+                </div>
+            </div>
+            <div id ="formproductos">
                 <div class="Contenedor-Tabla">
                     <div class="tabla">
                         <div class="fila">
@@ -136,6 +145,12 @@
                         </Columns>
                     </asp:GridView>
                 </div>
+            </div>
+            <div id="formusuario">
+                
+            </div>
+            <div id="formpedidos">
+
             </div>
         </body>
         <script src="AdminScripts/AdminScript.js"></script>

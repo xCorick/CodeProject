@@ -13,7 +13,8 @@ namespace CodeProject
     {
         //public static string strConexion = "user id=Corick_SQLLogin_1; password=46xqzadbj5; server=CarrilloShop.mssql.somee.com; database=CarrilloShop";
         //public static string strConnection = "user id=sa; password=DESKTOP-3A3O483\\SQLEXPRESS; server=.; database=CarrilloShop";
-        public static string strConexion = "server=CORICKGS\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
+        //public static string strConexion = "user id=sa; password=DESKTOP-3A3O483\\SQLEXPRESS; server=.; database=CarrilloShop";
+        public static string strConexion = "server=DESKTOP-3A3O483\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
         public static (SqlConnection, SqlCommand, SqlDataAdapter, DataTable) BuscarRegistro(string strConexion, string sp, string Argumento, string lbText)
         {
             SqlConnection conn = new SqlConnection(strConexion);
@@ -21,37 +22,54 @@ namespace CodeProject
             SqlDataAdapter adaptador = new SqlDataAdapter();
             DataTable datos = new DataTable();
 
-            if (conn.State == 0)
+            try
             {
-                conn.Open();
+                if (conn.State == 0)
+                {
+                    conn.Open();
+                }
+
+                comando.Connection = conn;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = sp;
+                comando.Parameters.AddWithValue(Argumento, lbText);
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(datos);
             }
 
-            comando.Connection = conn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = sp;
-            comando.Parameters.AddWithValue(Argumento, lbText);
-            adaptador.SelectCommand = comando;
-            adaptador.Fill(datos);
+            catch
+            {
+
+            }
             return (conn, comando, adaptador, datos);
         }
 
         public static (SqlConnection, SqlCommand, SqlDataAdapter, DataTable) LstTable(string strConexion, string sp)
         {
+
             SqlConnection conn = new SqlConnection(strConexion);
             SqlCommand comando = new SqlCommand();
             SqlDataAdapter adaptador = new SqlDataAdapter();
             DataTable datos = new DataTable();
 
-            if (conn.State == 0)
+            try
             {
-                conn.Open();
+
+                if (conn.State == 0)
+                {
+                    conn.Open();
+                }
+                comando.Connection = conn;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = sp;
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(datos);
             }
 
-            comando.Connection = conn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = sp;
-            adaptador.SelectCommand = comando;
-            adaptador.Fill(datos);
+            catch { 
+
+            }
+
             return (conn, comando, adaptador, datos);
         }
 
