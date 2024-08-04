@@ -7,7 +7,7 @@ function MostrarProductos() {
     document.getElementById('formproductos').style.display = 'block';
     document.getElementById('formusuario').style.display = 'none';
     document.getElementById('formpedidos').style.display = 'none';
-    ajustarContenedor();
+    location.reload();
 }
 
 function MostrarUsuarios() {
@@ -28,3 +28,4 @@ function ajustarContenedor() {
     contenedor.offsetHeight; // Forza el reflow
     contenedor.style.display = 'flex'; // Muestra el contenedor nuevamente
 }
+

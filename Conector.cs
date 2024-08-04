@@ -14,7 +14,8 @@ namespace CodeProject
         //public static string strConexion = "user id=Corick_SQLLogin_1; password=46xqzadbj5; server=CarrilloShop.mssql.somee.com; database=CarrilloShop";
         //public static string strConnection = "user id=sa; password=DESKTOP-3A3O483\\SQLEXPRESS; server=.; database=CarrilloShop";
         //public static string strConexion = "user id=sa; password=DESKTOP-3A3O483\\SQLEXPRESS; server=.; database=CarrilloShop";
-        public static string strConexion = "server=DESKTOP-3A3O483\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
+        //public static string strConexion = "server=DESKTOP-3A3O483\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
+        public static string strConexion = "server=CORICKGS\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
         public static (SqlConnection, SqlCommand, SqlDataAdapter, DataTable) BuscarRegistro(string strConexion, string sp, string Argumento, string lbText)
         {
             SqlConnection conn = new SqlConnection(strConexion);
@@ -102,23 +103,47 @@ namespace CodeProject
             {
                 
             }
-        }
-
-            
-
-        }
-
-             
-
-
-
-        /*public static string[] LlenarDropDown(int cont)
+        }   
+        public static bool InsertInto(string strConexion, string sp, params string[] parametros)
         {
-            string[] Elementos = new string[cont];
-            for (int i = 0;i < cont; i++)
+            double argumentos = Convert.ToDouble(parametros.Count());
+            double residuoArgumentos = argumentos % 2;
+            bool insercion = false;
+
+            if (residuoArgumentos != 0)
             {
-                DLTalla.Items.Add(Elementos[i]);
+                return insercion = false;
             }
-            return Elementos;
-        }*/
+            else
+            {
+                try
+                {
+                    SqlConnection conn = new SqlConnection(strConexion);
+                    SqlCommand comando = new SqlCommand();
+                    comando.Connection = conn;
+
+                    if(conn.State == 0)
+                    {
+                        conn.Open();
+                    }
+
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.CommandText = sp;
+
+                    for (int i = 0; i < parametros.Length; i+=2)
+                    {
+                        comando.Parameters.AddWithValue(parametros[i], parametros[i+1]);
+                    }
+                    comando.ExecuteNonQuery();
+                    conn.Close();
+                    insercion = true;
+                }
+                catch
+                {
+                    insercion=false;
+                }
+            }
+            return insercion;
+        }
+    }
  }
