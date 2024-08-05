@@ -8,9 +8,9 @@
             <div class ="ContenedorNavegacion">
                 <div class="tabla">
                     <div class="fila">
-                        <div class="celda2"><button type="button" onclick="MostrarProductos();" id="Produc">Productos</button></div>
-                        <div class="celda2"><button type="button" onclick="MostrarUsuarios();" id="Usuario">Usuarios</button></div>
-                        <div class="celda2"><button type="button" onclick="MostrarPedidos();" id="Pedidos">Pedidos</button></div>
+                        <div class="celda2"><button type="button" onclick="MostrarProductos();" class="botonfake" id="Produc">Productos</button></div>
+                        <div class="celda2"><button type="button" onclick="MostrarUsuarios();" class="botonfake" id="Usuario">Usuarios</button></div>
+                        <div class="celda2"><button type="button" onclick="MostrarPedidos();" class="botonfake" id="Pedidos">Pedidos</button></div>
                     </div>
                 </div>
             </div>
@@ -112,10 +112,13 @@
                             </div>
                         </div>
                         <div class="fila">
-                            <div class="celdacolspan3"><img src="AdminImages/empty.jpg" alt="ImgProduct" id="producto" /></div>
+                            <div class="celdacolspan3"><img src="AdminImages/empty.jpg" alt="ImgProduct" id="producto" />
+                                <asp:HiddenField ID="HFProducto" runat="server" />
+                            </div>
                         </div>
                         <div class="fila">
-                            <div class="celdacolspan3"><input id="InputFile" runat="server" name="InputFile" type="file" />
+                            <div class="celdacolspan3">
+                                <asp:FileUpload ID="InputFile" runat="server" name="InputFile" type="file"/>
                                 <asp:CustomValidator ID="CVInputFile" runat="server" 
                                     ErrorMessage="<br />Falta Imagen" 
                                     Display="Dynamic"
@@ -128,22 +131,28 @@
                 </div>
                 <div class="tabla">
                     <div class="fila">
-                        <div class="celda2"><asp:Button ID="Nuevo" runat="server" Text="Nuevo" /></div>
-                        <div class="celda2"><asp:Button ID="Guardar" runat="server" Text="Guardar" /></div>
-                        <div class="celda2"><asp:Button ID="Eliminar" runat="server" Text="Eliminar" /></div>
+                        <div class="celda2"><asp:Button class="btn btn-primary" ID="Nuevo" runat="server" Text="Nuevo" /></div>
+                        <div class="celda2">
+                            <asp:Button class="btn btn-success" ID="Guardar" runat="server" Text="Guardar" OnClick="Guardar_Click" /></div>
+                        <div class="celda2"><asp:Button class="btn btn-danger" ID="Eliminar" runat="server" Text="Eliminar" /></div>
                     </div>
                 </div>
-                <div class="gridinfo">
-                    <asp:GridView ID="grid" runat="server" AutoGenerateColumns="False" Width="100%">
-                        <Columns>
-                            <asp:BoundField DataField="Pro_ID" HeaderText="ID"></asp:BoundField>
-                            <asp:BoundField DataField="Pro_Nombre" HeaderText="Nombre"></asp:BoundField>
-                            <asp:BoundField DataField="Pro_Descripcion" HeaderText="Descripcion"></asp:BoundField>
-                            <asp:BoundField DataField="Pro_Precio" HeaderText="Precio"></asp:BoundField>
-                            <asp:ImageField DataImageUrlField="Pro_Imagen" HeaderText="Imagen" ControlStyle-Height="50px" ControlStyle-Width="50px"></asp:ImageField>
-                            <asp:BoundField DataField="Pro_Stock" HeaderText="En Stock"></asp:BoundField>
-                        </Columns>
-                    </asp:GridView>
+                <div class="container">
+                    <div class="grid-container">
+                        <div class="table-responsive">
+                            <asp:GridView ID="grid" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped" OnSelectedIndexChanged="grid_SelectedIndexChanged">
+                                <Columns>
+                                    <asp:BoundField DataField="Pro_ID" HeaderText="ID"></asp:BoundField>
+                                    <asp:BoundField DataField="Pro_Nombre" HeaderText="Nombre"></asp:BoundField>
+                                    <asp:BoundField DataField="Pro_Descripcion" HeaderText="Descripcion"></asp:BoundField>
+                                    <asp:BoundField DataField="Pro_Precio" DataFormatString="{0:c}" HeaderText="Precio"></asp:BoundField>
+                                    <asp:ImageField DataImageUrlField="Pro_Imagen" HeaderText="Imagen" ControlStyle-Height="50px" ControlStyle-Width="50px"></asp:ImageField>
+                                    <asp:BoundField DataField="Pro_Stock" HeaderText="En Stock"></asp:BoundField>
+                                    <asp:CommandField ShowSelectButton="True" HeaderText="Dar Click"><ItemStyle Width="90px"></ItemStyle></asp:CommandField>
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="formusuario">
@@ -159,6 +168,12 @@
                 const defaultFile = 'AdminImages/empty.jpg';
                 const file = document.getElementById('<%= InputFile.ClientID %>');
                 const img = document.getElementById('producto');
+                const hiddenFieldImageUrl = document.getElementById('<%= HFProducto.ClientID %>');
+
+                // Actualiza la fuente de la imagen al cargar la página
+                if (hiddenFieldImageUrl.value) {
+                    img.src = hiddenFieldImageUrl.value;
+                }
                 file.addEventListener('change', e => {
                     if (e.target.files[0]) {
                         const reader = new FileReader();
