@@ -116,12 +116,12 @@
                         </div>
                         <div class="fila">
                             <div class="celdacolspan3"><input id="InputFile" runat="server" name="InputFile" type="file" />
-                                <asp:CustomValidator ID="CVInputFile" runat="server" 
+                                    <!--<asp:CustomValidator ID="CVInputFile" runat="server" 
                                     ErrorMessage="<br />Falta Imagen" 
                                     Display="Dynamic"
                                     ForeColor="Red"
                                     ClientValidationFunction="ValidateInputFile"
-                                    OnServerValidate="CVInputFile_ServerValidate"></asp:CustomValidator>
+                                    OnServerValidate="CVInputFile_ServerValidate"></asp:CustomValidator>-->
                             </div>
                         </div>
                     </div>

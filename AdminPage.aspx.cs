@@ -17,7 +17,7 @@ namespace CodeProject
         void LlenarGrid()
         {
             var (conn, comando, adaptador, datos) = Conector.LstTable(Conector.strConexion, "Lst_Productos");
-            try
+             try
             {
                 grid.DataSource = datos;
                 grid.DataBind();
@@ -26,12 +26,12 @@ namespace CodeProject
             catch
             {
 
-            }
-
+            } 
+            
         }
         protected void CVInputFile_ServerValidate(object source, ServerValidateEventArgs args)
         {
             args.IsValid = InputFile.PostedFile != null && InputFile.PostedFile.ContentLength > 0;
-        }
+        } 
     }
 }
