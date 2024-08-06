@@ -19,7 +19,7 @@
 	</div>
     
 	
-	<div class="textoxd" style="text-align:center">
+	<div class="textoxd">
 		<h1>Equipando tus victorias, vistiendo tus sueños</h1>
 	</div>
 
