@@ -7,7 +7,7 @@
     height: 2400px;
     display: grid;
     place-items: center;
-    margin-top: -550px;
+    margin-top: -400px;
 }
 
 #slider-container {
@@ -17,7 +17,7 @@
     position: relative;
     overflow: hidden;
     padding: 20px;
-    margin-top: -550px;
+    margin-top: -400px;
 }
 
     #slider-container .btn {
@@ -133,7 +133,7 @@
 
 .imagenDep {
     position: absolute;
-    top: 1530px;
+    top: 1490px;
     height: 500px;
     width: 400px;
 }
@@ -165,23 +165,6 @@
         gap: 10px;
     }
 }
-
-
-
-
-
-
-.h1 {
-    font-size: 30px;
-    font-weight: bold;
-    position: absolute;
-    margin-top: 100px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-
 
 
 
@@ -223,18 +206,35 @@
     }
 }
 
-.textoxd {
-    font-size: 30px;
-    font-weight: bold;
-    position: absolute;
-    margin-top: 700px;
+
+
+.letras {
+    margin-top: -470px;
     text-align: center;
+    font-size: 80px;
+    font-family: lilex;
+    color: white;
+    text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black
 }
-
-
 
 @media only screen and (max-width: 870px) {
-    .textoxd {
-        font-size: 20px;
+    .carta {
+        font-size: 40px;
+        border: 3px solid black;
     }
 }
+
+
+.anuncio {
+    position:relative;
+    margin-top:-560px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.anuncio .h2{
+    margin-top:360px;
+}
+
+

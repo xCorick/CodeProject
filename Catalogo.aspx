@@ -37,14 +37,23 @@
 	<img  src="imagenes/InicioFoto.png"; style="position:absolute;margin:auto;margin-top:-15px;left:0px;width:100%;height:575px;"/>
 	</div>
     -->
-	
-	<div>
-		<h1>Equipando tus victorias, vistiendo tus sueños</h1>
-	</div>
+
+
+	<h1 class="letras">Equipando tus victorias, <br />vistiendo tus sueños</h1>
+
+
+	<!--
+		<h2 class="anuncio">Entra en accion con los productos mas nuevos</h2>
+		
+			<button>Compra Ahora</button>
+	-->	
 
 
 
-	<h1 style="position:absolute;margin-top:200px;font-family: Arial;left:90px;">En tendencia:</h1>
+
+
+
+	<h1 style="position:absolute;margin-top:400px;font-family: Arial;left:90px;">En tendencia:</h1>
 
 
 	<!--div style="margin-top:300px;"-->
@@ -72,7 +81,7 @@
     <script src="Scripts/CatalogoScript.js"></script>
 	
 
-	 <h1 style="position:absolute;top:1465px;font-family: Arial;left:90px;">El deporte para ti:</h1>
+	 <h1 style="position:absolute;top:1405px;font-family: Arial;left:90px;">El deporte para ti:</h1>
 
 	<div>
 		<div>
@@ -82,7 +91,7 @@
 			</div>
 		</div>
 
-		<div style="position:absolute;top:2100px;left:110px;">
+		<div style="position:absolute;top:2150px;left:110px;">
 
 	   <div class="contenedor">
 		   <img class="imagen" src="imagenes/dec.png" alt=""/>
