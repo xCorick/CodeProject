@@ -3,7 +3,7 @@
 
        <!DOCTYPE html>
 
-<html lan="en">
+<html>
 <head>
     <title>Inicio</title>
 
@@ -17,11 +17,13 @@
 	<div>
 	<img  src="imagenes/InicioFoto.png"; style="position:absolute;margin:auto;margin-top:-15px;left:0px;width:100%;height:575px;"/>
 	</div>
-    
-	
-	<div class="textoxd" style="text-align:center">
-		<h1>Equipando tus victorias, vistiendo tus sueños</h1>
-	</div>
+
+
+     <div class="card">
+		 <div class="contenido">
+			 <h1>Equipa tus metas, viste tus sueños</h1>
+		 </div>
+     </div>
 
 
 
