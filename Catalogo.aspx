@@ -44,10 +44,10 @@
 
 
 
-	<h1 style="position:absolute;margin-top:1018px;font-family: Arial;left:90px;">En tendencia:</h1>
+	<h1 style="position:absolute;margin-top:200px;font-family: Arial;left:90px;">En tendencia:</h1>
 
 
-	<!--<div style="margin-top:1670px;">-->
+	<!--div style="margin-top:300px;"-->
 
 <div id="container">
 		<div id="slider-container">
@@ -67,7 +67,7 @@
 			<span onclick="slideLeft()" class="btn"></span>
 		</div>
 	</div>
-  
+   
 
     <script src="Scripts/CatalogoScript.js"></script>
 	

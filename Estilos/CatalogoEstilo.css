@@ -6,7 +6,8 @@
 #container {
     height: 2400px;
     display: grid;
-    place-items: center
+    place-items: center;
+    margin-top: -550px;
 }
 
 #slider-container {
@@ -16,6 +17,7 @@
     position: relative;
     overflow: hidden;
     padding: 20px;
+    margin-top: -550px;
 }
 
     #slider-container .btn {
@@ -52,6 +54,7 @@
         width: 1000%;
         height: 100%;
         transition: all .5s;
+        
     }
 
         #slider-container #slider .slide {
@@ -174,6 +177,8 @@
     position: absolute;
     margin-top: 100px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 
