@@ -208,8 +208,10 @@
     <Content Include="Estilos\AdminStyles.css" />
     <Content Include="Estilos\AlbumStyle.css" />
     <Content Include="Estilos\CatalogoEstilo.css" />
+    <Content Include="Estilos\CatalogoSlider.css" />
     <Content Include="Estilos\Default.css" />
     <Content Include="Estilos\LoginStyle.css" />
+    <Content Include="Estilos\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background\Background.png" />
