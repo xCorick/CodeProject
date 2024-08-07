@@ -1,0 +1,43 @@
+﻿.marco{
+    width:1300px;
+    height:700px;
+    margin:50px auto 0;
+    overflow:hidden;
+}
+
+    .marco img {
+        height: 660px;
+    }
+
+.marco ul{
+    display: flex;
+    padding:0;
+    width:400%;
+    animation:slider 14s infinite alternate;
+}
+
+.marco li{
+    width: 100%;
+    list-style:none;
+}
+
+.marco img{
+    width: 100%;
+}
+
+@keyframes slider{
+    0%{margin-left:0%;}
+    20% {margin-left: 0%;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50%  {margin-left: -200%;}
+    75% {margin-left: -200%;}
+
+    80% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+
+

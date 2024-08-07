@@ -185,6 +185,7 @@
     <Content Include="AdminImages\empty.jpg" />
     <Content Include="AdminPage.aspx" />
     <Content Include="AdminScripts\AdminScript.js" />
+    <Content Include="Carrito.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -207,8 +208,10 @@
     <Content Include="Estilos\AdminStyles.css" />
     <Content Include="Estilos\AlbumStyle.css" />
     <Content Include="Estilos\CatalogoEstilo.css" />
+    <Content Include="Estilos\CatalogoSlider.css" />
     <Content Include="Estilos\Default.css" />
     <Content Include="Estilos\LoginStyle.css" />
+    <Content Include="Estilos\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background\Background.png" />
@@ -359,6 +362,7 @@
     <Content Include="lib\twitter-bootstrap\scss\vendor\_rfs.scss" />
     <Content Include="Scripts\AlbumScript.js" />
     <Content Include="Catalogo.aspx" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -419,6 +423,13 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Conector.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

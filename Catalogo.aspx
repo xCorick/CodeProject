@@ -9,26 +9,45 @@
 
     <link href="Estilos/CatalogoEstilo.css" rel="stylesheet" />
 
+    <link href="Estilos/CatalogoSlider.css" rel="stylesheet" />
+
     <script src="Scripts/CatalogoScript.js"></script>
 </head>
 <body>
     
-	
+	<div class="marco">
+    <ul>
+        <li>
+            <img src="imagenes/F1.2.jpg">
+        </li>
+        <li>
+            <img src="imagenes/F4.2.jpg">
+       </li>
+        <li>
+            <img src="imagenes/F10.2.jpeg">
+        </li>
+        <li>
+            <img src="imagenes/F9.2.jpg">
+        </li>
+    </ul>
+</div>
+
+	<!--
 	<div>
 	<img  src="imagenes/InicioFoto.png"; style="position:absolute;margin:auto;margin-top:-15px;left:0px;width:100%;height:575px;"/>
 	</div>
-    
+    -->
 	
-	<div class="textoxd" style="text-align:center">
+	<div>
 		<h1>Equipando tus victorias, vistiendo tus sueños</h1>
 	</div>
 
 
 
-	<h1 style="position:absolute;margin-top:1018px;font-family: Arial;left:90px;">En tendencia:</h1>
+	<h1 style="position:absolute;margin-top:200px;font-family: Arial;left:90px;">En tendencia:</h1>
 
 
-	<!--<div style="margin-top:1670px;">-->
+	<!--div style="margin-top:300px;"-->
 
 <div id="container">
 		<div id="slider-container">
@@ -48,7 +67,7 @@
 			<span onclick="slideLeft()" class="btn"></span>
 		</div>
 	</div>
-  
+   
 
     <script src="Scripts/CatalogoScript.js"></script>
 	
