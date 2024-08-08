@@ -207,6 +207,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Estilos\AdminStyles.css" />
     <Content Include="Estilos\AlbumStyle.css" />
+    <Content Include="Estilos\CatalogoCarrusel2.css" />
     <Content Include="Estilos\CatalogoEstilo.css" />
     <Content Include="Estilos\CatalogoSlider.css" />
     <Content Include="Estilos\Default.css" />
@@ -423,6 +424,7 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="A_Conector.cs" />
     <Compile Include="Carrito.aspx.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -11,6 +11,10 @@
 
     <link href="Estilos/CatalogoSlider.css" rel="stylesheet" />
 
+    <link href="Estilos/CatalogoCarrusel2.css" rel="stylesheet" />
+
+
+
     <script src="Scripts/CatalogoScript.js"></script>
 </head>
 <body>
@@ -114,6 +118,25 @@
 		   </div>
 	   </div>
 		   
+
+	<div id="container2" style="margin-top:0px"> 
+		<div id="slider2-container2">
+			<span onclick="slideRight2()" class="btn2"></span>
+			<div id="slider2">
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/S2.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/FI2.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T4.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BP3.jpg" class="imagen2" alt="BP3"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BPI2.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/L2.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T1.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/G4.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BI1.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen2" alt="img1"/></button></div>
+			</div>
+			<span onclick="slideLeft2()" class="btn2"></span>
+		</div>
+	</div>
 
 	
 
