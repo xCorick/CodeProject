@@ -35,34 +35,8 @@
 		<div class="row" id="cards"></div>
 	</div>
 
-	<template id="template-footer">
-        <th scope="row" colspan="2">Total productos</th>
-        <td>10</td>
-        <td>
-            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-                vaciar todo
-            </button>
-        </td>
-        <td class="font-weight-bold">$ <span>5000</span></td>
-    </template>
-    
-    <template id="template-carrito">
-      <tr>
-        <th scope="row">id</th>
-        <td>Café</td>
-        <td>1</td>
-        <td>
-            <button class="btn btn-info btn-sm">
-                +
-            </button>
-            <button class="btn btn-danger btn-sm">
-                -
-            </button>
-        </td>
-        <td>$ <span>500</span></td>
-      </tr>
-    </template>
-
+	
+	<asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"></asp:GridView>
 
 	<template id="template-card">
 		<div class="col-12 mb-2 col-md-4">

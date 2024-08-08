@@ -1,7 +1,7 @@
-﻿var container = document.getElementById('container')
-var slider = document.getElementById('slider');
-var slides = document.getElementsByClassName('slide').length;
-var buttons = document.getElementsByClassName('btn');
+﻿var container = document.getElementById('container2')
+var slider = document.getElementById('slider2');
+var slides = document.getElementsByClassName('slide2').length;
+var buttons = document.getElementsByClassName('btn2');
 
 var currentPosition = 0;
 var currentMargin = 0;
@@ -14,7 +14,7 @@ var nextKeyActive = true;
 window.addEventListener("resize", checkWidth);
 
 function checkWidth() {
-	containerWidth = container.offsetWidth;
+	containerWidth = container2.offsetWidth;
 	setParams(containerWidth);
 }
 
@@ -51,7 +51,7 @@ function setParams(w) {
 
 setParams();
 
-function slideRight() {
+function slideRight2() {
 	if (currentPosition != 0) {
 		slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
 		currentMargin += (100 / slidesPerPage);
@@ -65,7 +65,7 @@ function slideRight() {
 	}
 };
 
-function slideLeft() {
+function slideLeft2() {
 	if (currentPosition != slidesCount) {
 		slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
 		currentMargin -= (100 / slidesPerPage);
@@ -78,5 +78,3 @@ function slideLeft() {
 		buttons[0].classList.remove('inactive');
 	}
 };
-
-
