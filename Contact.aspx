@@ -47,7 +47,7 @@
                          </main>
                   </div>
                       <div class="col-12 col-md-6" >
-                          <a href="Default.aspx"><img class="img-fluid rounded-start w-100 h-70 object-fit-cover" src="https://img.freepik.com/foto-gratis/chico-atractivo-joven-camiseta-roja-casual-hace-senal-telefono-indica-dedo-indice-directamente-camara_273609-18651.jpg?t=st=1721821016~exp=1721824616~hmac=42458a2e07d9f3bcb1d8043dbfb7d94489cd45ef3db2e29e5c49e6a4934df02a&w=1380" loading="lazy" alt="Welcome to Carrillo Shop!" /></a>
+                          <a href="Default.aspx"><img class="img-fluid rounded-start w-100 h-70 object-fit-cover" src="https://www.linkaform.com/hubfs/linkaform-2021/img-contactanos.png" loading="lazy" alt="Welcome to Carrillo Shop!" /></a>
                       </div>
                     <hr />
                   </div>

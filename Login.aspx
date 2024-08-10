@@ -8,6 +8,8 @@
     <title>Uniformes Carrillo</title>
 </head>
 <body>
+    ,
+
     <form id="form1" runat="server">
         <div>
             <section class="p-3 p-md-4 p-xl-5">
@@ -67,7 +69,8 @@
                                                             <a href="SingUp.aspx" class="link-secondary text-decoration-none">Crear cuenta nueva</a>
                                                         </div>
                                                         <div class="text-center mt-3">
-                                                            <a href="#!" class="link-secondary text-decoration-none">Olvidé mi contraseña</a>
+                                                            <a href="#!" class="link-secondary text-decoration-none" id="recoverPasswordModal">Olvidé mi contraseña</a>
+
                                                         </div>
                                                     </div>
                                                 </div>
