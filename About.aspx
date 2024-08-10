@@ -61,7 +61,7 @@
                   rendimiento en el ámbito deportivo. Nos esforzamos por ofrecer un servicio excepcional, mantener estándares de calidad impecables en nuestros productos y contribuir 
                   positivamente al desarrollo del deporte en nuestra comunidad.</p>
             </div>
-            <img class="card-img-right flex-auto d-none d-md-block" src="https://img.freepik.com/foto-gratis/turistas-suben-colina-al-amanecer_1150-19692.jpg?t=st=1721845967~exp=1721849567~hmac=c3906a0623f383643eab508c36d622dfa76342bda152f24fc94ba91da1f5d503&w=1380" width="600px" height="300px" alt="Card image cap"/>
+            <img class="card-img-right flex-auto d-none d-md-block" src="https://d1ih8jugeo2m5m.cloudfront.net/2022/09/imagenes-sin-copyright-gratis-1200x685.jpg" width="600px" height="300px" alt="Card image cap"/>
           </div>
         </div>
         <div class="col-md-6">
@@ -75,7 +75,7 @@
               <p class="card-text mb-auto">Nuestra visión es convertirnos en la principal opción para los equipos deportivos locales, para los aficionados al 
                   deporte en Ciudad Obregón y sus alrededores. Buscamos expandir nuestra presencia en el mercado, diversificar nuestra oferta de productos y brindar la mejor atención.</p>       
             </div>
-            <img class="card-img-right flex-auto d-none d-md-block" src="https://img.freepik.com/foto-gratis/grupo-amigos-reunidos_23-2148729690.jpg?t=st=1721845931~exp=1721849531~hmac=b5d9ba51f4d8fa3523e46d128ab385bcc89b00a0d796909ce82fbc058bc64247&w=1800" widht="600px" height="300px" alt="Card image cap"/>
+            <img class="card-img-right flex-auto d-none d-md-block" src="https://olimpicocol.co/web/wp-content/uploads/2023/10/sotf-1200x675.jpeg" widht="600px" height="300px" alt="Card image cap"/>
           </div>
         </div>
       </div>

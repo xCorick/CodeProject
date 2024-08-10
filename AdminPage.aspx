@@ -1,10 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="CodeProject.AdminPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <html>
+    <!DOCTYPE html>
         <head>
             <link href="Estilos/AdminStyles.css" rel="stylesheet" />
         </head>
         <body>
+            <div class="loading-screen">
+                <div class="loader-window"    >
+                    <div class="loader">
+                    </div>
+                </div>              
+            </div>
             <div class ="ContenedorNavegacion">
                 <div class="tabla">
                     <div class="fila">
@@ -118,7 +124,7 @@
                         </div>
                         <div class="fila">
                             <div class="celdacolspan3">
-                                <asp:FileUpload ID="InputFile" runat="server" name="InputFile" type="file"/>
+                                <asp:FileUpload ID="InputFile" runat="server" name="InputFile" type="file" OnClientClick="LoadingProduct()"/>
                                 <asp:CustomValidator ID="CVInputFile" runat="server" 
                                     ErrorMessage="<br />Falta Imagen" 
                                     Display="Dynamic"
@@ -131,10 +137,9 @@
                 </div>
                 <div class="tabla">
                     <div class="fila">
-                        <div class="celda2"><asp:Button class="btn btn-primary" ID="Nuevo" runat="server" Text="Nuevo" /></div>
-                        <div class="celda2">
-                            <asp:Button class="btn btn-success" ID="Guardar" runat="server" Text="Guardar" OnClick="Guardar_Click" /></div>
-                        <div class="celda2"><asp:Button class="btn btn-danger" ID="Eliminar" runat="server" Text="Eliminar" /></div>
+                        <div class="celda2"><asp:Button class="btn btn-primary" ID="Nuevo" runat="server" Text="Nuevo" CausesValidation="false" /></div>
+                        <div class="celda2"><asp:Button class="btn btn-success" ID="Guardar" runat="server" Text="Guardar" OnClick="Guardar_Click" CausesValidation="true" /></div>
+                        <div class="celda2"><asp:Button class="btn btn-danger" ID="Eliminar" runat="server" Text="Eliminar"  /></div>
                     </div>
                 </div>
                 <div class="container">
@@ -186,6 +191,13 @@
                     }
                 });
             };
+            function LoadingProduct() {
+                // Deshabilitar los botones
+                document.getElementById('<%= Nuevo.ClientID %>').disabled = true;
+                document.getElementById('<%= Guardar.ClientID %>').disabled = true;
+                document.getElementById('<%= Eliminar.ClientID %>').disabled = true;
+                document.getElementById('<%= InputFile.ClientID %>').disabled = true;
+            }
         </script>
     </html>
 </asp:Content>

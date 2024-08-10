@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Principal;
@@ -17,10 +18,6 @@ namespace CodeProject
         public static string ruta2;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Nuevo.Enabled = true;
-            Guardar.Enabled = true;
-            Eliminar.Enabled = true;
-            InputFile.Enabled = true;
             LlenarGrid();
             LlenarPublico("Bus_Publico", "publico");
             LlenarTalla("Bus_Talla", "talla");
@@ -122,7 +119,7 @@ namespace CodeProject
         }
 
         Cloudinary cloud;
-        public string CargarImagen()
+        public (string ruta, bool isInserted) CargarImagen()
         {
             Account account = new Account(
            "dj4vhebsj",
@@ -131,6 +128,8 @@ namespace CodeProject
             );
 
             string ruta2 ="";
+
+            bool isInserted2 = false;
 
             MemoryStream ms = new MemoryStream();
             ms = new MemoryStream(InputFile.FileBytes);
@@ -148,39 +147,60 @@ namespace CodeProject
                 {
                     string ruta = UploadResult.SecureUrl.ToString();
                     ruta2 = ruta;
+                    isInserted2 = true;
+                    return (ruta2, isInserted2);
                 }
                 else
                 {
                     // Manejo del caso en que SecureUrl es null
                     // Puede registrar un error o lanzar una excepción
                     Response.Write("<script>alert('Error al subir la imagen')</script>");
+                    return (ruta2, isInserted2);
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 Response.Write("<script>alert('Error al subir la imagen')</script>");
             }
-            return ruta2;
+            return (ruta2, isInserted2);
         }
 
         protected void Guardar_Click(object sender, EventArgs e)
         {
             Nuevo.Enabled = false;
+            Nuevo.BackColor = Color.Gray;
             Guardar.Enabled = false;
             Eliminar.Enabled = false;
             InputFile.Enabled = false;
-            string ruta2 = CargarImagen();
-            bool insersion = Conector.InsertInto(Conector.strConexion, "Ins_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", DDLTalla.Text, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
+            if (Page.IsValid)
+            {
+                var resultado = CargarImagen();
+                string ruta2 = resultado.ruta;
+                bool isInserted = resultado.isInserted;
 
-            if (insersion)
-            {
-                Response.Write("<script>alert('Producto guardado exitosamente')</script>");
+                if (isInserted)
+                {
+                    bool insersion = Conector.InsertInto(Conector.strConexion, "Ins_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", DDLTalla.Text, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
+
+                    if (insersion)
+                    {
+                        Response.Write("<script>alert('Producto guardado exitosamente')</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Algo salio mal, intenta de nuevo')</script>");
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>alert('Algo salio mal, intenta de nuevo')</script>");
+                }
+                LlenarGrid();
             }
-            else
-            {
-                Response.Write("<script>alert('Algo salio mal, intenta de nuevo')</script>");
-            }
-            LlenarGrid();
+            Nuevo.Enabled = true;
+            Guardar.Enabled = true;
+            Eliminar.Enabled = true;
+            InputFile.Enabled = true;
         }
 
         protected void grid_SelectedIndexChanged(object sender, EventArgs e)
