@@ -2,41 +2,66 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-     <!DOCTYPE html>
-  <html lang="en">
+         <!DOCTYPE html>
 
+<html lan="en">
 <head>
+    <title>Inicio</title>
 
-<title>Inicio</title>
+    <link href="Estilos/CatalogoEstilo.css" rel="stylesheet" />
 
-    <link href="Estilos/EstiloInicio.css" rel="stylesheet" />
+    <link href="Estilos/CatalogoSlider.css" rel="stylesheet" />
 
-    <script src="Scripts/script.js"></script>
+    <link href="Estilos/CatalogoCarrusel2.css" rel="stylesheet" />
+
+
+
+    <script src="Scripts/CatalogoScript.js"></script>
 </head>
 <body>
-   
-	
+    
+	<div class="marco">
+    <ul>
+        <li>
+            <img src="imagenes/F1.2.jpg">
+        </li>
+        <li>
+            <img src="imagenes/F4.2.jpg">
+       </li>
+        <li>
+            <img src="imagenes/F10.2.jpeg">
+        </li>
+        <li>
+            <img src="imagenes/F9.2.jpg">
+        </li>
+    </ul>
+</div>
+
+	<!--
 	<div>
 	<img  src="imagenes/InicioFoto.png"; style="position:absolute;margin:auto;margin-top:-15px;left:0px;width:100%;height:575px;"/>
 	</div>
-    
-	
-     <!--
-    <div style="position:absolute;margin-top:560px;border: 2px solid #333;right:50vw";width:100%;>
-    <img src="imagenes/Logo.png" width="645" height="312" alt="Foto del logo"/>
-    </div>
     -->
-	
-	<div class="textoxd">
-		<h1>Equipando tus victorias, vistiendo tus sueños</h1>
-	</div>
 
+
+	<h1 class="letras">Equipando tus victorias, <br />vistiendo tus sueños</h1>
+
+
+	<!--
+		<h2 class="anuncio">Entra en accion con los productos mas nuevos</h2>
 		
+			<button>Compra Ahora</button>
+	-->	
 
-	<h1 style="position:absolute;margin-top:1010px;font-family: Arial;left:90px;">En tendencia:</h1>
 
 
-	 <div style="margin-top:0px;"> 
+
+
+
+	<h1 style="position:absolute;margin-top:400px;font-family: Arial;left:90px;">En tendencia:</h1>
+
+
+	<!--div style="margin-top:300px;"-->
 
 <div id="container">
 		<div id="slider-container">
@@ -56,12 +81,12 @@
 			<span onclick="slideLeft()" class="btn"></span>
 		</div>
 	</div>
-  </div>
+   
 
-    <script src="Scripts/script.js"></script>
+    <script src="Scripts/CatalogoScript.js"></script>
 	
 
-	 <h1 style="position:absolute;top:1450px;font-family: Arial;left:90px;">El deporte para ti:</h1>
+	 <h1 style="position:absolute;top:1405px;font-family: Arial;left:90px;">El deporte para ti:</h1>
 
 	<div>
 		<div>
@@ -71,7 +96,7 @@
 			</div>
 		</div>
 
-		<div style="position:absolute;top:2200px;left:110px;">
+		<div style="position:absolute;top:2150px;left:110px;">
 
 	   <div class="contenedor">
 		   <img class="imagen" src="imagenes/dec.png" alt=""/>
@@ -94,14 +119,32 @@
 		   </div>
 	   </div>
 		   
-	<!--
-	<div style="position:absolute;color:#232323;top:2900px;">
-		<h2>© 2024 Uniformes Carrillo, Inc. Todos los derechos reservados</h2>
+
+	<div id="container2" style="margin-top:0px"> 
+		<div id="slider2-container2">
+			<span onclick="slideRight2()" class="btn2"></span>
+			<div id="slider2">
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/S2.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/FI2.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T4.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BP3.jpg" class="imagen2" alt="BP3"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BPI2.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/L2.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T1.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/G4.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BI1.jpg" class="imagen2" alt="img1"/></button></div>
+				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen2" alt="img1"/></button></div>
+			</div>
+			<span onclick="slideLeft2()" class="btn2"></span>
+		</div>
 	</div>
-	-->
+	 <script src="Scripts/CatalogoScript2.js"></script>    
+	
 
 </body>
 </html>
+
+
 </asp:Content>
 
 

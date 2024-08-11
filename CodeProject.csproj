@@ -159,6 +159,9 @@
     <Content Include="Default.aspx" />
     <Content Include="Estilos\AdminStyles.css" />
     <Content Include="Estilos\AlbumStyle.css" />
+    <Content Include="Estilos\CatalogoCarrusel2.css" />
+    <Content Include="Estilos\CatalogoEstilo.css" />
+    <Content Include="Estilos\CatalogoSlider.css" />
     <Content Include="Estilos\Default.css" />
     <Content Include="Estilos\EstiloInicio.css" />
     <Content Include="Estilos\LoginStyle.css" />
@@ -318,6 +321,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\CatalogoScript.js" />
+    <Content Include="Scripts\CatalogoScript2.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
