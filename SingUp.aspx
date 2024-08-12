@@ -81,19 +81,37 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
-                                                        <label for="password" class="form-label">Contraseña:</label>
-                                                        <asp:TextBox ID="password" type="password" class="form-control" runat="server" placeholder="Contraseña" ></asp:TextBox>
-                                                        <asp:Label ID="messPass" runat="server" Text="message" visible="false" ForeColor="Red"></asp:Label>
-                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                                                            ControlToValidate="password"
-                                                            ErrorMessage="Contraseña inválida. Favor de ingresar el dato."
-                                                            ForeColor="Red" 
+                                                        <label for="lblPassword" class="form-label">Contraseña:</label>
+                                                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control" placeholder="Contraseña"></asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server"
+                                                            ControlToValidate="txtPassword"
+                                                            ErrorMessage="La contraseña es obligatoria."
+                                                            ForeColor="Red"
                                                             Display="Dynamic"></asp:RequiredFieldValidator>
                                                     </div>
-                                                    <div><asp:Label style="text-align:center" ID="lbMensaje" runat="server" Text="Label" ForeColor="Green" Visible="False" Font-Bold="True">Error</asp:Label></div>
+
+                                                    <div class="form-floating mb-3">
+                                                        <label for="lblConfirmPassword" class="form-label">Confirmar Contraseña:</label>
+                                                        <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="form-control" placeholder="Confirmar Contraseña"></asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="rfvConfirmPassword" runat="server"
+                                                            ControlToValidate="txtConfirmPassword"
+                                                            ErrorMessage="Confirmar contraseña es obligatorio."
+                                                            ForeColor="Red"
+                                                            Display="Dynamic"></asp:RequiredFieldValidator>
+    
+                                                        <asp:CompareValidator ID="cvPassword" runat="server"
+                                                            ControlToCompare="txtPassword"
+                                                            ControlToValidate="txtConfirmPassword"
+                                                            ErrorMessage="Las contraseñas no coinciden."
+                                                            ForeColor="Red"
+                                                            Display="Dynamic"></asp:CompareValidator>
+                                                    </div>
+
+
+                                                    <div><asp:Label style="text-align:center" ID="lblError" runat="server" Text="Label" ForeColor="Green" Visible="False" Font-Bold="True">Error</asp:Label></div>
                                                     <div class="d-grid d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
                                                         <asp:Button class="btn btn-dark btn-lg" 
-                                                            ID="Create" type="submit" runat="server" Text="Crear cuenta" OnClick="Create_Click" />
+                                                            ID="btnCreate" type="submit" runat="server" Text="Crear cuenta" OnClick="Create_Click" />
                                                     </div>
                                                     <div class="text-center mt-3">
                                                         <span>¿Ya tienes una cuenta?</span><a href="Login.aspx" class="link-secondary text-decoration-none"> Iniciar sesión</a>
