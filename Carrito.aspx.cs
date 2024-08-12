@@ -17,6 +17,14 @@ namespace CodeProject
 
         protected void Page_Load(object sender, EventArgs e)
          {
+
+            Usuario usuario = (Usuario)Session["user"];
+            if (usuario == null)
+            {
+                Response.Redirect("Catalogo.aspx");
+            }
+
+
             LlenarGrid();
          }
 
@@ -43,6 +51,15 @@ namespace CodeProject
         }
 
 
+        SqlParameter[] parametros = new SqlParameter[]
+{
+                new SqlParameter("@LisCar_ProID", SqlDbType.Int) { Value = clave },
+                new SqlParameter("@LisCar_CarritoID", SqlDbType.VarChar) { Value = "123" }
+};
+
+
+
+
 
         void EliminarPro(string clave)
         {
@@ -66,13 +83,15 @@ namespace CodeProject
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Añadir parámetros al comando
-                command.Parameters.AddWithValue("@LisCar_ProID", clave, "@LisCar_CarritoID", "7DB72A33-2");
+                command.Parameters.AddWithValue("@LisCar_ProID", clave);
+                command.Parameters.AddWithValue("@LisCar_CarritoID", "7DB72A33-2");
 
                 // Abrir la conexión
                 conn.Open();
 
                 // Ejecutar el procedimiento almacenado
                 command.ExecuteNonQuery();
+                LlenarGrid();
 
             }
 
@@ -86,8 +105,28 @@ namespace CodeProject
         }
 
 
+        void CargarCarrito(string Correo)
+        {
+            SqlConnection conn = new SqlConnection(strConexion);
+               SqlCommand comando = new SqlCommand();
+               if (conn.State == 0)
+               {
+                   conn.Open();
+               }
+                   comando.CommandType = CommandType.StoredProcedure;
+                   comando.CommandText = "Pa_CarritoID";
+                   comando.Parameters.AddWithValue("@Car_CliCorreo", Correo);
+                   comando.ExecuteNonQuery();
+                   
+                   conn.Close();
+                   
+        }
 
-
+        public string CorreoUsuarioa()
+        {
+            string Correo = "alexgrijalva@gmail.com";
+            return Correo;
+        }
     
 
 
