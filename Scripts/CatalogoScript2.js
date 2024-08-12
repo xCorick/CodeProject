@@ -13,7 +13,7 @@ var nextKeyActive2 = true;
 
 window.addEventListener("resize", checkWidth);
 
-function checkWidth() {
+function  checkWidth() {
     containerWidth2 = container2.offsetWidth;
     setParams(containerWidth2);
 }
