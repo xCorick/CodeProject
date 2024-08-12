@@ -51,11 +51,6 @@ namespace CodeProject
         }
 
 
-        SqlParameter[] parametros = new SqlParameter[]
-{
-                new SqlParameter("@LisCar_ProID", SqlDbType.Int) { Value = clave },
-                new SqlParameter("@LisCar_CarritoID", SqlDbType.VarChar) { Value = "123" }
-};
 
 
 
@@ -64,7 +59,10 @@ namespace CodeProject
         void EliminarPro(string clave)
         {
             SqlConnection conn = new SqlConnection(strConexion);
-            /*   SqlCommand comando = new SqlCommand();
+
+            string carritoid = "7DB72A33-2";
+
+               SqlCommand comando = new SqlCommand();
                if (conn.State == 0)
                {
                    conn.Open();
@@ -72,19 +70,22 @@ namespace CodeProject
                    comando.CommandType = CommandType.StoredProcedure;
                    comando.CommandText = "Del_ListaCarrito";
                    comando.Parameters.AddWithValue("@LisCar_ProID", clave);
+                   comando.Parameters.AddWithValue("@LisCar_CarritoID", carritoid);
                    comando.ExecuteNonQuery();
                    conn.Close();
                    Response.Write("<script>alert('C fue')</script>");
                    LlenarGrid();
 
-               */
+
+            ----------------------------
+
             using (SqlCommand command = new SqlCommand("Del_ListaCarrito", conn))
             {
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Añadir parámetros al comando
                 command.Parameters.AddWithValue("@LisCar_ProID", clave);
-                command.Parameters.AddWithValue("@LisCar_CarritoID", "7DB72A33-2");
+                command.Parameters.AddWithValue("@LisCar_CarritoID", carritoid);
 
                 // Abrir la conexión
                 conn.Open();
