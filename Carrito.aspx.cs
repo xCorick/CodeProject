@@ -40,5 +40,38 @@ namespace CodeProject
             }
         }
 
+
+
+        void EliminarPro(string clave)
+        {
+            SqlConnection conn = new SqlConnection(strConexion);
+            SqlCommand comando = new SqlCommand();
+            if (conn.State == 0)
+            {
+                conn.Open();
+            }
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "Del_ListaCarrito";
+            comando.Parameters.AddWithValue("@LisCar_ProID", clave);
+            comando.ExecuteNonQuery();
+            conn.Close();
+            Response.Write("<script>alert('C fue')</script>");
+            LlenarGrid();
+
+        }
+
+
+        protected void grid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string clave = GridView.Rows[GridView.SelectedRow.RowIndex].Cells[0].Text;
+            EliminarPro(clave);
+        }
+
+
+
+
+
+
+
     }
 }

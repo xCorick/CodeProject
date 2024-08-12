@@ -15,8 +15,8 @@
                 <h1>Carrito</h1>
 
 
-			  <asp:GridView ID="GridView" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False">
-                    <AlternatingRowStyle BackColor="#66CCFF" ForeColor="#000066"></AlternatingRowStyle>
+			  <asp:GridView ID="GridView" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False" OnSelectedIndexChanged="grid_SelectedIndexChanged" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+                    <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
                     <Columns>
                         <asp:BoundField DataField="LisCar_ProID" HeaderText="Producto">
                             <ItemStyle Width="90px"></ItemStyle>
@@ -27,6 +27,15 @@
                         <asp:BoundField DataField="LisCar_Cantidad" DataFormatString="{0:c}" HeaderText="Cantidad"><ItemStyle Width="90px"></ItemStyle></asp:BoundField>
                         <asp:CommandField ShowSelectButton="True" HeaderText="Eliminar"><ItemStyle Width="90px"></ItemStyle></asp:CommandField>
                     </Columns>
+                    <FooterStyle BackColor="#CCCC99" />
+                    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                    <RowStyle BackColor="#F7F7DE" />
+                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                    <SortedAscendingHeaderStyle BackColor="#848384" />
+                    <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                    <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
 
 
