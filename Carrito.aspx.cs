@@ -6,12 +6,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Security.Cryptography;
 
 namespace CodeProject
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
+        //string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
+        public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
 
         protected void Page_Load(object sender, EventArgs e)
          {
@@ -45,18 +47,34 @@ namespace CodeProject
         void EliminarPro(string clave)
         {
             SqlConnection conn = new SqlConnection(strConexion);
-            SqlCommand comando = new SqlCommand();
-            if (conn.State == 0)
+            /*   SqlCommand comando = new SqlCommand();
+               if (conn.State == 0)
+               {
+                   conn.Open();
+               }
+                   comando.CommandType = CommandType.StoredProcedure;
+                   comando.CommandText = "Del_ListaCarrito";
+                   comando.Parameters.AddWithValue("@LisCar_ProID", clave);
+                   comando.ExecuteNonQuery();
+                   conn.Close();
+                   Response.Write("<script>alert('C fue')</script>");
+                   LlenarGrid();
+
+               */
+            using (SqlCommand command = new SqlCommand("Del_ListaCarrito", conn))
             {
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Añadir parámetros al comando
+                command.Parameters.AddWithValue("@LisCar_ProID", clave, "@LisCar_CarritoID", "7DB72A33-2");
+
+                // Abrir la conexión
                 conn.Open();
+
+                // Ejecutar el procedimiento almacenado
+                command.ExecuteNonQuery();
+
             }
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "Del_ListaCarrito";
-            comando.Parameters.AddWithValue("@LisCar_ProID", clave);
-            comando.ExecuteNonQuery();
-            conn.Close();
-            Response.Write("<script>alert('C fue')</script>");
-            LlenarGrid();
 
         }
 
@@ -70,7 +88,7 @@ namespace CodeProject
 
 
 
-
+    
 
 
     }
