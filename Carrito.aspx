@@ -29,23 +29,6 @@
                     </Columns>
                 </asp:GridView>
 
-			
-
-        </div>
-	</div>
-
-	
-	
-
-
-
-
-
-
-
-
-
-
 
 
 </body>

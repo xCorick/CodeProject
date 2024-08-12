@@ -14,9 +14,9 @@ namespace CodeProject
         string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+         {
             LlenarGrid();
-        }
+         }
 
 
         void LlenarGrid()
