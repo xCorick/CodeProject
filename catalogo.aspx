@@ -120,7 +120,10 @@
 	   </div>
 		   
 
-	<div id="container2" style="margin-top:0px"> 
+		<h1 style="position:absolute;margin-top:25px;font-family: Arial;left:90px;">Disenado ti:</h1>
+
+
+	<div id="container2" style="margin-top:-470px"> 
 		<div id="slider2-container2">
 			<span onclick="slideRight2()" class="btn2"></span>
 			<div id="slider2">

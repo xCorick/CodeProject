@@ -3,7 +3,7 @@
     height: 2400px;
     display: grid;
     place-items: center;
-    margin-top: -1000px;
+    margin-top: 00px;
 }
 
 #slider2-container2 {
@@ -13,7 +13,7 @@
     position: relative;
     overflow: hidden;
     padding: 20px;
-    margin-top: -1000px;
+    margin-top: 00px;
 }
 
     #slider2-container2 .btn2 {
