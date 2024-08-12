@@ -24,6 +24,15 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.TextBox TBClave;
 
         /// <summary>
+        /// LBClave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBClave;
+
+        /// <summary>
         /// RFClave control.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace CodeProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDLTalla;
+
+        /// <summary>
+        /// CBLTallas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CBLTallas;
 
         /// <summary>
         /// TBMarca control.

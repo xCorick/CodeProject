@@ -1,6 +1,6 @@
 ﻿function ValidateInputFile(sender, args) {
-    var inputFile = document.getElementById('<%= InputFile.ClientID %>');
-    args.IsValid = inputFile.value !== '';
+    var HFProduct = document.getElementById('<%= HFProducto.ClientID %>');
+    args.IsValid = HFProduct.value !== '';
 }
 
 function MostrarProductos() {
