@@ -78,3 +78,5 @@ function slideLeft2() {
         buttons2[0].classList.remove('inactive');
     }
 };
+
+//aaaaa
