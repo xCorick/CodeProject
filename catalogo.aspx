@@ -140,9 +140,10 @@
 			</div>
 			<span onclick="slideLeft2()" class="btn2"></span>
 		</div>
+		<script src="Scripts/CatalogoScript2.js"></script>     
 	</div>
-	 <script src="Scripts/CatalogoScript2.js"></script>    
 	
+
 
 </body>
 </html>
