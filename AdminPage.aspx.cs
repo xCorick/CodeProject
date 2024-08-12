@@ -115,7 +115,7 @@ namespace CodeProject
         }
         protected void CVHFProduct_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            args.IsValid = !string.IsNullOrEmpty(HFProducto.Value);
+            args.IsValid = !string.IsNullOrEmpty(HFProducto.Value.ToString());
         }
 
         Cloudinary cloud;

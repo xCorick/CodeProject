@@ -129,7 +129,7 @@
                         </div>
                         <div class="fila">
                             <div class="celdacolspan3">
-                                <asp:FileUpload ID="InputFile" runat="server" name="InputFile" type="file"/>
+                                <asp:FileUpload ID="InputFile" runat="server" name="InputFile" type="file" />
                                 <asp:CustomValidator ID="CVInputFile" runat="server" 
                                     ErrorMessage="<br />Falta Imagen" 
                                     Display="Dynamic"
@@ -191,7 +191,7 @@
                         const reader = new FileReader();
                         reader.onload = function (e) {
                             img.src = e.target.result;
-                            hiddenFieldImageUrl.src = e.target.result;
+                            hiddenFieldImageUrl.value = e.target.result;
                         }
                         reader.readAsDataURL(e.target.files[0])
                     } else {
