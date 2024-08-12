@@ -22,6 +22,7 @@
     <!-- Scripts de ASP.NET (puedes dejarlos como están si no necesitas cambiarlos) -->
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Estilos/AdminStyles.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
