@@ -112,7 +112,7 @@
             <!-- FOOTER -->
             <footer class="container">
                 <p class="float-end"><a href="#">Volver arriba</a></p>
-                <p>&copy; <%: DateTime.Now.Year %> CodeCrafters Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Términos</a></p>
+                <p>&copy; <%: DateTime.Now.Year %> CodeCrafters Company, Inc. &middot; <a href="Privacity.aspx">Privacidad</a> &middot; <a href="Terms.aspx">Términos</a></p>
             </footer>
         </div>
 

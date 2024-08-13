@@ -105,6 +105,7 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
+        /// Control password.
         /// Control txtPassword.
         /// </summary>
         /// <remarks>
@@ -114,6 +115,7 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
+        /// Control messPass.
         /// Control rfvPassword.
         /// </summary>
         /// <remarks>
@@ -123,6 +125,7 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPassword;
 
         /// <summary>
+        /// Control RequiredFieldValidator5.
         /// Control txtConfirmPassword.
         /// </summary>
         /// <remarks>
@@ -132,6 +135,7 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
 
         /// <summary>
+        /// Control lbMensaje.
         /// Control rfvConfirmPassword.
         /// </summary>
         /// <remarks>
@@ -141,6 +145,7 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvConfirmPassword;
 
         /// <summary>
+        /// Control Create.
         /// Control cvPassword.
         /// </summary>
         /// <remarks>

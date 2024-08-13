@@ -1,0 +1,10 @@
+﻿ aside{
+     padding:20px;
+
+ }
+
+#content1 {
+    width: 450px; /* Asegura que la imagen no se desborde del contenedor */
+    height:700px;
+    margin-right: 0px;
+}
