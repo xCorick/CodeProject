@@ -213,12 +213,14 @@
     <Content Include="Estilos\Default.css" />
     <Content Include="Estilos\LoginStyle.css" />
     <Content Include="Estilos\styles.css" />
+    <Content Include="Estilos\TermsStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background\Background.png" />
     <Content Include="Images\Background\Login1.png" />
     <Content Include="Images\Background\Logo.png" />
     <Content Include="Images\Background\Logo1.png" />
+    <Content Include="Images\Background\RecoveryPass1.png" />
     <Content Include="Images\Background\Reg.png" />
     <Content Include="Images\Background\Tem1.png" />
     <Content Include="Images\Items\HomeIcon.png" />
@@ -361,6 +363,8 @@
     <Content Include="lib\twitter-bootstrap\scss\mixins\_visually-hidden.scss" />
     <Content Include="lib\twitter-bootstrap\scss\utilities\_api.scss" />
     <Content Include="lib\twitter-bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="Privacity.aspx" />
+    <Content Include="RecoveryPass.aspx" />
     <Content Include="Scripts\AlbumScript.js" />
     <Content Include="Catalogo.aspx" />
     <Content Include="Scripts\app.js" />
@@ -378,6 +382,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\MapScript.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\RecoveryPass.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -401,6 +406,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="SingUp.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="Terms.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -457,7 +463,21 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Privacity.aspx.cs">
+      <DependentUpon>Privacity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privacity.aspx.designer.cs">
+      <DependentUpon>Privacity.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecoveryPass.aspx.cs">
+      <DependentUpon>RecoveryPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecoveryPass.aspx.designer.cs">
+      <DependentUpon>RecoveryPass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SingUp.aspx.cs">
       <DependentUpon>SingUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -478,6 +498,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Terms.aspx.cs">
+      <DependentUpon>Terms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Terms.aspx.designer.cs">
+      <DependentUpon>Terms.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Catalogo.aspx.cs">

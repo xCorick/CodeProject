@@ -5,11 +5,12 @@
 <head runat="server">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="Estilos/LoginStyle.css" rel="stylesheet" />
-    <title>Uniformes Carrillo</title>
+    <title>Iniciar sesión</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/RecoveryPass.js"></script>
 </head>
 <body>
-    ,
-
     <form id="form1" runat="server">
         <div>
             <section class="p-3 p-md-4 p-xl-5">
@@ -69,37 +70,11 @@
                                                             <a href="SingUp.aspx" class="link-secondary text-decoration-none">Crear cuenta nueva</a>
                                                         </div>
                                                         <div class="text-center mt-3">
-                                                            <a href="#!" class="link-secondary text-decoration-none" id="recoverPasswordModal">Olvidé mi contraseña</a>
-
+                                                            <a href="#!" class="link-secondary text-decoration-none" id="recoverPasswordModal" onclick="abrirVentanaEmergente(); return false;">Olvidé mi contraseña</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                  <br />
-
-                                                <!-- Modal para recuperar contraseña -->
-                                                <div class="modal fade" id="recoverPasswordModal" tabindex="-1" aria-labelledby="recoverPasswordModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="recoverPasswordModalLabel">Recuperar Contraseña</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p>Introduce tu dirección de correo electrónico para recuperar tu contraseña.</p>
-                                                                <form>
-                                                                    <div class="mb-3">
-                                                                        <label for="recoverEmail" class="form-label">Correo electrónico</label>
-                                                                        <input type="email" class="form-control" id="recoverEmail" aria-describedby="emailHelp" placeholder="Correo@ejemplo.com"/>
-                                                                    </div>
-                                                                    <button type="submit" class="btn btn-primary">Recuperar Contraseña</button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Fin Modal -->
-
-                                                <br />
 
                                                 <!-- Botones a redes sociales -->
                                                 <div class="row">
