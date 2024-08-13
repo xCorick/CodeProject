@@ -113,9 +113,9 @@ namespace CodeProject
             }
 
         }
-        protected void CVInputFile_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void CVHFProduct_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            args.IsValid = InputFile.PostedFile != null && InputFile.PostedFile.ContentLength > 0;
+            args.IsValid = !string.IsNullOrEmpty(HFProducto.Value.ToString());
         }
 
         Cloudinary cloud;
@@ -165,48 +165,185 @@ namespace CodeProject
             return (ruta2, isInserted2);
         }
 
+        public bool EliminarImagen(string imageUrl)
+        {
+            try
+            {
+                // Configurar la cuenta de Cloudinary
+                Account account = new Account(
+                    "dj4vhebsj",
+                    "229926379921624",
+                    "om5p15DLxxbX3CbTmwQyaeBr5rs"
+                );
+
+                Cloudinary cloudinary = new Cloudinary(account);
+
+                // Extraer el public_id de la URL de la imagen
+                var uri = new Uri(imageUrl);
+                string publicId = Path.GetFileNameWithoutExtension(uri.LocalPath);
+
+                // Eliminar la imagen usando el public_id
+                var deletionParams = new DeletionParams(publicId);
+                var deletionResult = cloudinary.Destroy(deletionParams);
+
+                // Verificar si la eliminación fue exitosa
+                if (deletionResult.Result == "ok")
+                {
+                    return true;
+                }
+                else
+                {
+                    Response.Write("<script>alert('Error al eliminar la imagen')</script>");
+                    return false;
+                }
+            }
+            catch
+            {
+                Response.Write("<script>alert('Error al eliminar la imagen')</script>");
+                return false;
+            }
+        }
+
+
         protected void Guardar_Click(object sender, EventArgs e)
         {
-            Nuevo.Enabled = false;
-            Nuevo.BackColor = Color.Gray;
-            Guardar.Enabled = false;
-            Eliminar.Enabled = false;
-            InputFile.Enabled = false;
+            var seleccionados = ShowSelectedItemsCheckBox(CBLTallas);
+            string tallas = string.Join(" ", seleccionados);
+            string ruta2;
+            bool isInserted;
             if (Page.IsValid)
             {
+                bool insercion;
+                var (conn,comando,adaptador,datos) = Conector.BuscarRegistro(Conector.strConexion, "Bus_Producto", "@Pro_ID", TBClave.Text);
+                if (datos.Rows.Count > 0)
+                {
+                    if (HFProducto.Value.ToString() == datos.Rows[0].ItemArray[4].ToString())
+                    {
+                        insercion = Conector.InsertInto(Conector.strConexion, "Act_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", HFProducto.Value.ToString(), "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
+                        if (insercion)
+                        {
+                            Response.Write("<script>alert('Producto actualizado exitosamente')</script>");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Algo salio mal, intenta de nuevo1')</script>");
+                        }
+                        LlenarGrid();
+                        conn.Close();
+                    }
+                    else
+                    {
+                        EliminarImagen(datos.Rows[0].ItemArray[4].ToString());
+                        var resultado2 = CargarImagen();
+                        ruta2 = resultado2.ruta;
+                        isInserted = resultado2.isInserted;
+
+                        if (isInserted)
+                        {
+                            insercion = Conector.InsertInto(Conector.strConexion, "Act_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
+                            if (insercion)
+                            {
+                                Response.Write("<script>alert('Producto actualizado exitosamente')</script>");
+                            }
+                            else
+                            {
+                                Response.Write("<script>alert('Algo salio mal, intenta de nuevo2')</script>");
+                            }
+                        }   
+                    }
+                    LlenarGrid();
+                    conn.Close();
+                    return;
+                }
                 var resultado = CargarImagen();
-                string ruta2 = resultado.ruta;
-                bool isInserted = resultado.isInserted;
+                ruta2 = resultado.ruta;
+                isInserted = resultado.isInserted;
 
                 if (isInserted)
                 {
-                    bool insersion = Conector.InsertInto(Conector.strConexion, "Ins_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", DDLTalla.Text, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
+                    insercion = Conector.InsertInto(Conector.strConexion, "Ins_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
 
-                    if (insersion)
+                    if (insercion)
                     {
                         Response.Write("<script>alert('Producto guardado exitosamente')</script>");
                     }
                     else
                     {
-                        Response.Write("<script>alert('Algo salio mal, intenta de nuevo')</script>");
+                        Response.Write("<script>alert('Algo salio mal, intenta de nuevo3')</script>");
                     }
                 }
                 else
                 {
-                    Response.Write("<script>alert('Algo salio mal, intenta de nuevo')</script>");
+                    Response.Write("<script>alert('Algo salio mal, intenta de nuevo4')</script>");
                 }
+                conn.Close();
                 LlenarGrid();
+                HFProducto.Value = ruta2;
             }
-            Nuevo.Enabled = true;
-            Guardar.Enabled = true;
-            Eliminar.Enabled = true;
-            InputFile.Enabled = true;
         }
 
         protected void grid_SelectedIndexChanged(object sender, EventArgs e)
         {
             string clave = grid.Rows[grid.SelectedRow.RowIndex].Cells[0].Text;
             LlenarForma(clave);
+        }
+
+        protected void Nuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarTextBoxes(this);
+            TBClave.Enabled = true;
+            HFProducto.Value = "AdminImages/empty.jpg";
+        }
+
+        protected List<string> ShowSelectedItemsCheckBox(CheckBoxList check)
+        {
+            List<string> seleccionados = new List<string>();
+            foreach (ListItem item in check.Items)
+            {
+                if (item.Selected)
+                {
+                    seleccionados.Add(item.Value);
+                }
+            }
+            return seleccionados;
+        }
+        protected void LimpiarTextBoxes(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Text = string.Empty;
+                }
+                else if (control.HasControls())
+                {
+                    LimpiarTextBoxes(control);
+                }
+            }
+        }
+
+        protected void Eliminar_Click(object sender, EventArgs e)
+        {
+            if (TBClave.Text == "")
+            {
+                LBClave.Visible = true;
+            }
+            else
+            {
+                try
+                {
+                    bool insercion = Conector.InsertInto(Conector.strConexion, "Bor_Productos", "@Pro_ID", TBClave.Text);
+                    if (insercion)
+                    {
+                        Response.Write("<script>alert('Producto borrado exitosamente')</script>");
+                        LlenarGrid();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Response.Write("<script>alert('"+ ex +"')</script>");
+                }
+            } 
         }
     }
 }

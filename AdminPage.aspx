@@ -1,12 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="CodeProject.AdminPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <!DOCTYPE html>
-        <head>
-            <link href="Estilos/AdminStyles.css" rel="stylesheet" />
-        </head>
-        <body>
-            <div class="loading-screen">
-                <div class="loader-window"    >
+            <div class="loading-screen" style="display:none;" id="Load">
+                <div class="loader-window" style="margin:0 auto !important; display:flex;">
                     <div class="loader">
                     </div>
                 </div>              
@@ -26,6 +21,7 @@
                         <div class="fila">
                             <div class="celda">Clave:</div>
                             <div class="celdacolspan2"><asp:TextBox ID="TBClave" runat="server"></asp:TextBox>
+                                <br/><asp:Label ID="LBClave" runat="server" Text="Falta Clave" Visible="False" ForeColor="Red"></asp:Label>
                                     <asp:RequiredFieldValidator ID="RFClave" runat="server" 
                                     ErrorMessage="<br />Falta clave"
                                     Display="Dynamic" 
@@ -84,8 +80,17 @@
                             </div>
                         </div>
                         <div class="fila">
-                            <div class="celda">Talla:</div>
-                            <div class="celdacolspan2"><asp:DropDownList ID="DDLTalla" runat="server"></asp:DropDownList>
+                            <div class="celda">Tallas:</div>
+                            <!--<div class="celdacolspan2"><asp:DropDownList ID="DDLTalla" runat="server"></asp:DropDownList>-->
+                            <div class="celdacolspan2">
+                                <asp:CheckBoxList ID="CBLTallas" runat="server" RepeatDirection="Horizontal" RepeatColumns="2">
+                                    <asp:ListItem>XS</asp:ListItem>
+                                    <asp:ListItem>S</asp:ListItem>
+                                    <asp:ListItem>M</asp:ListItem>
+                                    <asp:ListItem>L</asp:ListItem>
+                                    <asp:ListItem>XL</asp:ListItem>
+                                    <asp:ListItem>XXL</asp:ListItem>
+                                </asp:CheckBoxList>   
                             </div>
                         </div>
                     </div>
@@ -124,22 +129,24 @@
                         </div>
                         <div class="fila">
                             <div class="celdacolspan3">
-                                <asp:FileUpload ID="InputFile" runat="server" name="InputFile" type="file" OnClientClick="LoadingProduct()"/>
+                                <asp:FileUpload ID="InputFile" runat="server" name="InputFile" type="file" />
                                 <asp:CustomValidator ID="CVInputFile" runat="server" 
                                     ErrorMessage="<br />Falta Imagen" 
                                     Display="Dynamic"
                                     ForeColor="Red"
                                     ClientValidationFunction="ValidateInputFile"
-                                    OnServerValidate="CVInputFile_ServerValidate"></asp:CustomValidator>
+                                    OnServerValidate="CVHFProduct_ServerValidate"></asp:CustomValidator>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="tabla">
                     <div class="fila">
-                        <div class="celda2"><asp:Button class="btn btn-primary" ID="Nuevo" runat="server" Text="Nuevo" CausesValidation="false" /></div>
-                        <div class="celda2"><asp:Button class="btn btn-success" ID="Guardar" runat="server" Text="Guardar" OnClick="Guardar_Click" CausesValidation="true" /></div>
-                        <div class="celda2"><asp:Button class="btn btn-danger" ID="Eliminar" runat="server" Text="Eliminar"  /></div>
+                        <div class="celda2">
+                            <asp:Button class="btn btn-primary" ID="Nuevo" runat="server" Text="Nuevo" CausesValidation="false" OnClick="Nuevo_Click" /></div>
+                        <div class="celda2"><asp:Button class="btn btn-success" ID="Guardar" runat="server" Text="Guardar" OnClick="Guardar_Click" OnClientClick="LoadingProcess();" CausesValidation="true" /></div>
+                        <div class="celda2">
+                            <asp:Button class="btn btn-danger" ID="Eliminar" runat="server" OnClientClick="LoadingProcess();" Text="Eliminar" OnClick="Eliminar_Click" CausesValidation="false" /></div>
                     </div>
                 </div>
                 <div class="container">
@@ -184,6 +191,7 @@
                         const reader = new FileReader();
                         reader.onload = function (e) {
                             img.src = e.target.result;
+                            hiddenFieldImageUrl.value = e.target.result;
                         }
                         reader.readAsDataURL(e.target.files[0])
                     } else {
@@ -191,13 +199,10 @@
                     }
                 });
             };
-            function LoadingProduct() {
-                // Deshabilitar los botones
-                document.getElementById('<%= Nuevo.ClientID %>').disabled = true;
-                document.getElementById('<%= Guardar.ClientID %>').disabled = true;
-                document.getElementById('<%= Eliminar.ClientID %>').disabled = true;
-                document.getElementById('<%= InputFile.ClientID %>').disabled = true;
+            function LoadingProcess() {
+                // Pantalla de Craga
+                //document.getElementsByClassName('.loading-screen').style.display = 'block';
+                document.getElementById('Load').style.display = 'block';
             }
         </script>
-    </html>
 </asp:Content>
