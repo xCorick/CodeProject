@@ -23,16 +23,16 @@
 	<div class="marco">
     <ul>
         <li>
-            <img src="imagenes/F1.2.jpg">
+            <img src="imagenes/F1.2.jpg"/>
         </li>
         <li>
-            <img src="imagenes/F4.2.jpg">
+            <img src="imagenes/F4.2.jpg"/>
        </li>
         <li>
-            <img src="imagenes/F10.2.jpeg">
+            <img src="imagenes/F10.2.jpeg"/>
         </li>
         <li>
-            <img src="imagenes/F9.2.jpg">
+            <img src="imagenes/F9.2.jpg"/>
         </li>
     </ul>
 </div>
