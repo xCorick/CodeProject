@@ -18,8 +18,9 @@ namespace CodeProject
         public static string ruta2;
         protected void Page_Load(object sender, EventArgs e)
         {
+                DDLPublico.Items.Clear();
                 LlenarGrid();
-                LlenarPublico("Bus_Publico", "publico");
+                LlenarPublico("Bus_Publico");
                 LlenarTalla("Bus_Talla", "talla"); 
         }
 
@@ -47,27 +48,28 @@ namespace CodeProject
             conn.Close();
         }
 
-        public void LlenarPublico(string sp, string campo)
+        public void LlenarPublico(string sp)
         {
             var (conn, comando, adaptador, datos) = Conector.LstTable(Conector.strConexion, sp);
             try
             {
-                int con = datos.Rows.Count;
+                int cont = 0;
+                cont = Convert.ToInt32(datos.Rows.Count);
+                for (int i = 0; i < cont; i++)
+                {
+                    DDLPublico.Items.Add(datos.Rows[i].ItemArray[0].ToString());
+                }
+                conn.Close();
+                /*int con = datos.Rows.Count;
                 DDLPublico.DataSource = datos;
                 DDLPublico.DataTextField = campo;
                 DDLPublico.DataBind();
+                */
             }
             catch {
 
             }
-            /* int cont = 0;
-             cont= Convert.ToInt32(datos.Rows[]);
-             string[] Elementos = new string[cont];
-             for (int i = 0; i < cont; i++)
-             {
-                 DLTalla.Items.Add(Elementos[i]);
-             }*/
-            conn.Close();
+             
         }
 
         void LlenarGrid()
@@ -112,7 +114,7 @@ namespace CodeProject
                 }
             }
             catch {
-                Response.Write("<script>alert('Something's wrong')</script>");
+                Response.Write("<script>alert('No se pudo llenar el formulario, favor de intentar de nuevo')</script>");
             }
 
         }
@@ -222,7 +224,7 @@ namespace CodeProject
                 {
                     if (HFProducto.Value.ToString() == datos.Rows[0].ItemArray[4].ToString())
                     {
-                        insercion = Conector.InsertInto(Conector.strConexion, "Act_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", HFProducto.Value.ToString(), "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
+                        insercion = Conector.InsertInto(Conector.strConexion, "Act_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", HFProducto.Value.ToString(), "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.SelectedValue.ToString(), "@Pro_Categoria", TBCategoria.Text);
                         if (insercion)
                         {
                             Response.Write("<script>alert('Producto actualizado exitosamente')</script>");
@@ -243,7 +245,7 @@ namespace CodeProject
 
                         if (isInserted)
                         {
-                            insercion = Conector.InsertInto(Conector.strConexion, "Act_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
+                            insercion = Conector.InsertInto(Conector.strConexion, "Act_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.SelectedValue.ToString(), "@Pro_Categoria", TBCategoria.Text);
                             if (insercion)
                             {
                                 Response.Write("<script>alert('Producto actualizado exitosamente')</script>");
@@ -264,7 +266,7 @@ namespace CodeProject
 
                 if (isInserted)
                 {
-                    insercion = Conector.InsertInto(Conector.strConexion, "Ins_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.Text, "@Pro_Categoria", TBCategoria.Text);
+                    insercion = Conector.InsertInto(Conector.strConexion, "Ins_Producto", "@Pro_ID", TBClave.Text, "@Pro_Nombre", TBNombre.Text, "Pro_Descripcion", TBDescrip.Text, "@Pro_Precio", TBPrecio.Text, "@Pro_Imagen", ruta2, "@Pro_Stock", TBStock.Text, "@Pro_UnidadesOrden", TBCantOrden.Text, "@Pro_Talla", tallas, "@Pro_Marca", TBMarca.Text, "@Pro_Publico", DDLPublico.SelectedValue.ToString(), "@Pro_Categoria", TBCategoria.Text);
 
                     if (insercion)
                     {
