@@ -14,17 +14,5 @@ namespace CodeProject
 
         }
 
-
-        protected void Presionado(object sender, EventArgs e)
-        {
-            string id;
-
-            Button Presionado = (Button)sender;
-
-           id =  Presionado.ID;
-
-            PanProducto pantallaproducto = new PanProducto("id");  
-            Response.Redirect("PanProducto.aspx");
-        }
     }
 }
