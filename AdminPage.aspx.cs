@@ -18,9 +18,9 @@ namespace CodeProject
         public static string ruta2;
         protected void Page_Load(object sender, EventArgs e)
         {
-            LlenarGrid();
-            LlenarPublico("Bus_Publico", "publico");
-            LlenarTalla("Bus_Talla", "talla");
+                LlenarGrid();
+                LlenarPublico("Bus_Publico", "publico");
+                LlenarTalla("Bus_Talla", "talla"); 
         }
 
         public void LlenarTalla(string sp, string campo)
@@ -81,7 +81,7 @@ namespace CodeProject
             }
             catch
             {
-
+                Response.Write("<script>alert('No se pudo recuperar los datos de los productos, intente de nuevo')</script>");
             }
 
         }
