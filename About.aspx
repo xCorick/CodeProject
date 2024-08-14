@@ -23,6 +23,10 @@
   <body>
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="row">
+            <div class="col-12 col-md-6" style="background-color:white">
+                <a href="Default.aspx">
+                    <img class="img-fluid rounded-start w-100 h-70 object-fit-cover" 
+                         src="Images/Background/Logo.png" 
             <div class="col-12 col-md-6">
                 <a href="Default.aspx">
                     <img class="img-fluid rounded-start w-100 h-70 object-fit-cover" 

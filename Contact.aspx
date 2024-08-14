@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="CodeProject.Contact" %>
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    <!DOCTYPE html>
   <html lang="en">
@@ -110,3 +109,5 @@
   </html>
     </div>
 </asp:Content>
+</asp:Content>
+
