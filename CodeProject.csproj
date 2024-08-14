@@ -212,11 +212,14 @@
     <Content Include="Estilos\CatalogoSlider.css" />
     <Content Include="Estilos\Default.css" />
     <Content Include="Estilos\LoginStyle.css" />
+    <Content Include="Estilos\MapStyle.css" />
     <Content Include="Estilos\styles.css" />
     <Content Include="Estilos\TermsStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Background\About.png" />
     <Content Include="Images\Background\Background.png" />
+    <Content Include="Images\Background\Local.png" />
     <Content Include="Images\Background\Login1.png" />
     <Content Include="Images\Background\Logo.png" />
     <Content Include="Images\Background\Logo1.png" />
@@ -380,7 +383,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <Content Include="Scripts\MapScript.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\RecoveryPass.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
