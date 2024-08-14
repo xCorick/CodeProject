@@ -21,22 +21,37 @@
   </head>
 
   <body>
-
-
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic"><strong><em>UNIFORMES CARRILLO</em></strong></h1>
-          <p class="mb-0">Uniformes Carrillo es una empresa local dedicada a la confección y venta de uniformes deportivos, ubicada en Ciudad Obregón, Sonora. 
-            Situada específicamente en Calle Gregorio Payro #433. col Constitución en Ciudad Obregón, Sonora.</p>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <a href="Default.aspx">
+                    <img class="img-fluid rounded-start w-100 h-70 object-fit-cover" 
+                         src="Images/Background/About.png" 
+                         loading="lazy" 
+                         alt="Welcome to Carrillo Shop!" />
+                </a>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                <main role="main" class="inner cover">
+                    <h1 class="display-4 font-italic">
+                        <strong><em>UNIFORMES CARRILLO</em></strong>
+                    </h1>
+                    <p class="mb-0">Uniformes Carrillo es una empresa local dedicada a la confección y venta de uniformes deportivos,
+                    ubicada en Ciudad Obregón, Sonora. 
+                    Situada específicamente en Calle Gregorio Payro #433. col Constitución en Ciudad Obregón, Sonora.</p>
+                    <br />
+                    <a href="Contact.aspx" class="btn btn-lg btn-secondary" >¡Contáctanos!</a> 
+                </main>
+            </div>
+            <hr />
         </div>
-          <hr />
-      </div>
+    </div>
       <br />
       <div class="row mb-2">
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-             <!-- <strong class="d-inline-block mb-2 text-primary">World</strong>-->
+             <!--<strong class="d-inline-block mb-2 text-primary">World</strong>-->
               <h3 class="mb-0">
                 <a class="text-dark">Misión</a>
               </h3>

@@ -49,27 +49,27 @@
         <div class="col-md-8 blog-main">
             <br />
           <div class="blog-post">
-            <h3 class="blog-post-title">Aceptación de los Términos</h3>
+            <h3 class="blog-post-title">1. Aceptación de los Términos</h3>
 
                 <p>Al utilizar nuestro Sitio, usted acepta estos Términos y Condiciones en su totalidad. Nos reservamos el derecho de cambiar estos términos en cualquier momento, y su uso continuo del Sitio después de la publicación de cualquier cambio constituye su aceptación de dichos cambios.</p>
                 <p>Usted se compromete a utilizar el Sitio solo para fines legales y de acuerdo con todas las leyes y regulaciones aplicables. No debe utilizar el Sitio de ninguna manera que pueda dañar, deshabilitar, sobrecargar o perjudicar el funcionamiento del Sitio.</p>
               
            <hr/>
-            <h3>Propiedad Intelectual</h3>
+            <h3>2. Propiedad Intelectual</h3>
                 <p>Todo el contenido en el Sitio, incluidos, entre otros, texto, gráficos, logotipos, imágenes y software, es propiedad de <strong>Uniformes Carrillo</strong> de nuestros licenciantes y está protegido por las leyes de propiedad intelectual.</p>
            <hr/>
-            <h3>Productos y Precios</h3>
+            <h3>3. Productos y Precios</h3>
                 <p>Nos reservamos el derecho de modificar o descontinuar productos en cualquier momento sin previo aviso. Los precios de los productos están sujetos a cambios sin previo aviso.</p>
            <hr/>  
-             <h3>Envíos y Devoluciones</h3>
+             <h3>4. Envíos y Devoluciones</h3>
                  <ul>
                    <li><strong>Envíos:</strong> Los plazos de envío son aproximados y pueden variar. Consulte nuestra política de envíos para más detalles.</li>
                    <li><strong>Devoluciones: </strong> Aceptamos devoluciones dentro de <a href="#!">6441463426</a> días después de la recepción del pedido. Los artículos deben estar en condiciones originales y con las etiquetas intactas. Para más detalles, consulte nuestra política de devoluciones.</li>
                  </ul>        
             <hr/>
-            <h3>Limitación y Responsabilidad</h3>
+            <h3>5. Limitación y Responsabilidad</h3>
                 <p>En la medida máxima permitida por la ley, Uniformes Carrillo no será responsable de ningún daño indirecto, incidental, especial o consecuente que resulte del uso o la imposibilidad de usar el Sitio.</p>
- 
+            <hr />
                 
 
           </div><!-- /.blog-post -->
