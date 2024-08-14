@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Terms.aspx.cs" Inherits="CodeProject.Terms__Privacy" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Terms.aspx.cs" Inherits="CodeProject.Terms__Privacy" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!doctype html>
 <html lang="en">
@@ -69,8 +69,11 @@
             <hr/>
             <h3>5. Limitación y Responsabilidad</h3>
                 <p>En la medida máxima permitida por la ley, Uniformes Carrillo no será responsable de ningún daño indirecto, incidental, especial o consecuente que resulte del uso o la imposibilidad de usar el Sitio.</p>
+
  
                 <hr />
+            <hr />
+
 
           </div><!-- /.blog-post -->
         

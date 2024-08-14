@@ -27,6 +27,10 @@
                 <a href="Default.aspx">
                     <img class="img-fluid rounded-start w-100 h-70 object-fit-cover" 
                          src="Images/Background/Logo.png" 
+            <div class="col-12 col-md-6">
+                <a href="Default.aspx">
+                    <img class="img-fluid rounded-start w-100 h-70 object-fit-cover" 
+                         src="Images/Background/About.png" 
                          loading="lazy" 
                          alt="Welcome to Carrillo Shop!" />
                 </a>

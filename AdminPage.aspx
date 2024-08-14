@@ -160,8 +160,9 @@
                                     <asp:BoundField DataField="Pro_Precio" DataFormatString="{0:c}" HeaderText="Precio"></asp:BoundField>
                                     <asp:ImageField DataImageUrlField="Pro_Imagen" HeaderText="Imagen" ControlStyle-Height="50px" ControlStyle-Width="50px"></asp:ImageField>
                                     <asp:BoundField DataField="Pro_Stock" HeaderText="En Stock"></asp:BoundField>
+                                    <asp:BoundField DataField="Pro_Talla" HeaderText="Tallas"></asp:BoundField>
                                     <asp:CommandField ShowSelectButton="True" HeaderText="Dar Click"><ItemStyle Width="90px"></ItemStyle></asp:CommandField>
-                                </Columns>
+                                    </Columns>
                             </asp:GridView>
                         </div>
                     </div>
