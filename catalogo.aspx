@@ -1,12 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="catalogo.aspx.cs" Inherits="CodeProject.catalogo" %>
+﻿<%@ Page Title="Catalogo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="catalogo.aspx.cs" Inherits="CodeProject.catalogo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-         <!DOCTYPE html>
 
-<html lan="en">
-<head>
-    <title>Inicio</title>
+
+ 
 
     <link href="Estilos/CatalogoEstilo.css" rel="stylesheet" />
 
@@ -17,8 +15,7 @@
 
 
     <script src="Scripts/CatalogoScript.js"></script>
-</head>
-<body>
+
     
 	<div class="marco">
     <ul>
@@ -67,16 +64,16 @@
 		<div id="slider-container">
 			<span onclick="slideRight()" class="btn"></span>
 			<div id="slider">
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/S2.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/FI2.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T4.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BP3.jpg" class="imagen" alt="BP3"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BPI2.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/L2.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T1.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/G4.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BI1.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen" alt="img1"/></button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/S2.jpg" class="imagen" alt="img1"/>abc</button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/FI2.jpg" class="imagen" alt="img1"/>asd</button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T4.jpg" class="imagen" alt="img1"/>fsa</button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BP3.jpg" class="imagen" alt="BP3"/>fsa</button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BPI2.jpg" class="imagen" alt="img1"/>sfa</button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/L2.jpg" class="imagen" alt="img1"/>fsaf</button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T1.jpg" class="imagen" alt="img1"/>fsa</button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/G4.jpg" class="imagen" alt="img1"/>sf</button></div>
+				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BI1.jpg" class="imagen" alt="img1"/>fsa</button></div>
+				<div class="slide"><button onclick="redirigirConId(event)" id="CalDep" style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen" alt="img1"/>fs</button></div>
 			</div>
 			<span onclick="slideLeft()" class="btn"></span>
 		</div>
@@ -120,7 +117,7 @@
 	   </div>
 		   
 
-		<h1 style="position:absolute;margin-top:25px;font-family: Arial;left:90px;">Disenado ti:</h1>
+		<h1 style="position:absolute;margin-top:25px;font-family: Arial;left:90px;">Diseñado ti:</h1>
 
 
 	<div id="container2" style="margin-top:-970px"> 
@@ -152,8 +149,6 @@
 
 
 
-</body>
-</html>
 
 
 </asp:Content>

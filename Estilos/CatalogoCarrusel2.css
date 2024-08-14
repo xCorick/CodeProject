@@ -7,7 +7,7 @@
 }
 
 #slider2-container2 {
-    height: 300px;
+    height: 360px;
     width: 85vw;
     max-width: 1400px;
     position: relative;
@@ -74,7 +74,7 @@
 
             #slider2-container2 #slider2 .slide2 span {
                 color: white;
-                font-size: 60px;
+                font-size: 100px;
                 top: auto;
             }
 
