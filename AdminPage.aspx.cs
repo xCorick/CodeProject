@@ -93,6 +93,10 @@ namespace CodeProject
                 var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "Bus_Producto", "@Pro_ID", clave);
                 if (datos.Rows.Count > 0)
                 {
+                    string tallas = datos.Rows[0].ItemArray[7].ToString();
+
+                    LlenarChecks(CBLTallas, tallas);
+
                     TBClave.Text = datos.Rows[0].ItemArray[0].ToString();
                     TBNombre.Text = datos.Rows[0].ItemArray[1].ToString();
                     TBDescrip.Text = datos.Rows[0].ItemArray[2].ToString();
@@ -100,7 +104,6 @@ namespace CodeProject
                     HFProducto.Value = datos.Rows[0].ItemArray[4].ToString();
                     TBStock.Text = datos.Rows[0].ItemArray[5].ToString();
                     TBCantOrden.Text = datos.Rows[0].ItemArray[6].ToString();
-                    DDLTalla.Text = datos.Rows[0].ItemArray[7].ToString();
                     TBMarca.Text = datos.Rows[0].ItemArray[8].ToString();
                     DDLPublico.Text = datos.Rows[0].ItemArray[9].ToString();
                     TBCategoria.Text = datos.Rows[0].ItemArray[10].ToString();
@@ -306,6 +309,19 @@ namespace CodeProject
                 }
             }
             return seleccionados;
+        }
+
+        protected void LlenarChecks(CheckBoxList check, string tallas)
+        {
+            string[] tallaArray = tallas.Split(' ');
+            foreach (string talla in tallaArray)
+            {
+                ListItem item = check.Items.FindByValue(talla);
+                if (item != null)
+                {
+                    item.Selected = true;
+                }
+            }
         }
         protected void LimpiarTextBoxes(Control parent)
         {
