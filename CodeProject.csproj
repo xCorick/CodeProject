@@ -323,6 +323,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\CatalogoParametro.js" />
     <Content Include="Scripts\CatalogoScript.js" />
     <Content Include="Scripts\CatalogoScript2.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

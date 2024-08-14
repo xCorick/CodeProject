@@ -3,7 +3,7 @@
 
 
 
-
+    <script src="Scripts/CatalogoParametro.js"></script>
  
 
     <link href="Estilos/CatalogoEstilo.css" rel="stylesheet" />
