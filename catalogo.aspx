@@ -73,7 +73,7 @@
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T1.jpg" class="imagen" alt="img1"/>fsa</button></div>
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/G4.jpg" class="imagen" alt="img1"/>sf</button></div>
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BI1.jpg" class="imagen" alt="img1"/>fsa</button></div>
-				<div class="slide"><button onclick="redirigirConId(event)" id="CalDep" style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen" alt="img1"/>fs</button></div>
+				<div class="slide"><button id="CalDep" onclick="redirigirConId(event)" style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen" alt="img1"/>fs</button></div>
 			</div>
 			<span onclick="slideLeft()" class="btn"></span>
 		</div>

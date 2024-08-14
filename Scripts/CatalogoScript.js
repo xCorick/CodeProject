@@ -90,5 +90,5 @@ function redirigirConId(event) {
     const idBoton = boton.id;
 
     // Redirige a la otra página con el id como parámetro
-    window.location.href = 'PanProducto.html?id=' + encodeURIComponent(idBoton);
+    window.location.href = 'PanProducto.aspx?id=' + encodeURIComponent(idBoton);
 }
