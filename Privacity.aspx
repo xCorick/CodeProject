@@ -62,28 +62,28 @@
                   <li><strong>Para Mejorar Nuestro Sitio: </strong> Utilizamos información de navegación para analizar el uso del Sitio y mejorar su experiencia.</li>
                 </ul>   
               <hr />
-             <h3>Envíos y Devoluciones</h3>
+             <h3>3. Envíos y Devoluciones</h3>
                  <ul>
                    <li><strong>Envíos:</strong> Los plazos de envío son aproximados y pueden variar. Consulte nuestra política de envíos para más detalles</li>
                    <li><strong>Devoluciones: </strong> Aceptamos devoluciones dentro de <a href="#!">6441463426</a> días después de la recepción del pedido. Los artículos deben estar en condiciones originales y con las etiquetas intactas. Para más detalles, consulte nuestra política de devoluciones</li>
                  </ul>        
             <hr />
-            <h3>3. Compartición de Información</h3>
+            <h3>4. Compartición de Información</h3>
               <p>No vendemos, alquilamos ni compartimos su información personal con terceros, excepto en los siguientes casos:</p>
                <ul>
                   <li><strong>Con Proveedores de Servicios: </strong>Podemos compartir su información con proveedores de servicios que nos ayudan a procesar pedidos, pagos y envíos.</li>
                   <li><strong>Por Requerimiento Legal: </strong>Podemos divulgar su información para cumplir con una obligación legal o para proteger nuestros derechos, propiedad o seguridad.</li>
                 </ul> 
             <hr />
-            <h3>4. Seguridad de la Información</h3> 
+            <h3>5. Seguridad de la Información</h3> 
               <p>Tomamos medidas razonables para proteger su información personal contra pérdida, robo, acceso no autorizado y divulgación. Sin embargo, ninguna medida de seguridad es completamente infalible.</p>
             <hr />
 
-            <h3>5. Cookies</h3>
+            <h3>6. Cookies</h3>
               <p>Utilizamos cookies para mejorar su experiencia en nuestro Sitio. Las cookies son pequeños archivos de texto que se almacenan en su dispositivo. Puede configurar su navegador para que rechace las cookies, pero esto puede afectar la funcionalidad del Sitio.</p>
             <hr />
 
-            <h3>6. Cambios en la Política de Privacidad</h3>
+            <h3>7. Cambios en la Política de Privacidad</h3>
               <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos sobre cambios significativos mediante la publicación de una nueva política en nuestro Sitio.</p>
 
             <hr />
