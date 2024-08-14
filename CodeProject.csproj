@@ -212,6 +212,7 @@
     <Content Include="Estilos\CatalogoSlider.css" />
     <Content Include="Estilos\Default.css" />
     <Content Include="Estilos\LoginStyle.css" />
+    <Content Include="Estilos\MapStyle.css" />
     <Content Include="Estilos\styles.css" />
     <Content Include="Estilos\TermsStyle.css" />
     <Content Include="favicon.ico" />
