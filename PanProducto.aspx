@@ -18,28 +18,17 @@
         </header>
 
         <main>
-            <div class="container-img">
-                <asp:Image ID="Pro_Imagen" runat="server" ImageUrl="https://ss224.liverpool.com.mx/sm/1150533640.jpg" AlternateText="Imagen Principal" />
-            </div>
-
-              <p>Producto: <span id="displayValue"></span></p>
-            <asp:Label ID="Pro_Nombre" runat="server" Text="Label"></asp:Label>
+            
+                <asp:Image ID="Pro_Imagen" runat="server" ImageUrl="" AlternateText="" />
+          
+            
+            <asp:Label ID="Pro_Nombre" runat="server" Text=""></asp:Label>
 
             <div class="container-info-product">
                 <div class="container-price">
-                    <asp:Label ID="Pro_Precio" runat="server" Text="$0" CssClass="price-label"></asp:Label>
+                    <asp:Label ID="Pro_Precio" runat="server" Text="" CssClass="price-label"></asp:Label>
                 </div>
 
-                <div class="container-details-product">
-                    <div class="form-group">
-                        <label for="SizeList">Tamaño:</label>
-                        <asp:DropDownList ID="SizeList" runat="server">
-                            <asp:ListItem Value="S">S</asp:ListItem>
-                            <asp:ListItem Value="M">M</asp:ListItem>
-                            <asp:ListItem Value="L">L</asp:ListItem>
-                            <asp:ListItem Value="XL">XL</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
 
                     <div class="container-add-cart">
                         <div class="container-quantity">
@@ -51,7 +40,7 @@
                     <div class="container-description">
                         <p class="title-description">Descripción:</p>
                        <!-- <p class="Pro_descripccion">Descripción del producto aquí. Detalles sobre las características y beneficios del producto.</p> -->
-                        <asp:Label ID="Pro_Descripcion" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="Pro_Descripcion" runat="server" Text=""></asp:Label>
                         </div>
 
                     <div class="container-actions">
@@ -61,19 +50,6 @@
             </div>
         </main>
 
-        <div class="container-related-products">
-            <h2>Productos Relacionados</h2>
-            <div class="card-list-products">
-                <!-- Productos relacionados aquí -->
-            </div>
-        </div>
-
-        <div class="container-best-sellers">
-            <h2>Productos Más Vendidos</h2>
-            <div class="card-list-best-sellers">
-                <!-- Productos más vendidos aquí -->
-            </div>
-        </div>
 
 
     </body>

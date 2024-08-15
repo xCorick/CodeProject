@@ -15,12 +15,13 @@ namespace CodeProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            ProductoID();
+
+            
+
             if (!IsPostBack)
             {
                 // Inicializar valores por defecto
- 
-
-
 
 
             }
@@ -29,8 +30,7 @@ namespace CodeProject
         protected void AddToCartButton_Click(object sender, EventArgs e)
         {
             int quantity = int.Parse(QuantityTextBox.Text);
-            string selectedSize = SizeList.SelectedValue;
-
+         
             // Aquí puedes agregar la lógica para manejar el producto agregado al carrito
             // Por ejemplo, redirigir a una página de confirmación, actualizar el carrito en la base de datos, etc.
             // La lógica específica de agregar al carrito debe implementarse aquí.
@@ -43,7 +43,7 @@ namespace CodeProject
         }
 
 
-        void LlenarForma(string clave)
+        void BuscarProducto(string clave)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace CodeProject
                     comando.Connection = conn;
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.CommandText = "Bus_Producto";
-                    comando.Parameters.AddWithValue("@Pro_Cve", clave);
+                    comando.Parameters.AddWithValue("@Pro_ID", "CalDep");
                     adapter.SelectCommand = comando;
                     adapter.Fill(datos);
                     if (datos.Rows.Count > 0)
@@ -69,7 +69,14 @@ namespace CodeProject
                         Pro_Imagen.ImageUrl = datos.Rows[0].ItemArray[4].ToString();
 
                     }
-                    
+                    else
+                    {
+                        Pro_Nombre.Text = "No se encontró el producto";
+                        Pro_Descripcion.Text = "";
+                        Pro_Precio.Text = "";
+                        Pro_Imagen.ImageUrl = "";
+                    }
+
                     conn.Close();
                 }
             }
@@ -79,7 +86,11 @@ namespace CodeProject
             }
         }
 
-
+        public string ProductoID()
+        {
+            string clave= "CalDep";
+            return clave;
+        }
 
     }
 }

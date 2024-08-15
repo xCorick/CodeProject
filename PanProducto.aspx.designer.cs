@@ -42,15 +42,6 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.Label Pro_Precio;
 
         /// <summary>
-        /// Control SizeList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SizeList;
-
-        /// <summary>
         /// Control QuantityTextBox.
         /// </summary>
         /// <remarks>
