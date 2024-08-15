@@ -15,22 +15,31 @@ namespace CodeProject
     {
 
         /// <summary>
-        /// Control MainImage.
+        /// Control Pro_Imagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image MainImage;
+        protected global::System.Web.UI.WebControls.Image Pro_Imagen;
 
         /// <summary>
-        /// Control PriceLabel.
+        /// Control Pro_Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PriceLabel;
+        protected global::System.Web.UI.WebControls.Label Pro_Nombre;
+
+        /// <summary>
+        /// Control Pro_Precio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Pro_Precio;
 
         /// <summary>
         /// Control SizeList.
@@ -58,6 +67,15 @@ namespace CodeProject
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddToCartButton;
+
+        /// <summary>
+        /// Control Pro_Descripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Pro_Descripcion;
 
         /// <summary>
         /// Control BackButton.

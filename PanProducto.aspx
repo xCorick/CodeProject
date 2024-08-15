@@ -19,15 +19,15 @@
 
         <main>
             <div class="container-img">
-                <asp:Image ID="MainImage" runat="server" ImageUrl="https://ss224.liverpool.com.mx/sm/1150533640.jpg" AlternateText="Imagen Principal" />
+                <asp:Image ID="Pro_Imagen" runat="server" ImageUrl="https://ss224.liverpool.com.mx/sm/1150533640.jpg" AlternateText="Imagen Principal" />
             </div>
 
               <p>Producto: <span id="displayValue"></span></p>
-
+            <asp:Label ID="Pro_Nombre" runat="server" Text="Label"></asp:Label>
 
             <div class="container-info-product">
                 <div class="container-price">
-                    <asp:Label ID="PriceLabel" runat="server" Text="$799.00" CssClass="price-label"></asp:Label>
+                    <asp:Label ID="Pro_Precio" runat="server" Text="$0" CssClass="price-label"></asp:Label>
                 </div>
 
                 <div class="container-details-product">
@@ -50,8 +50,9 @@
 
                     <div class="container-description">
                         <p class="title-description">Descripción:</p>
-                        <p class="Pro_descripccion">Descripción del producto aquí. Detalles sobre las características y beneficios del producto.</p>
-                    </div>
+                       <!-- <p class="Pro_descripccion">Descripción del producto aquí. Detalles sobre las características y beneficios del producto.</p> -->
+                        <asp:Label ID="Pro_Descripcion" runat="server" Text="Label"></asp:Label>
+                        </div>
 
                     <div class="container-actions">
                         <asp:Button ID="BackButton" runat="server" Text="Regresar" CssClass="btn-small" OnClick="BackButton_Click" />

@@ -18,8 +18,7 @@ namespace CodeProject
             if (!IsPostBack)
             {
                 // Inicializar valores por defecto
-                MainImage.ImageUrl = "https://ss224.liverpool.com.mx/sm/1150533640.jpg";
-                PriceLabel.Text = "$799.00";
+ 
 
 
 
@@ -63,10 +62,11 @@ namespace CodeProject
                     adapter.Fill(datos);
                     if (datos.Rows.Count > 0)
                     {
-                        Pro_ID.Text = datos.Rows[0].ItemArray[0].ToString();
+                     /*   Pro_ID.Text = datos.Rows[0].ItemArray[0].ToString(); */
                         Pro_Nombre.Text = datos.Rows[0].ItemArray[1].ToString();
-                        Pro_Descripccion = datos.Rows[0].ItemArray[2].ToString();
-                        imagen.text = datos.Rows[0].ItemArray[3].ToString();
+                        Pro_Descripcion.Text = datos.Rows[0].ItemArray[2].ToString();
+                        Pro_Precio.Text = Convert.ToDouble(datos.Rows[0].ItemArray[3]).ToString("N");
+                        Pro_Imagen.ImageUrl = datos.Rows[0].ItemArray[4].ToString();
 
                     }
                     
