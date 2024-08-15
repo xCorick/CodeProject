@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,6 +11,8 @@ namespace CodeProject
 {
     public partial class PanProducto : System.Web.UI.Page
     {
+        public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -40,8 +44,43 @@ namespace CodeProject
         }
 
 
+        void LlenarForma(string clave)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(strConexion);
+                SqlCommand comando = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataTable datos = new DataTable();
+                if (conn.State == 0)
+                {
+                    conn.Open();
+                    comando.Connection = conn;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.CommandText = "Bus_Producto";
+                    comando.Parameters.AddWithValue("@Pro_Cve", clave);
+                    adapter.SelectCommand = comando;
+                    adapter.Fill(datos);
+                    if (datos.Rows.Count > 0)
+                    {
+                        Pro_ID.Text = datos.Rows[0].ItemArray[0].ToString();
+                        Pro_Nombre.Text = datos.Rows[0].ItemArray[1].ToString();
+                        Pro_Descripccion = datos.Rows[0].ItemArray[2].ToString();
+                        imagen.text = datos.Rows[0].ItemArray[3].ToString();
 
-     
+                    }
+                    
+                    conn.Close();
+                }
+            }
+            catch (Exception err)
+            {
+                Response.Write("<script>alert('" + err.Message + "')</script>");
+            }
+        }
+
+
+
     }
 }
 

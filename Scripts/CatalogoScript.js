@@ -18,6 +18,11 @@ function checkWidth() {
     setParams(containerWidth);
 }
 
+function cliimagen(num) {
+    alert("se dio click ->" + num);
+
+}
+
 function setParams(w) {
     if (w < 551) {
         slidesPerPage = 1;

@@ -50,7 +50,7 @@
 
                     <div class="container-description">
                         <p class="title-description">Descripción:</p>
-                        <p class="text-description">Descripción del producto aquí. Detalles sobre las características y beneficios del producto.</p>
+                        <p class="Pro_descripccion">Descripción del producto aquí. Detalles sobre las características y beneficios del producto.</p>
                     </div>
 
                     <div class="container-actions">
