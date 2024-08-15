@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Producto" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PanProducto.aspx.cs" Inherits="CodeProject.PanProducto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-
+    <script src="Scripts/Recuperacion.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,8 @@
                 <asp:Image ID="MainImage" runat="server" ImageUrl="https://ss224.liverpool.com.mx/sm/1150533640.jpg" AlternateText="Imagen Principal" />
             </div>
 
-            <asp:Label ID=" lblValue" runat="server" Text="Label"></asp:Label>
+              <p>Producto: <span id="displayValue"></span></p>
+
 
             <div class="container-info-product">
                 <div class="container-price">

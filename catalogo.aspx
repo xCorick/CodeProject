@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-
-  <!--  <script src="Scripts/CatalogoParametro.js"></script>  -->
- 
+	<!--
+  <script src="Scripts/CatalogoParametro.js"></script> 
+	-->
 
     <link href="Estilos/CatalogoEstilo.css" rel="stylesheet" />
 
@@ -14,7 +14,7 @@
 
 
 
-    <script src="Scripts/CatalogoScript.js"></script>
+   <script src="Scripts/CatalogoScript.js"></script>
 
     
 	<div class="marco">
@@ -64,7 +64,7 @@
 		<div id="slider-container">
 			<span onclick="slideRight()" class="btn"></span>
 			<div id="slider">
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/S2.jpg" class="imagen" alt="img1"/>abc</button></div>
+				<div class="slide"><button type="submit" formaction="PanProducto.aspx" style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/S2.jpg" class="imagen" alt="img1"/>abc</button></div>
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/FI2.jpg" class="imagen" alt="img1"/>asd</button></div>
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T4.jpg" class="imagen" alt="img1"/>fsa</button></div>
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BP3.jpg" class="imagen" alt="BP3"/>fsa</button></div>
@@ -73,16 +73,15 @@
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T1.jpg" class="imagen" alt="img1"/>fsa</button></div>
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/G4.jpg" class="imagen" alt="img1"/>sf</button></div>
 				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BI1.jpg" class="imagen" alt="img1"/>fsa</button></div>
-				<div class="slide"><button id="CalDep" onclick="btnRedirect" style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen" alt="img1"/>fs</button></div>
+				<div class="slide"><button type="submit" formaction="PanProducto.aspx" style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen" alt="img1"/>fs</button></div>
 			</div>
 			<span onclick="slideLeft()" class="btn"></span>
 		</div>
 	</div>
    
-
-    <script src="Scripts/CatalogoScript.js"></script>
+	    <script src="Scripts/CatalogoScript.js"></script>
+    
 	
-
 	 <h1 style="position:absolute;top:1405px;font-family: Arial;left:90px;">El deporte para ti:</h1>
 
 	<div>

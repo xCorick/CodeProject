@@ -18,10 +18,7 @@ namespace CodeProject
                 PriceLabel.Text = "$799.00";
 
 
-                string value = Session["MyValue"] as string;
 
-                // Muestra el valor en una etiqueta
-                lblValue.Text = value;
 
             }
         }

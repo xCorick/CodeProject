@@ -12,17 +12,11 @@ namespace CodeProject
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
+        }  
 
-
-        protected void btnRedirect_Click(object sender, EventArgs e)
+        protected void redirectToPage(object sender, EventArgs e)
         {
-            // Define la variable que quieres pasar
-            string valueToPass = "HolaMundo";
-
-            Session["MyValue"] = valueToPass;
-
-            // Redirige a Page2
+            // Redirigir a la misma página para todos los botones
             Response.Redirect("PanProducto.aspx");
         }
 
