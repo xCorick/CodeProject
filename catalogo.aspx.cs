@@ -14,10 +14,16 @@ namespace CodeProject
 
         }
 
-        private void CalDep_Clic()
+
+        protected void btnRedirect_Click(object sender, EventArgs e)
         {
+            // Define la variable que quieres pasar
+            string valueToPass = "HolaMundo";
 
+            Session["MyValue"] = valueToPass;
 
+            // Redirige a Page2
+            Response.Redirect("PanProducto.aspx");
         }
 
 
