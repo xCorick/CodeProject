@@ -33,6 +33,10 @@
                             <p class="title-description">Descripción:</p>
                             <asp:Label ID="Pro_Descripcion" runat="server" Text="" CssClass="product-description"></asp:Label>
                         </div>
+
+                        <asp:TextBox ID="Pro_Cantidad" runat="server"></asp:TextBox>
+
+
                     </div>
                 </div>
             </div>
