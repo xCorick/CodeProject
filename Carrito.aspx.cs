@@ -11,7 +11,8 @@ namespace CodeProject
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
+        // string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
+        public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,15 +45,20 @@ namespace CodeProject
 
         void EliminarPro(string clave)
         {
+            string carrito = "alex@gmail.com";
+
             SqlConnection conn = new SqlConnection(strConexion);
             SqlCommand comando = new SqlCommand();
             if (conn.State == 0)
             {
                 conn.Open();
             }
+            comando.Connection = conn;
+
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "Del_ListaCarrito";
             comando.Parameters.AddWithValue("@LisCar_ProID", clave);
+            comando.Parameters.AddWithValue("@LisCar_carritoID", carrito);
             comando.ExecuteNonQuery();
             conn.Close();
             Response.Write("<script>alert('C fue')</script>");

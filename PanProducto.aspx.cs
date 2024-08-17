@@ -11,8 +11,8 @@ namespace CodeProject
 {
     public partial class PanProducto : System.Web.UI.Page
     {
-        public static string strConexion = "Server=DESKTOP-V1FA3U3; Database=CarrilloShop; Integrated Security=True;";
-
+       // public static string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
+        public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -64,6 +64,7 @@ namespace CodeProject
                         Pro_Precio.Text = "";
                         Pro_Imagen.ImageUrl = "";
                     }
+
                 }
             }
             catch (Exception err)
@@ -78,14 +79,12 @@ namespace CodeProject
 
         protected void AgreCarrito_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                 double cantidad = Convert.ToDouble(Pro_Cantidad.Text);
                 double precio = Convert.ToDouble(Pro_Precio.Text);
                 double descuento = 0;
                 string ProID = Session["Pro_ID"] as string;
                 string carritoid = "alex@gmail.com";
-
 
 
                 using (SqlConnection conn = new SqlConnection(strConexion))
@@ -98,20 +97,22 @@ namespace CodeProject
                     comando.Parameters.AddWithValue("@LisCar_ProID", ProID);
                     comando.Parameters.AddWithValue("@LisCar_CarritoID", carritoid);
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(comando);
-                    DataTable datos = new DataTable();
+                    
+                    conn.Open();
+                    comando.ExecuteNonQuery();
+                    conn.Close();
 
                     conn.Open();
-                    adapter.Fill(datos);
-
-
+                    Response.Write("Agregado al carrito");
                 }
-            }
+            
+        /*
             catch (Exception err)
             {
                 // Manejo de errores
                 Response.Write($"<script>alert('{err.Message}')</script>");
             }
+        */
         }
     }
 }

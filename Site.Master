@@ -62,8 +62,8 @@
                                     Catálogo
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Acción</a></li>
-                                    <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                                    <li><a class="dropdown-item" href="catalogo.aspx">VerCatalogo</a></li>
+                                    <li><a class="dropdown-item" href="Carrito.aspx">Ver Carrito</a></li>
                                     <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
                                 </ul>
                             </div>

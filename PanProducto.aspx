@@ -24,7 +24,7 @@
 
                         <div class="container-add-cart">
                             <div class="container-quantity">
-                                <asp:TextBox ID="QuantityTextBox" runat="server" Text="1" CssClass="input-quantity" />
+                                <asp:TextBox ID="Pro_Cantidad" runat="server" Text="1" CssClass="input-quantity" />
                             </div>
                             <asp:Button ID="Bot_PaCarrito" OnClick="AgreCarrito_Click" runat="server" Text="Agregar a carrito" />
                       
@@ -34,8 +34,6 @@
                             <p class="title-description">Descripción:</p>
                             <asp:Label ID="Pro_Descripcion" runat="server" Text="" CssClass="product-description"></asp:Label>
                         </div>
-
-                        <asp:TextBox ID="Pro_Cantidad" runat="server"></asp:TextBox>
 
 
                     </div>

@@ -51,13 +51,13 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.Label Pro_Precio;
 
         /// <summary>
-        /// Control QuantityTextBox.
+        /// Control Pro_Cantidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox QuantityTextBox;
+        protected global::System.Web.UI.WebControls.TextBox Pro_Cantidad;
 
         /// <summary>
         /// Control Bot_PaCarrito.
@@ -76,14 +76,5 @@ namespace CodeProject
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Pro_Descripcion;
-
-        /// <summary>
-        /// Control Pro_Cantidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Pro_Cantidad;
     }
 }
