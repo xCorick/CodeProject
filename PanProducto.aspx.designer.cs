@@ -15,6 +15,15 @@ namespace CodeProject
     {
 
         /// <summary>
+        /// Control Pro_ID.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Pro_ID;
+
+        /// <summary>
         /// Control Pro_Imagen.
         /// </summary>
         /// <remarks>
@@ -51,13 +60,13 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.TextBox QuantityTextBox;
 
         /// <summary>
-        /// Control AddToCartButton.
+        /// Control Bot_PaCarrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddToCartButton;
+        protected global::System.Web.UI.WebControls.Button Bot_PaCarrito;
 
         /// <summary>
         /// Control Pro_Descripcion.

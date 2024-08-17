@@ -137,6 +137,7 @@
     <Content Include="AdminImages\empty.jpg" />
     <Content Include="AdminPage.aspx" />
     <Content Include="AdminScripts\AdminScript.js" />
+    <Content Include="Carrito.aspx" />
     <Content Include="catalogo.aspx" />
     <Content Include="Catalogo2.aspx" />
     <Content Include="Contact.aspx" />
@@ -381,6 +382,13 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="catalogo.aspx.cs">
       <DependentUpon>catalogo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

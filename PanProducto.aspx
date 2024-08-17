@@ -8,7 +8,7 @@
         <header>
             <h1> CarrilloShop</h1>
         </header>
-
+    <asp:Label ID="Pro_ID" runat="server" Text=""></asp:Label>
 
             <div class="product-details">
                 <asp:Image ID="Pro_Imagen" runat="server" ImageUrl="" AlternateText="Imagen del Producto" CssClass="product-image" />
@@ -26,8 +26,9 @@
                             <div class="container-quantity">
                                 <asp:TextBox ID="QuantityTextBox" runat="server" Text="1" CssClass="input-quantity" />
                             </div>
-                            <asp:Button ID="AddToCartButton" runat="server" Text="Añadir al Carrito" CssClass="btn-add-to-cart" OnClick="AddToCartButton_Click" />
-                        </div>
+                            <asp:Button ID="Bot_PaCarrito" OnClick="AgreCarrito_Click" runat="server" Text="Agregar a carrito" />
+                      
+                            </div>
 
                         <div class="container-description">
                             <p class="title-description">Descripción:</p>

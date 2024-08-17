@@ -19,12 +19,10 @@ namespace CodeProject
 
            
             if (Request.QueryString["id"] != null)
-            {
-
-                
-
-              
+            { 
                 string id = Request.QueryString["id"];
+
+                Session["Pro_ID"] = id;
 
                 BuscarProducto(id);
             }
@@ -32,54 +30,6 @@ namespace CodeProject
             {
                
             }
-        }
-
-
-
-
-        protected void AgreCarrito(object sender, EventArgs e, string id)
-        {
-            try
-            {
-                double cantidad = Convert.ToDouble(Pro_Cantidad.Text);
-                double precio = Convert.ToDouble(Pro_Precio.Text);
-                double descuento = 0;
-                string LisCar_ProID = id;
-                string carritoid = "alex@gmail.com";
-
-
-
-                using (SqlConnection conn = new SqlConnection(strConexion))
-                {
-                    SqlCommand comando = new SqlCommand("Ins_ListaCarrito", conn);
-                    comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.AddWithValue("@LisCar_Cantidad", cantidad);
-                    comando.Parameters.AddWithValue("@LisCar_Precio", precio);
-                    comando.Parameters.AddWithValue("@LisCar_Descuento", descuento);
-                    comando.Parameters.AddWithValue("@LisCar_ProID", id);
-                    comando.Parameters.AddWithValue("@LisCar_CarritoID", carritoid);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(comando);
-                    DataTable datos = new DataTable();
-
-                    conn.Open();
-                    adapter.Fill(datos);
-
-                    
-                }
-            }
-            catch (Exception err)
-            {
-                // Manejo de errores
-                Response.Write($"<script>alert('{err.Message}')</script>");
-            }
-
-
-        }
-
-        protected void BackButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect(Request.UrlReferrer.ToString());
         }
 
 
@@ -101,6 +51,7 @@ namespace CodeProject
 
                     if (datos.Rows.Count > 0)
                     {
+                        Pro_ID.Text = datos.Rows[0]["Pro_ID"].ToString();
                         Pro_Nombre.Text = datos.Rows[0]["Pro_Nombre"].ToString();
                         Pro_Descripcion.Text = datos.Rows[0]["Pro_Descripcion"].ToString();
                         Pro_Precio.Text = Convert.ToDouble(datos.Rows[0]["Pro_Precio"]).ToString("N");
@@ -122,8 +73,46 @@ namespace CodeProject
             }
         }
 
-      
 
+
+
+        protected void AgreCarrito_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double cantidad = Convert.ToDouble(Pro_Cantidad.Text);
+                double precio = Convert.ToDouble(Pro_Precio.Text);
+                double descuento = 0;
+                string ProID = Session["Pro_ID"] as string;
+                string carritoid = "alex@gmail.com";
+
+
+
+                using (SqlConnection conn = new SqlConnection(strConexion))
+                {
+                    SqlCommand comando = new SqlCommand("Ins_ListaCarrito", conn);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@LisCar_Cantidad", cantidad);
+                    comando.Parameters.AddWithValue("@LisCar_Precio", precio);
+                    comando.Parameters.AddWithValue("@LisCar_Descuento", descuento);
+                    comando.Parameters.AddWithValue("@LisCar_ProID", ProID);
+                    comando.Parameters.AddWithValue("@LisCar_CarritoID", carritoid);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                    DataTable datos = new DataTable();
+
+                    conn.Open();
+                    adapter.Fill(datos);
+
+
+                }
+            }
+            catch (Exception err)
+            {
+                // Manejo de errores
+                Response.Write($"<script>alert('{err.Message}')</script>");
+            }
+        }
     }
 }
 
