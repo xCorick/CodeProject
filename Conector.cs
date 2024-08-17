@@ -16,6 +16,8 @@ namespace CodeProject
         //public static string strConexion = "user id=sa; password=uts; server=CORICKGS\\SQLEXPRESS; database=CarrilloShop";
         //public static string strConexion = "server=DESKTOP-3A3O483\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
         //public static string strConexion = "server=CORICKGS\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
+        //public static string strConexion = "user id=sa; password=Omega928117B312@; server=192.168.0.7; database=CarrilloShop";
+
         public static (SqlConnection, SqlCommand, SqlDataAdapter, DataTable) BuscarRegistro(string strConexion, string sp, string Argumento, string lbText)
         {
             SqlConnection conn = new SqlConnection(strConexion);
