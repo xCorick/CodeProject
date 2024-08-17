@@ -20,7 +20,7 @@
                     <div class="tabla">
                         <div class="fila">
                             <div class="celda">Clave:</div>
-                            <div class="celdacolspan2"><asp:TextBox ID="TBClave" runat="server"></asp:TextBox>
+                            <div class="celdacolspan2"><asp:TextBox ID="TBClave" runat="server" AutoPostBack="True" OnTextChanged ="TBClave_TextChanged"></asp:TextBox>
                                 <br/><asp:Label ID="LBClave" runat="server" Text="Falta Clave" Visible="False" ForeColor="Red"></asp:Label>
                                     <asp:RequiredFieldValidator ID="RFClave" runat="server" 
                                     ErrorMessage="<br />Falta clave"
@@ -109,7 +109,8 @@
                         </div>
                         <div class="fila">
                             <div class="celda">Publico:</div>
-                            <div class="celdacolspan2"><asp:DropDownList ID="DDLPublico" runat="server"></asp:DropDownList>
+                            <div class="celdacolspan2">
+                                <asp:DropDownList ID="DDLPublico" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLPublico_SelectedIndexChanged"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="fila">
@@ -174,8 +175,6 @@
             <div id="formpedidos">
 
             </div>
-        </body>
-        <script src="AdminScripts/AdminScript.js"></script>
         <script type="text/javascript">
             window.onload = function () {
                 const defaultFile = 'AdminImages/empty.jpg';
@@ -206,4 +205,5 @@
                 document.getElementById('Load').style.display = 'block';
             }
         </script>
+    <script src="AdminScripts/AdminScripts.js"></script>
 </asp:Content>

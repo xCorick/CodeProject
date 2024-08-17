@@ -18,10 +18,14 @@ namespace CodeProject
         public static string ruta2;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
                 DDLPublico.Items.Clear();
                 LlenarGrid();
                 LlenarPublico("Bus_Publico");
                 LlenarTalla("Bus_Talla", "talla"); 
+            }
+                
         }
 
         public void LlenarTalla(string sp, string campo)
@@ -271,6 +275,9 @@ namespace CodeProject
                     if (insercion)
                     {
                         Response.Write("<script>alert('Producto guardado exitosamente')</script>");
+                        conn.Close();
+                        LlenarGrid();
+                        HFProducto.Value = ruta2;
                     }
                     else
                     {
@@ -281,16 +288,20 @@ namespace CodeProject
                 {
                     Response.Write("<script>alert('Algo salio mal, intenta de nuevo4')</script>");
                 }
-                conn.Close();
-                LlenarGrid();
-                HFProducto.Value = ruta2;
             }
         }
 
         protected void grid_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string clave = grid.Rows[grid.SelectedRow.RowIndex].Cells[0].Text;
-            LlenarForma(clave);
+            try
+            {
+                string clave = grid.Rows[grid.SelectedRow.RowIndex].Cells[0].Text;
+                LlenarForma(clave);
+            }
+            catch
+            {
+
+            }
         }
 
         protected void Nuevo_Click(object sender, EventArgs e)
@@ -362,6 +373,19 @@ namespace CodeProject
                     Response.Write("<script>alert('"+ ex +"')</script>");
                 }
             } 
+        }
+
+        protected void DDLPublico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TBClave_TextChanged(object sender, EventArgs e)
+        {
+            if (TBClave.Text != "")
+            {
+                LlenarForma(TBClave.Text);
+            }
         }
     }
 }
