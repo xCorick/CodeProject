@@ -11,6 +11,7 @@ var containerWidth = container.offsetWidth;
 var prevKeyActive = false;
 var nextKeyActive = true;
 
+// Escuchar el evento de redimensionamiento de la ventana para ajustar los parámetros del slider
 window.addEventListener("resize", checkWidth);
 
 function checkWidth() {
@@ -18,11 +19,7 @@ function checkWidth() {
     setParams(containerWidth);
 }
 
-function cliimagen(num) {
-    alert("se dio click ->" + num);
-
-}
-
+// Configurar los parámetros basados en el ancho de la ventana
 function setParams(w) {
     if (w < 551) {
         slidesPerPage = 1;
@@ -41,7 +38,7 @@ function setParams(w) {
     if (currentPosition > slidesCount) {
         currentPosition -= slidesPerPage;
     };
-    currentMargin = - currentPosition * (100 / slidesPerPage);
+    currentMargin = -currentPosition * (100 / slidesPerPage);
     slider.style.marginLeft = currentMargin + '%';
     if (currentPosition > 0) {
         buttons[0].classList.remove('inactive');
@@ -54,6 +51,7 @@ function setParams(w) {
     }
 }
 
+// Inicializar los parámetros del slider
 setParams();
 
 function slideRight() {
@@ -83,6 +81,3 @@ function slideLeft() {
         buttons[0].classList.remove('inactive');
     }
 };
-
-
-

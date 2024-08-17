@@ -11,15 +11,25 @@ namespace CodeProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
 
-        }  
-
-        protected void redirectToPage(object sender, EventArgs e)
-        {
-            // Redirigir a la misma página para todos los botones
-            Response.Redirect("PanProducto.aspx");
+            }
         }
 
+        protected void ImageButton_Click(object sender, ImageClickEventArgs e)
+        {
+            // Obtener el botón que fue clickeado
+            ImageButton clickedButton = (ImageButton)sender;
 
-    }
+            // Obtener el CommandArgument (ID del botón)
+            string buttonId = clickedButton.CommandArgument;
+
+            // Redirigir a la página con el parámetro
+            Response.Redirect($"PanProducto.aspx?id={buttonId}");
+        }
+    }  
+
+
+
 }

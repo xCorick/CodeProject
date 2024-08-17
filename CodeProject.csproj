@@ -166,6 +166,7 @@
     <Content Include="Estilos\Default.css" />
     <Content Include="Estilos\EstiloInicio.css" />
     <Content Include="Estilos\LoginStyle.css" />
+    <Content Include="Estilos\VerProducto.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background\Background.png" />

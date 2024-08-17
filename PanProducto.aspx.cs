@@ -11,63 +11,54 @@ namespace CodeProject
 {
     public partial class PanProducto : System.Web.UI.Page
     {
-        public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
+        public static string strConexion = "Server=DESKTOP-V1FA3U3; Database=CarrilloShop; Integrated Security=True;";
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ProductoID();
 
-            
-
-            if (!IsPostBack)
+           
+            if (Request.QueryString["id"] != null)
             {
-                // Inicializar valores por defecto
 
+                
 
+              
+                string id = Request.QueryString["id"];
+
+                BuscarProducto(id);
+            }
+            else
+            {
+               
             }
         }
 
-        protected void AddToCartButton_Click(object sender, EventArgs e)
-        {
-            int quantity = int.Parse(QuantityTextBox.Text);
-         
-            // Aquí puedes agregar la lógica para manejar el producto agregado al carrito
-            // Por ejemplo, redirigir a una página de confirmación, actualizar el carrito en la base de datos, etc.
-            // La lógica específica de agregar al carrito debe implementarse aquí.
-        }
-
-        protected void BackButton_Click(object sender, EventArgs e)
-        {
-            // Redirigir a la página anterior
-            Response.Redirect(Request.UrlReferrer.ToString());
-        }
 
 
-        void BuscarProducto(string clave)
+
+        protected void AgreCarrito(object sender, EventArgs e)
         {
             try
             {
-                SqlConnection conn = new SqlConnection(strConexion);
-                SqlCommand comando = new SqlCommand();
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                DataTable datos = new DataTable();
-                if (conn.State == 0)
+                using (SqlConnection conn = new SqlConnection(strConexion))
                 {
-                    conn.Open();
-                    comando.Connection = conn;
+                    SqlCommand comando = new SqlCommand("Bus_Producto", conn);
                     comando.CommandType = CommandType.StoredProcedure;
-                    comando.CommandText = "Bus_Producto";
-                    comando.Parameters.AddWithValue("@Pro_ID", "CalDep");
-                    adapter.SelectCommand = comando;
+                    comando.Parameters.AddWithValue("@Pro_ID", id);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                    DataTable datos = new DataTable();
+
+                    conn.Open();
                     adapter.Fill(datos);
+
                     if (datos.Rows.Count > 0)
                     {
-                     /*   Pro_ID.Text = datos.Rows[0].ItemArray[0].ToString(); */
-                        Pro_Nombre.Text = datos.Rows[0].ItemArray[1].ToString();
-                        Pro_Descripcion.Text = datos.Rows[0].ItemArray[2].ToString();
-                        Pro_Precio.Text = Convert.ToDouble(datos.Rows[0].ItemArray[3]).ToString("N");
-                        Pro_Imagen.ImageUrl = datos.Rows[0].ItemArray[4].ToString();
-
+                        Pro_Nombre.Text = datos.Rows[0]["Pro_Nombre"].ToString();
+                        Pro_Descripcion.Text = datos.Rows[0]["Pro_Descripcion"].ToString();
+                        Pro_Precio.Text = Convert.ToDouble(datos.Rows[0]["Pro_Precio"]).ToString("N");
+                        Pro_Imagen.ImageUrl = datos.Rows[0]["Pro_Imagen"].ToString();
                     }
                     else
                     {
@@ -76,13 +67,59 @@ namespace CodeProject
                         Pro_Precio.Text = "";
                         Pro_Imagen.ImageUrl = "";
                     }
-
-                    conn.Close();
                 }
             }
             catch (Exception err)
             {
-                Response.Write("<script>alert('" + err.Message + "')</script>");
+                // Manejo de errores
+                Response.Write($"<script>alert('{err.Message}')</script>");
+            }
+
+
+        }
+
+        protected void BackButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.UrlReferrer.ToString());
+        }
+
+
+        void BuscarProducto(string id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(strConexion))
+                {
+                    SqlCommand comando = new SqlCommand("Bus_Producto", conn);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@Pro_ID", id);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                    DataTable datos = new DataTable();
+
+                    conn.Open();
+                    adapter.Fill(datos);
+
+                    if (datos.Rows.Count > 0)
+                    {
+                        Pro_Nombre.Text = datos.Rows[0]["Pro_Nombre"].ToString();
+                        Pro_Descripcion.Text = datos.Rows[0]["Pro_Descripcion"].ToString();
+                        Pro_Precio.Text = Convert.ToDouble(datos.Rows[0]["Pro_Precio"]).ToString("N");
+                       Pro_Imagen.ImageUrl = datos.Rows[0]["Pro_Imagen"].ToString();
+                    }
+                    else
+                    {
+                        Pro_Nombre.Text = "No se encontró el producto";
+                        Pro_Descripcion.Text = "";
+                        Pro_Precio.Text = "";
+                        Pro_Imagen.ImageUrl = "";
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                // Manejo de errores
+                Response.Write($"<script>alert('{err.Message}')</script>");
             }
         }
 
