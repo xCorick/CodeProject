@@ -45,25 +45,30 @@ namespace CodeProject
 
         void EliminarPro(string clave)
         {
-            string carrito = "alex@gmail.com";
+            string carrito = "micarrito";
 
-            SqlConnection conn = new SqlConnection(strConexion);
-            SqlCommand comando = new SqlCommand();
-            if (conn.State == 0)
+            try
             {
-                conn.Open();
+                using (SqlConnection conn = new SqlConnection(strConexion))
+                {
+                    using (SqlCommand comando = new SqlCommand("Del_ListaCarrito", conn))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.Add("@LisCar_ProID", SqlDbType.VarChar).Value = clave;
+                        comando.Parameters.Add("@LisCar_carritoID", SqlDbType.VarChar).Value = carrito;
+
+                        conn.Open();
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                Response.Write("<script>alert('C fue')</script>");
+                LlenarGrid();
             }
-            comando.Connection = conn;
-
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "Del_ListaCarrito";
-            comando.Parameters.AddWithValue("@LisCar_ProID", clave);
-            comando.Parameters.AddWithValue("@LisCar_carritoID", carrito);
-            comando.ExecuteNonQuery();
-            conn.Close();
-            Response.Write("<script>alert('C fue')</script>");
-            LlenarGrid();
-
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Response.Write($"<script>alert('Error: {ex.Message}')</script>");
+            }
         }
 
 

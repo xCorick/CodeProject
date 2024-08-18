@@ -79,41 +79,44 @@ namespace CodeProject
 
         protected void AgreCarrito_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
                 double cantidad = Convert.ToDouble(Pro_Cantidad.Text);
                 double precio = Convert.ToDouble(Pro_Precio.Text);
                 double descuento = 0;
                 string ProID = Session["Pro_ID"] as string;
-                string carritoid = "alex@gmail.com";
-
+                string carritoid = "micarrito";
 
                 using (SqlConnection conn = new SqlConnection(strConexion))
                 {
-                    SqlCommand comando = new SqlCommand("Ins_ListaCarrito", conn);
-                    comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.AddWithValue("@LisCar_Cantidad", cantidad);
-                    comando.Parameters.AddWithValue("@LisCar_Precio", precio);
-                    comando.Parameters.AddWithValue("@LisCar_Descuento", descuento);
-                    comando.Parameters.AddWithValue("@LisCar_ProID", ProID);
-                    comando.Parameters.AddWithValue("@LisCar_CarritoID", carritoid);
+                    using (SqlCommand comando = new SqlCommand("Ins_ListaCarrito", conn))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.Add("@LisCar_Cantidad", SqlDbType.Float).Value = cantidad;
+                        comando.Parameters.Add("@LisCar_Precio", SqlDbType.Money).Value = precio;
+                        comando.Parameters.Add("@LisCar_Descuento", SqlDbType.Money).Value = descuento;
+                        comando.Parameters.Add("@LisCar_ProID", SqlDbType.VarChar).Value = ProID;
+                        comando.Parameters.Add("@LisCar_CarritoID", SqlDbType.VarChar).Value = carritoid;
 
-                    
-                    conn.Open();
-                    comando.ExecuteNonQuery();
-                    conn.Close();
-
-                    conn.Open();
-                    Response.Write("Agregado al carrito");
+                        conn.Open();
+                        comando.ExecuteNonQuery();
+                    }
                 }
-            
-        /*
+
+                // Mensaje de éxito, considera usar un control en lugar de Response.Write para una mejor experiencia de usuario.
+                Response.Write("<script>alert('Agregado al carrito');</script>");
+            }
             catch (Exception err)
             {
                 // Manejo de errores
-                Response.Write($"<script>alert('{err.Message}')</script>");
+                Response.Write($"<script>alert('Error: {err.Message}');</script>");
             }
-        */
         }
+
+
+
+
+
     }
 }
 
