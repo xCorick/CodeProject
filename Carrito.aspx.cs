@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Security.Claims;
 
 namespace CodeProject
 {
@@ -22,6 +23,7 @@ namespace CodeProject
 
         void LlenarGrid()
         {
+            string IDCarrito = "micarrito";
             SqlConnection conn = new SqlConnection(strConexion);
             SqlCommand comando = new SqlCommand();
             SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -32,7 +34,8 @@ namespace CodeProject
                 conn.Open();
                 comando.Connection = conn;
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "Cons_ListaCarrito";
+                comando.Parameters.Add("@LisCar_CarritoID", SqlDbType.VarChar).Value = IDCarrito;
+                comando.CommandText = "LlenarListaCarrito";
                 adaptador.SelectCommand = comando;
                 adaptador.Fill(datos);
                 GridView.DataSource = datos;

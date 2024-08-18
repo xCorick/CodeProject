@@ -104,7 +104,7 @@ namespace CodeProject
                 }
 
                 // Mensaje de éxito, considera usar un control en lugar de Response.Write para una mejor experiencia de usuario.
-                Response.Write("<script>alert('Agregado al carrito');</script>");
+                Response.Write("Agregado al carrito");
             }
             catch (Exception err)
             {
