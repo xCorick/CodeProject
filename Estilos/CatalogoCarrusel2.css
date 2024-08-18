@@ -3,20 +3,20 @@
     height: 2400px;
     display: grid;
     place-items: center;
-    margin-top: 00px;
+    margin-top: -400px;
 }
 
-#slider2-container2 {
+#slider-container2 {
     height: 360px;
     width: 85vw;
     max-width: 1400px;
     position: relative;
     overflow: hidden;
     padding: 20px;
-    margin-top: 00px;
+    margin-top: -400px;
 }
 
-    #slider2-container2 .btn2 {
+    #slider-container2 .btn2 {
         position: absolute;
         top: calc(50% - 30px);
         height: 15px;
@@ -27,32 +27,32 @@
         z-index: 3;
     }
 
-        #slider2-container2 .btn2:hover {
+        #slider-container2 .btn2:hover {
             transform: scale(1.2);
         }
 
-        #slider2-container2 .btn2.inactive {
+        #slider-container2 .btn2.inactive {
             border-color: #050505;
         }
 
-        #slider2-container2 .btn2:first-of-type {
+        #slider-container2 .btn2:first-of-type {
             transform: rotate(-45deg);
             left: 10px
         }
 
-        #slider2-container2 .btn2:last-of-type {
+        #slider-container2 .btn2:last-of-type {
             transform: rotate(135deg);
             right: 10px;
         }
 
-    #slider2-container2 #slider2 {
+    #slider-container2 #slider2 {
         display: flex;
         width: 1000%;
         height: 100%;
         transition: all .5s;
     }
 
-        #slider2-container2 #slider2 .slide2 {
+        #slider-container2 #slider2 .slide2 {
             height: 90%;
             margin: auto 10px;
             background-color: #cfcfcf;
@@ -62,7 +62,7 @@
             place-items: center;
         }
 
-            #slider2-container2 #slider2 .slide2 .imagen2 {
+            #slider-container2 #slider2 .slide2 .imagen2 {
                 height: 250px;
                 width: 250px;
                 margin: auto 10px;
@@ -72,56 +72,111 @@
                 place-items: center;
             }
 
-            #slider2-container2 #slider2 .slide2 span {
+            #slider-container2 #slider2 .slide2 span {
                 color: white;
-                font-size: 100px;
+                font-size: 120px;
                 top: auto;
             }
 
 @media only screen and (min-width: 1100px) {
-    #slider2-container2 #slider2 .slide2 {
+    #slider-container2 #slider2 .slide2 {
         width: calc(2.5% - 20px);
     }
 }
 
 @media only screen and (max-width: 1100px) {
-    #slider2-container2 #slider2 .slide2 {
+    #slider-container2 #slider2 .slide2 {
         width: calc(3.3333333% - 20px);
     }
 }
 
 @media only screen and (max-width: 900px) {
-    #slider2-container2 #slider2 .slide2 {
+    #slider-container2 #slider2 .slide2 {
         width: calc(5% - 20px);
     }
 }
 
 @media only screen and (max-width: 550px) {
-    #slider2-container2 #slider2 .slide2 {
+    #slider-container2 #slider2 .slide2 {
         width: calc(10% - 20px);
     }
 }
 
-
-
+.imagenDep2 {
+    position: absolute;
+    top: 1490px;
+    height: 500px;
+    width: 400px;
+}
 
 @media only screen and (max-width: 1100px) {
-    #slider2-container2 #slider2 .slide2 {
-        width: calc(3.3333333% - 20px);
+    .imagenDep2 {
+        height: 250px;
+        width: 200px;
     }
 }
 
 @media only screen and (max-width: 900px) {
-    #slider2-container2 #slider2 .slide2 {
-        width: calc(5% - 20px);
+    .imagenDep2 {
+        height: 125px;
+        width: 100px;
     }
 }
 
-@media only screen and (max-width: 550px) {
-    #slider2-container2 #slider2 .slide2 {
-        width: calc(10% - 20px);
+@media only screen and (max-width: 150px) {
+    .imagenDep2 {
+        height: 125px;
+        width: 100px;
+        display: grid;
+        gap: 10px;
     }
 }
 
+.contenedor2 {
+    display: flex;
+}
 
-<!--ayudaa weee-->
+.imagen2 {
+    width: 540px;
+    height: 348px;
+    margin-right: 50px;
+    left: 0px;
+    border: 2px solid #333;
+}
+
+#contenedor2 .h2 {
+    font-weight: bold;
+    background-color: #84f2f6;
+}
+
+#contenedor2 {
+    line-height: 1.5;
+    font-size: 8px;
+}
+
+@media only screen and (max-width: 850px) {
+    .contenedor2 {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .imagen2 {
+        width: 270px;
+        height: 174px
+    }
+}
+
+.imagenButton2 {
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 250px;
+    margin: auto 10px;
+    background-color: #b5b5b5;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    border: none;
+    cursor: pointer;
+}

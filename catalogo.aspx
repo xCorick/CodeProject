@@ -140,7 +140,7 @@
 
 	<div id="container2">
     <div id="slider-container2">
-        <span onclick="slideRight()2" class="btn2"></span>
+        <span onclick="slideRight2()" class="btn2"></span>
         <div id="slider2">
             <div class="slide2">
                 <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="imagenesProductos/bc9.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap1" />
@@ -170,7 +170,7 @@
                 <asp:ImageButton ID="ImageButton18" runat="server" ImageUrl="imagenesProductos/bc10.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="UniFem3" />
             </div>
         </div>
-        <span onclick="slideLeft()2" class="btn2"></span>
+        <span onclick="slideLeft2()" class="btn2"></span>
     </div>
         <script src="Scripts/CatalogoScript2.js"></script>     
 </div>
