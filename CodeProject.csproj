@@ -370,7 +370,6 @@
     <Content Include="Privacity.aspx" />
     <Content Include="RecoveryPass.aspx" />
     <Content Include="Scripts\AlbumScript.js" />
-    <Content Include="Catalogo.aspx" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -510,13 +509,6 @@
       <DependentUpon>Terms.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
-    <Compile Include="Catalogo.aspx.cs">
-      <DependentUpon>Catalogo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Catalogo.aspx.designer.cs">
-      <DependentUpon>Catalogo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
