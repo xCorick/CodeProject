@@ -19,13 +19,13 @@ namespace CodeProject
 
         protected void ImageButton_Click(object sender, ImageClickEventArgs e)
         {
-            // Obtener el botón que fue clickeado
+            
             ImageButton clickedButton = (ImageButton)sender;
 
-            // Obtener el CommandArgument (ID del botón)
+            
             string buttonId = clickedButton.CommandArgument;
 
-            // Redirigir a la página con el parámetro
+         
             Response.Redirect($"PanProducto.aspx?id={buttonId}");
         }
     }  

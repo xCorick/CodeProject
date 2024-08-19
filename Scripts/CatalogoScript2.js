@@ -1,4 +1,4 @@
-﻿var container2 = document.getElementById('container2')
+﻿var container2 = document.getElementById('container2');
 var slider2 = document.getElementById('slider2');
 var slides2 = document.getElementsByClassName('slide2').length;
 var buttons2 = document.getElementsByClassName('btn2');
@@ -12,15 +12,15 @@ var prevKeyActive2 = false;
 var nextKeyActive2 = true;
 
 // Escuchar el evento de redimensionamiento de la ventana para ajustar los parámetros del slider
-window.addEventListener("resize", checkWidth);
+window.addEventListener("resize", checkWidth2);
 
-function checkWidth() {
+function checkWidth2() {
     containerWidth2 = container2.offsetWidth;
-    setParams(containerWidth2);
+    setParams2(containerWidth2);
 }
 
 // Configurar los parámetros basados en el ancho de la ventana
-function setParams(w) {
+function setParams2(w) {
     if (w < 551) {
         slidesPerPage2 = 1;
     } else {
@@ -52,11 +52,11 @@ function setParams(w) {
 }
 
 // Inicializar los parámetros del slider
-setParams();
+setParams2();
 
 function slideRight2() {
     if (currentPosition2 != 0) {
-        slider2.style.marginLeft2 = currentMargin2 + (100 / slidesPerPage2) + '%';
+        slider2.style.marginLeft = currentMargin2 + (100 / slidesPerPage2) + '%';
         currentMargin2 += (100 / slidesPerPage2);
         currentPosition2--;
     };
@@ -70,7 +70,7 @@ function slideRight2() {
 
 function slideLeft2() {
     if (currentPosition2 != slidesCount2) {
-        slider2.style.marginLeft2 = currentMargin2 - (100 / slidesPerPage2) + '%';
+        slider2.style.marginLeft = currentMargin2 - (100 / slidesPerPage2) + '%';
         currentMargin2 -= (100 / slidesPerPage2);
         currentPosition2++;
     };

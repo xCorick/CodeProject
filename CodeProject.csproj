@@ -411,6 +411,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ControlProductos.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,6 +436,7 @@
     <Compile Include="PanProducto.aspx.designer.cs">
       <DependentUpon>PanProducto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingUp.aspx.cs">
       <DependentUpon>SingUp.aspx</DependentUpon>
