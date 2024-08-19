@@ -105,6 +105,8 @@ namespace CodeProject
         {
             string Correo = "alexgrijalva@gmail.com";
             return Correo;
+
+            //Variable de session user
         }
 
     }
