@@ -12,7 +12,9 @@ namespace CodeProject
     public partial class PanProducto : System.Web.UI.Page
     {
        // public static string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
-        public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
+        //public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
+
+        public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -63,7 +65,7 @@ namespace CodeProject
                         Pro_Nombre.Text = "No se encontró el producto";
                         Pro_Descripcion.Text = "";
                         Pro_Precio.Text = "";
-                        Pro_Imagen.ImageUrl = "";
+                        Pro_Imagen.ImageUrl = "imagenesProducto/NotFound.png";
                     }
 
                 }
@@ -80,8 +82,7 @@ namespace CodeProject
 
         protected void AgreCarrito_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                 double cantidad = Convert.ToDouble(Pro_Cantidad.Text);
                 double precio = Convert.ToDouble(Pro_Precio.Text);
                 double descuento = 0;
@@ -106,12 +107,7 @@ namespace CodeProject
 
                 // Mensaje de éxito, considera usar un control en lugar de Response.Write para una mejor experiencia de usuario.
                 Response.Write("Agregado al carrito");
-            }
-            catch (Exception err)
-            {
-                // Manejo de errores
-                Response.Write($"<script>alert('Error: {err.Message}');</script>");
-            }
+
         }
 
 
