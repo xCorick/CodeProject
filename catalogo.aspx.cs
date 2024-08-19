@@ -28,8 +28,14 @@ namespace CodeProject
          
             Response.Redirect($"PanProducto.aspx?id={buttonId}");
         }
+
+
+
+
+       
+
+
+
+
     }  
-
-
-
 }
