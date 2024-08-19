@@ -23,7 +23,21 @@ namespace CodeProject
                 DDLPublico.Items.Clear();
                 LlenarGrid();
                 LlenarPublico("Bus_Publico");
-                LlenarTalla("Bus_Talla", "talla"); 
+                LlenarTalla("Bus_Talla", "talla");
+                LlenarGridEliminados();
+                //bool isAnyChecked = GVProductBor.Rows.Cast<GridViewRow>().Any(row => ((CheckBox)row.FindControl("CheckBoxSelect")).Checked);
+                if (GVProductBor.Rows.Count == 0)
+                {
+                    Recuperar.Enabled = false;
+                    Purgar.Enabled = false;
+                    
+                }
+                else
+                {
+                    Recuperar.Enabled = true;
+                    Purgar.Enabled = true;
+                    
+                }
             }
                 
         }
@@ -88,6 +102,22 @@ namespace CodeProject
             catch
             {
                 Response.Write("<script>alert('No se pudo recuperar los datos de los productos, intente de nuevo')</script>");
+            }
+
+        }
+
+        void LlenarGridEliminados()
+        {
+            var (conn, comando, adaptador, datos) = Conector.LstTable(Conector.strConexion, "Lst_ElimPro");
+            try
+            {
+                GVProductBor.DataSource = datos;
+                GVProductBor.DataBind();
+                conn.Close();
+            }
+            catch
+            {
+                Response.Write("<script>alert('No se pudo recuperar los datos de los productos eliminados, intente de nuevo')</script>");
             }
 
         }
@@ -213,6 +243,41 @@ namespace CodeProject
             }
         }
 
+        public void EliminarImagenes(int cantidad, string claves)
+        {
+            //string[] url = claves.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "Lst_ImgProBor", "@Pro_IDs", claves);
+            for (int i = 0; i < cantidad; i++)
+            {
+               bool hola = EliminarImagen(datos.Rows[i].ItemArray[0].ToString());
+            }
+            conn.Close();
+        }
+
+        public string ObtenerStringDeClaves(GridView grid)
+        {
+            string ids = "";
+            foreach(GridViewRow row in grid.Rows)
+            {
+                CheckBox chk = (CheckBox)row.FindControl("CheckBoxSelect");
+                if (chk != null && chk.Checked)
+                {
+                    if (ids == "")
+                    {
+                        ids = grid.DataKeys[row.RowIndex].Value.ToString() + ",";
+                    }
+                    else
+                    {
+                        ids = ids + grid.DataKeys[row.RowIndex].Value.ToString() + ",";
+                    }
+                }
+            }
+            if (ids.EndsWith(","))
+            {
+                ids = ids.TrimEnd(',');
+            }
+            return ids;
+        }
 
         protected void Guardar_Click(object sender, EventArgs e)
         {
@@ -239,6 +304,10 @@ namespace CodeProject
                         }
                         LlenarGrid();
                         conn.Close();
+                        LimpiarTextBoxes(this);
+                        TBClave.Enabled = true;
+                        HFProducto.Value = "AdminImages/empty.jpg";
+                        VaciarChecks(CBLTallas);
                     }
                     else
                     {
@@ -262,6 +331,10 @@ namespace CodeProject
                     }
                     LlenarGrid();
                     conn.Close();
+                    LimpiarTextBoxes(this);
+                    TBClave.Enabled = true;
+                    HFProducto.Value = "AdminImages/empty.jpg";
+                    VaciarChecks(CBLTallas);
                     return;
                 }
                 var resultado = CargarImagen();
@@ -275,8 +348,12 @@ namespace CodeProject
                     if (insercion)
                     {
                         Response.Write("<script>alert('Producto guardado exitosamente')</script>");
-                        conn.Close();
                         LlenarGrid();
+                        conn.Close();
+                        LimpiarTextBoxes(this);
+                        TBClave.Enabled = true;
+                        HFProducto.Value = "AdminImages/empty.jpg";
+                        VaciarChecks(CBLTallas);
                         HFProducto.Value = ruta2;
                     }
                     else
@@ -289,6 +366,11 @@ namespace CodeProject
                     Response.Write("<script>alert('Algo salio mal, intenta de nuevo4')</script>");
                 }
             }
+            LlenarGrid();
+            LimpiarTextBoxes(this);
+            TBClave.Enabled = true;
+            HFProducto.Value = "AdminImages/empty.jpg";
+            VaciarChecks(CBLTallas);
         }
 
         protected void grid_SelectedIndexChanged(object sender, EventArgs e)
@@ -309,6 +391,7 @@ namespace CodeProject
             LimpiarTextBoxes(this);
             TBClave.Enabled = true;
             HFProducto.Value = "AdminImages/empty.jpg";
+            VaciarChecks(CBLTallas);
         }
 
         protected List<string> ShowSelectedItemsCheckBox(CheckBoxList check)
@@ -334,6 +417,13 @@ namespace CodeProject
                 {
                     item.Selected = true;
                 }
+            }
+        }
+        protected void VaciarChecks(CheckBoxList check)
+        {
+            foreach (ListItem item in check.Items)
+            {
+                item.Selected = false;
             }
         }
         protected void LimpiarTextBoxes(Control parent)
@@ -372,7 +462,15 @@ namespace CodeProject
                 {
                     Response.Write("<script>alert('"+ ex +"')</script>");
                 }
-            } 
+            }
+            LimpiarTextBoxes(this);
+            TBClave.Enabled = true;
+            HFProducto.Value = "AdminImages/empty.jpg";
+            LlenarGridEliminados();
+            VaciarChecks(CBLTallas);
+            Recuperar.Enabled = true;
+            Purgar.Enabled = true;
+            
         }
 
         protected void DDLPublico_SelectedIndexChanged(object sender, EventArgs e)
@@ -386,6 +484,41 @@ namespace CodeProject
             {
                 LlenarForma(TBClave.Text);
             }
+        }
+
+        protected void Recuperar_Click(object sender, EventArgs e)
+        {
+            string claves = ObtenerStringDeClaves(GVProductBor);
+            bool insercion = Conector.InsertInto(Conector.strConexion, "Recuperar_Product", "@Pro_IDs", claves);
+            if (insercion)
+            {
+                Response.Write("<script>alert('Se recuperaron los productos con clave "+claves+"')</script>");
+                LlenarGrid();
+            }
+            else
+            {
+                Response.Write("<script>alert('No se pudieron recuperar los productos')</script>");
+            }
+            LlenarGridEliminados();
+        }
+
+        protected void Purgar_Click(object sender, EventArgs e)
+        {
+            string claves = ObtenerStringDeClaves(GVProductBor);
+            var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "Lst_ImgProBor", "@Pro_IDs", claves);
+            int conteo = datos.Rows.Count;
+            EliminarImagenes(conteo, claves);
+            bool insercion = Conector.InsertInto(Conector.strConexion, "Bor_ProductosSelect", "@Pro_IDs", claves);
+            if (insercion)
+            {
+                Response.Write("<script>alert('Se borraron permanentemente los productos con claves " + claves + "')</script>");
+                conn.Close();
+            }
+            else
+            {
+                Response.Write("<script>alert('No se pudieron borrar permanentemente los productos, intente de nuevo')</script>");
+            }
+            LlenarGridEliminados();
         }
     }
 }

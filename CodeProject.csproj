@@ -183,6 +183,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdminImages\empty.jpg" />
+    <Content Include="AdminImages\papelera-de-reciclaje.png" />
     <Content Include="AdminPage.aspx" />
     <Content Include="AdminScripts\AdminScripts.js" />
     <Content Include="Carrito.aspx" />
