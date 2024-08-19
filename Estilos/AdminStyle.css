@@ -14,8 +14,7 @@ body {
 }
 
 .Contenedor-Tabla, .Contenedor-Tabla2 {
-    display: flex;
-    width: 50%;
+    flex: 1 0 auto;
     min-width: 300px;
     margin: auto;
     margin-top: 0;
@@ -44,7 +43,17 @@ div#formusuario, div#formpedidos {
     width: 65%;
     border-radius: 2%;
     padding: 20px;
-    display: flex;
+    display: none;
+    flex-wrap: wrap;
+}
+
+div#formborrados {
+    margin: auto;
+    background-color: white;
+    width: 65%;
+    border-radius: 2%;
+    padding: 20px;
+    display: none;
     flex-wrap: wrap;
 }
 

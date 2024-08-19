@@ -9,7 +9,8 @@
             <div class ="ContenedorNavegacion">
                 <div class="tabla">
                     <div class="fila">
-                        <div class="celda2"><button type="button" onclick="MostrarProductos();" class="botonfake" id="Produc">Productos</button></div>
+                        <div class="celda2"><asp:Button ID="Produc" runat="server" AutoPostBack="True" type="button" OnClientClick="MostrarProductos();" class="botonfake" CausesValidation="false" Text="Productos" /></div>
+                        <!--<div-- class="celda2"><button type="button" onclick="MostrarProductos();" class="botonfake" id="Produ">Productos</button></div-->
                         <div class="celda2"><button type="button" onclick="MostrarUsuarios();" class="botonfake" id="Usuario">Usuarios</button></div>
                         <div class="celda2"><button type="button" onclick="MostrarPedidos();" class="botonfake" id="Pedidos">Pedidos</button></div>
                     </div>
@@ -124,7 +125,7 @@
                             </div>
                         </div>
                         <div class="fila">
-                            <div class="celdacolspan3"><img src="AdminImages/empty.jpg" alt="ImgProduct" id="producto" />
+                            <div class="celdacolspan3"><img src="AdminImages/empty.jpg" alt="ImgProduct" id="producto" style="width:200px;height:auto" />
                                 <asp:HiddenField ID="HFProducto" runat="server" />
                             </div>
                         </div>
@@ -142,12 +143,15 @@
                     </div>
                 </div>
                 <div class="tabla">
+                    <div class="fila" style="justify-content:right !important;">
+                        <button type="button" style="width:30px; height:auto; border:none; background-color:transparent; padding-right:75px" onclick="MostrarBorrados()">
+                            <img src="AdminImages/papelera-de-reciclaje.png" style="width:30px; height:auto"/>
+                        </button>
+                    </div>
                     <div class="fila">
-                        <div class="celda2">
-                            <asp:Button class="btn btn-primary" ID="Nuevo" runat="server" Text="Nuevo" CausesValidation="false" OnClick="Nuevo_Click" /></div>
+                        <div class="celda2"><asp:Button class="btn btn-primary" ID="Nuevo" runat="server" Text="Nuevo" CausesValidation="false" OnClick="Nuevo_Click" /></div>
                         <div class="celda2"><asp:Button class="btn btn-success" ID="Guardar" runat="server" Text="Guardar" OnClick="Guardar_Click" OnClientClick="LoadingProcess();" CausesValidation="true" /></div>
-                        <div class="celda2">
-                            <asp:Button class="btn btn-danger" ID="Eliminar" runat="server" OnClientClick="LoadingProcess();" Text="Eliminar" OnClick="Eliminar_Click" CausesValidation="false" /></div>
+                        <div class="celda2"><asp:Button class="btn btn-danger" ID="Eliminar" runat="server" OnClientClick="LoadingProcess();" Text="Eliminar" OnClick="Eliminar_Click" CausesValidation="false" /></div>
                     </div>
                 </div>
                 <div class="container">
@@ -169,11 +173,42 @@
                     </div>
                 </div>
             </div>
-            <div id="formusuario">
+            <div id="formusuario" style="display:none">
                 
             </div>
-            <div id="formpedidos">
+            <div id="formpedidos" style="display:none">
 
+            </div>
+            <div id="formborrados" style="display:none; margin:auto; background-color:rgba(240, 248, 255, 0.6); width:65%; border-radius:2%; padding:20px; flex-wrap:wrap;">
+                <h2 style="margin:0 auto">Productos Eliminados</h2>
+                <br />
+                <div class="container">
+                    <div class="grid-container">
+                        <div class="table-responsive">
+                            <asp:GridView ID="GVProductBor" ClientIDMode="Static" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped" OnSelectedIndexChanged="grid_SelectedIndexChanged" DataKeyNames="Pro_ID">
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:CheckBox ID="CheckBoxSelect" runat="server" CssClass="checkGrid" ClientIDMode="Static" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="Pro_ID" HeaderText="ID"></asp:BoundField>
+                                    <asp:BoundField DataField="Pro_Nombre" HeaderText="Nombre"></asp:BoundField>
+                                    <asp:BoundField DataField="Pro_Descripcion" HeaderText="Descripcion"></asp:BoundField>
+                                    <asp:BoundField DataField="Pro_Precio" DataFormatString="{0:c}" HeaderText="Precio"></asp:BoundField>
+                                    <asp:ImageField DataImageUrlField="Pro_Imagen" HeaderText="Imagen" ControlStyle-Height="50px" ControlStyle-Width="50px"></asp:ImageField>
+                                    <asp:BoundField DataField="Pro_Stock" HeaderText="En Stock"></asp:BoundField>
+                                    <asp:BoundField DataField="Pro_Talla" HeaderText="Tallas"></asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="celda2"><asp:Button class="btn btn-primary" ID="Recuperar" runat="server" Text="Recuperar" CausesValidation="false" OnClientClick="LoadingProcess();" OnClick="Recuperar_Click" /></div>
+                    <div class="celda2"><asp:Button class="btn btn-danger" ID="Purgar" runat="server" Text="Eliminar" OnClientClick="LoadingProcess();" CausesValidation="false" OnClick="Purgar_Click" /></div>
+                    <div class="celda2"><button type="button" class="btn btn-danger" id="SelectAll" onclick="selectAllCheckboxes(this);" >Seleccionar todo</button></div>
+                </div>
             </div>
         <script type="text/javascript">
             window.onload = function () {
@@ -204,6 +239,50 @@
                 //document.getElementsByClassName('.loading-screen').style.display = 'block';
                 document.getElementById('Load').style.display = 'block';
             }
+            function ValidateInputFile(sender, args) {
+                var HFProduct = document.getElementById('<%= HFProducto.ClientID %>');
+                args.IsValid = HFProduct.value !== '';
+            }
+
+            function MostrarProductos() {
+                document.getElementById('formproductos').style.display = 'block';
+                document.getElementById('formusuario').style.display = 'none';
+                document.getElementById('formpedidos').style.display = 'none';
+
+            }
+
+            function MostrarUsuarios() {
+                document.getElementById('formproductos').style.display = 'none';
+                document.getElementById('formusuario').style.display = 'flex';
+                document.getElementById('formpedidos').style.display = 'none';
+            }
+
+            function MostrarPedidos() {
+                document.getElementById('formproductos').style.display = 'none';
+                document.getElementById('formusuario').style.display = 'none';
+                document.getElementById('formpedidos').style.display = 'flex';
+            }
+            function MostrarBorrados() {
+                document.getElementById('formproductos').style.display = 'none';
+                document.getElementById('formusuario').style.display = 'none';
+                document.getElementById('formpedidos').style.display = 'none';
+                document.getElementById('formborrados').style.display = 'flex';
+            }
+            function selectAllCheckboxes(source) {
+                // Get all checkboxes within the GridView using a wildcard selector for IDs containing "CheckBoxSelect"
+                var checkboxes = document.querySelectorAll('input[id*="CheckBoxSelect"]');
+
+                // Determine if we want to select or deselect all based on the current state of the button
+                var selectAll = source.textContent === "Seleccionar todo";
+
+                // Loop through each checkbox and set its checked property
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.checked = selectAll;
+                });
+
+                // Toggle the button text
+                source.textContent = selectAll ? "Deseleccionar todo" : "Seleccionar todo";
+            }
+
         </script>
-    <script src="AdminScripts/AdminScripts.js"></script>
 </asp:Content>
