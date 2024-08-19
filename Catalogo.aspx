@@ -1,7 +1,5 @@
-﻿<%@ Page Title="Catalogo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Catalogo.aspx.cs" Inherits="CodeProject.Catalogo" %>
+<%@ Page Title="Catalogo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Catalogo.aspx.cs" Inherits="CodeProject.Catalogo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-
     	<!--
   <script src="Scripts/CatalogoParametro.js"></script> 
 	-->
@@ -176,13 +174,5 @@
 </div>
 
 
-
-
-
-
-	
-	<!--ayudaaaaaa-->
-
-
-
+                                                
 </asp:Content>
