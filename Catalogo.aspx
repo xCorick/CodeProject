@@ -1,11 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Catalogo.aspx.cs" Inherits="CodeProject.WebForm1" %>
+﻿<%@ Page Title="Catalogo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Catalogo.aspx.cs" Inherits="CodeProject.Catalogo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-       <!DOCTYPE html>
 
-<html lan="en">
-<head>
-    <title>Inicio</title>
+    	<!--
+  <script src="Scripts/CatalogoParametro.js"></script> 
+	-->
 
     <link href="Estilos/CatalogoEstilo.css" rel="stylesheet" />
 
@@ -15,23 +14,22 @@
 
 
 
-    <script src="Scripts/CatalogoScript.js"></script>
-</head>
-<body>
+   <script src="Scripts/CatalogoScript.js"></script>
+
     
 	<div class="marco">
     <ul>
         <li>
-            <img src="imagenes/F1.2.jpg">
+            <img src="imagenes/F1.2.jpg"/>
         </li>
         <li>
-            <img src="imagenes/F4.2.jpg">
+            <img src="imagenes/F4.2.jpg"/>
        </li>
         <li>
-            <img src="imagenes/F10.2.jpeg">
+            <img src="imagenes/F10.2.jpeg"/>
         </li>
         <li>
-            <img src="imagenes/F9.2.jpg">
+            <img src="imagenes/F9.2.jpg"/>
         </li>
     </ul>
 </div>
@@ -63,33 +61,51 @@
 	<!--div style="margin-top:300px;"-->
 
 <div id="container">
-		<div id="slider-container">
-			<span onclick="slideRight()" class="btn"></span>
-			<div id="slider">
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/S2.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/FI2.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T4.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BP3.jpg" class="imagen" alt="BP3"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BPI2.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/L2.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T1.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/G4.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BI1.jpg" class="imagen" alt="img1"/></button></div>
-				<div class="slide"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen" alt="img1"/></button></div>
-			</div>
-			<span onclick="slideLeft()" class="btn"></span>
-		</div>
-	</div>
+    <div id="slider-container">
+        <span onclick="slideRight()" class="btn"></span>
+        <div id="slider">
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="imagenesProductos/bc9.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap1" />
+            </div>
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="imagenesProductos/bp6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap2" />
+            </div>
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="imagenesProductos/bc1.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="taqFut" />
+            </div>
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="imagenesProductos/PL6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="Unifem" />
+            </div>
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="imagenesProductos/PL4.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="Unifem6" />
+            </div>
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="imagenesProductos/bc3.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="UniFem4" />
+            </div>
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="imagenesProductos/G7.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap5" />
+            </div>
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="imagenesProductos/bc6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="UniFem2" />
+            </div>
+            <div class="slide">
+                <asp:ImageButton ID="ImageButton9" runat="server" ImageUrl="imagenesProductos/bc10.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="UniFem3" />
+            </div>
+        </div>
+        <span onclick="slideLeft()" class="btn"></span>
+    </div>
+</div>
+
+
    
-
-    <script src="Scripts/CatalogoScript.js"></script>
+	    <script src="Scripts/CatalogoScript.js"></script>
+    
 	
-
 	 <h1 style="position:absolute;top:1405px;font-family: Arial;left:90px;">El deporte para ti:</h1>
 
 	<div>
 		<div>
-				<div><button style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/futbol.png" class="imagenDep" style="right:65.5vw;border: 2px solid #333;" alt="img1"/></button></div>
+				<div><button  style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/futbol.png" class="imagenDep" style="right:65.5vw;border: 2px solid #333;" alt="img1"/></button></div>
 				<div><button style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/basquet.png" class="imagenDep" style="right:33.5vw;border: 2px solid #333;" alt="img1"/></button></div>
 				<div"><button style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/beisbol.png" class="imagenDep" style="right:2vw;border: 2px solid #333;" alt="img1"/></button></div>
 			</div>
@@ -119,30 +135,53 @@
 	   </div>
 		   
 
-	<div id="container2" style="margin-top:0px"> 
-		<div id="slider2-container2">
-			<span onclick="slideRight2()" class="btn2"></span>
-			<div id="slider2">
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/S2.jpg" class="imagen2" alt="img1"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/FI2.jpg" class="imagen2" alt="img1"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T4.jpg" class="imagen2" alt="img1"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BP3.jpg" class="imagen2" alt="BP3"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BPI2.jpg" class="imagen2" alt="img1"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/L2.jpg" class="imagen2" alt="img1"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/T1.jpg" class="imagen2" alt="img1"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/G4.jpg" class="imagen2" alt="img1"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/BI1.jpg" class="imagen2" alt="img1"/></button></div>
-				<div class="slide2"><button style="background-color: transparent; border: none; cursor: pointer;"><img src="imagenesProductos/C3.jpg" class="imagen2" alt="img1"/></button></div>
-			</div>
-			<span onclick="slideLeft2()" class="btn2"></span>
-		</div>
-	</div>
+		<h1 style="position:absolute;margin-top:25px;font-family: Arial;left:90px;">Diseñado ti:</h1>
+
+
+	<div id="container2">
+    <div id="slider-container2">
+        <span onclick="slideRight2()" class="btn2"></span>
+        <div id="slider2">
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="imagenesProductos/bc9.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap1" />
+            </div>
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="imagenesProductos/bp6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap2" />
+            </div>
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton12" runat="server" ImageUrl="imagenesProductos/bc1.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="taqFut" />
+            </div>
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton13" runat="server" ImageUrl="imagenesProductos/PL6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="Unifem" />
+            </div>
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton14" runat="server" ImageUrl="imagenesProductos/PL4.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="Unifem6" />
+            </div>
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton15" runat="server" ImageUrl="imagenesProductos/bc3.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="UniFem4" />
+            </div>
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton16" runat="server" ImageUrl="imagenesProductos/G7.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap5" />
+            </div>
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton17" runat="server" ImageUrl="imagenesProductos/bc6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="UniFem2" />
+            </div>
+            <div class="slide2">
+                <asp:ImageButton ID="ImageButton18" runat="server" ImageUrl="imagenesProductos/bc10.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="UniFem3" />
+            </div>
+        </div>
+        <span onclick="slideLeft2()" class="btn2"></span>
+    </div>
+        <script src="Scripts/CatalogoScript2.js"></script>     
+</div>
+
+
+
+
+
 
 	
-
-</body>
-</html>
-
+	<!--ayudaaaaaa-->
 
 
 
