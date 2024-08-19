@@ -1,4 +1,4 @@
-﻿var container = document.getElementById('container')
+var covar container = document.getElementById('container')
 var slider = document.getElementById('slider');
 var slides = document.getElementsByClassName('slide').length;
 var buttons = document.getElementsByClassName('btn');
