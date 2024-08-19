@@ -11,7 +11,7 @@
     <asp:Label ID="Pro_ID" runat="server" Text=""></asp:Label>
 
             <div class="product-details">
-                <asp:Image ID="Pro_Imagen" runat="server" ImageUrl="" AlternateText="Imagen del Producto" CssClass="product-image" />
+                <asp:Image ID="Pro_Imagen" runat="server" ImageUrl="imagenesProductos/NotFound.jpg" AlternateText="Imagen del Producto" CssClass="product-image" />
        
 
                 <div class="product-info">

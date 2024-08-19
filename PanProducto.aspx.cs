@@ -94,6 +94,7 @@ namespace CodeProject
                 using (SqlCommand comando = new SqlCommand("Ins_ListaCarrito", conn))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
+
                     comando.Parameters.Add("@LisCar_Cantidad", SqlDbType.Float).Value = cantidad;
                     comando.Parameters.Add("@LisCar_Precio", SqlDbType.Money).Value = precio;
                     comando.Parameters.Add("@LisCar_Descuento", SqlDbType.Money).Value = descuento;
