@@ -94,18 +94,17 @@ namespace CodeProject
                     using (SqlCommand comando = new SqlCommand("Ins_ListaCarrito", conn))
                     {
                         comando.CommandType = CommandType.StoredProcedure;
-                        comando.Parameters.Add("@LisCar_Cantidad", SqlDbType.Float).Value = cantidad;
-                        comando.Parameters.Add("@LisCar_Precio", SqlDbType.Money).Value = precio;
-                        comando.Parameters.Add("@LisCar_Descuento", SqlDbType.Money).Value = descuento;
-                        comando.Parameters.Add("@LisCar_ProID", SqlDbType.VarChar).Value = ProID;
-                        comando.Parameters.Add("@LisCar_CarritoID", SqlDbType.VarChar).Value = carritoid;
+                        comando.Parameters.AddWithValue("@LisCar_Cantidad", cantidad);
+                        comando.Parameters.AddWithValue("@LisCar_Precio", precio);
+                        comando.Parameters.AddWithValue("@LisCar_Descuento", descuento);
+                        comando.Parameters.AddWithValue("@LisCar_ProID", ProID);
+                        comando.Parameters.AddWithValue("@LisCar_CarritoID", carritoid);
 
                         conn.Open();
                         comando.ExecuteNonQuery();
                     }
                 }
 
-                // Mensaje de éxito, considera usar un control en lugar de Response.Write para una mejor experiencia de usuario.
                 Response.Write("Agregado al carrito");
 
         }

@@ -143,19 +143,19 @@
         <span onclick="slideRight2()" class="btn2"></span>
         <div id="slider2">
             <div class="slide2">
-                <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="imagenesProductos/bc9.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap1" />
+                <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="imagenesProductos/C3.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="caldep" />
             </div>
             <div class="slide2">
-                <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="imagenesProductos/bp6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap2" />
+                <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="imagenesProductos/G4.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="gorra" />
             </div>
             <div class="slide2">
-                <asp:ImageButton ID="ImageButton12" runat="server" ImageUrl="imagenesProductos/bc1.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="taqFut" />
+                <asp:ImageButton ID="ImageButton12" runat="server" ImageUrl="imagenesProductos/BPI2.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="unibas" />
             </div>
             <div class="slide2">
                 <asp:ImageButton ID="ImageButton13" runat="server" ImageUrl="imagenesProductos/PL6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="Unifem" />
             </div>
             <div class="slide2">
-                <asp:ImageButton ID="ImageButton14" runat="server" ImageUrl="imagenesProductos/PL4.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="Unifem6" />
+                <asp:ImageButton ID="ImageButton14" runat="server" ImageUrl="imagenesProductos/FI2.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="Unifut" />
             </div>
             <div class="slide2">
                 <asp:ImageButton ID="ImageButton15" runat="server" ImageUrl="imagenesProductos/bc3.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="UniFem4" />
