@@ -15,6 +15,8 @@
                     <Columns>
                        <asp:BoundField DataField="LisCar_ProID" HeaderText="ID">
                             <ItemStyle Width="120px"></ItemStyle>
+                           <asp:ImageField DataImageUrlField="Pro_Imagen" HeaderText="Imagen" ControlStyle-Height="50px" ControlStyle-Width="50px"></asp:ImageField>
+                           <ItemStyle Width="300px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="Pro_Nombre" HeaderText="Producto">
                             <ItemStyle Width="150px"></ItemStyle>
