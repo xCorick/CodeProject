@@ -24,7 +24,7 @@
 
                         <div class="container-add-cart">
                             <div class="container-quantity">
-                                <asp:TextBox ID="Pro_Cantidad" runat="server" Text="1" CssClass="input-quantity" />
+                                <asp:TextBox ID="Pro_Cantidad" runat="server" Text="1" CssClass="input-quantity" />  <!-- Cantidad -->
                             </div>
                             <asp:Button ID="Bot_PaCarrito" OnClick="AgreCarrito_Click" runat="server" Text="Agregar a carrito" />
                       

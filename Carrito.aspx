@@ -20,10 +20,10 @@
                             <ItemStyle Width="150px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="Pro_Precio" DataFormatString="{0:c}" HeaderText="Precio">
-                            <ItemStyle Width="80px"></ItemStyle>
+                            <ItemStyle Width="90px"></ItemStyle>
                         </asp:BoundField>
                          <asp:BoundField DataField="LisCar_Descuento" DataFormatString="{0:c}" HeaderText="Descuento">
-                            <ItemStyle Width="80px"></ItemStyle>
+                            <ItemStyle Width="100px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="LisCar_Cantidad" DataFormatString="{0}" HeaderText="Cantidad"><ItemStyle Width="90px"></ItemStyle></asp:BoundField>
                                            
