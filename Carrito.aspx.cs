@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
@@ -18,25 +18,23 @@ namespace CodeProject
        
         //public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
 
-        protected void Page_Load(object sender, EventArgs e, string CarritoID)
+        protected void Page_Load(object sender, EventArgs e)
         {
 
 
             Usuario usu = (Usuario)Session["User"];
             if (usu == null)
             {
-                Response.Redirect("Catalogo.aspx");
+                Response.Redirect("Login.aspx");
             }
             else
             {
-                string correoUsuario = usu.Correo;
-
-                CargarCarrito(correoUsuario);
+                
             }
 
+            string carritoID = Session["CarritoUsu"] as string;
 
-
-            LlenarGrid(CarritoID);
+            LlenarGrid(carritoID);
 
         }
 
@@ -110,47 +108,7 @@ namespace CodeProject
             string id = Session["CarritoUsu"].ToString();
             string clave = GridView.Rows[GridView.SelectedRow.RowIndex].Cells[0].Text;
             EliminarPro(id, clave);
-        }
-
-
-        void CargarCarrito(string CorreoUsuario)
-        {
-           
-            SqlConnection conn = new SqlConnection(Conector.strConexion);
-            SqlCommand comando = new SqlCommand();
-            if (conn.State == 0)
-            {
-                conn.Open();
-            }
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "Pa_CarritoID";
-            comando.Parameters.AddWithValue("@Car_CliCorreo", CorreoUsuario);
-
-
-            SqlParameter outputParam = new SqlParameter("@CarritoID", SqlDbType.VarChar, 10)
-            {
-                Direction = ParameterDirection.Output
-            };
-            comando.Parameters.Add(outputParam);
-
-            conn.Open();
-            comando.ExecuteNonQuery();
-
-           
-            string CarritoID = outputParam.Value.ToString();
-    
-
-            Session["CarritoUsu"] = CarritoID;
-        }
-
-        public string CorreoUsuarioa()
-        {
-            Usuario usu = (Usuario)Session["User"];
-
-                string correoUsuario = usu.Correo;
-
-                return correoUsuario;
-
+            
         }
     }
 }

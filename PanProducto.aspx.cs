@@ -54,7 +54,7 @@ namespace CodeProject
 
                     if (datos.Rows.Count > 0)
                     {
-                        Pro_ID.Text = datos.Rows[0]["Pro_ID"].ToString();
+                        
                         Pro_Nombre.Text = datos.Rows[0]["Pro_Nombre"].ToString();
                         Pro_Descripcion.Text = datos.Rows[0]["Pro_Descripcion"].ToString();
                         Pro_Precio.Text = Convert.ToDouble(datos.Rows[0]["Pro_Precio"]).ToString("N");
@@ -87,7 +87,7 @@ namespace CodeProject
             double precio = Convert.ToDouble(Pro_Precio.Text);
             double descuento = 0;
             string ProID = Session["Pro_ID"] as string;
-            string carritoid = Session["CarritoUsu"].ToString();
+            string carritoid = Session["CarritoUsu"] as string; ;
 
             using (SqlConnection conn = new SqlConnection(Conector.strConexion))
             {
