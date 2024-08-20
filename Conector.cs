@@ -14,6 +14,8 @@ namespace CodeProject
         //public static string strConexion = "user id=Corick_SQLLogin_1; password=46xqzadbj5; server=CarrilloShop.mssql.somee.com; database=CarrilloShop";
         //public static string strConnection = "user id=sa; password=DESKTOP-3A3O483\\SQLEXPRESS; server=.; database=CarrilloShop";
         //public static string strConexion = "user id=sa; password=uts; server=CORICKGS\\SQLEXPRESS; database=CarrilloShop";
+        //public static string strConexion = "server=DESKTOP-3A3O483\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
+        public static string strConexion = "server=CORICKGS\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
         //public static string strConexion = "server=CORICKGS\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
         //public static string strConexion = "user id=sa;password=Omega928117B312@;server=localhost,1433;database=CarrilloShop;Integrated Security=False;";
 
