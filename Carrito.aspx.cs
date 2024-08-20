@@ -20,7 +20,7 @@ namespace CodeProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ClaseCarrito carrito = Session["CarritoUsu"] as ClaseCarrito;
 
             Usuario usu = (Usuario)Session["User"];
             if (usu == null)
@@ -32,9 +32,9 @@ namespace CodeProject
                 
             }
 
-            string carritoID = Session["CarritoUsu"] as string;
+            string CarritoID = carrito.CarritoID;
 
-            LlenarGrid(carritoID);
+            LlenarGrid(CarritoID);
 
         }
 
@@ -105,7 +105,8 @@ namespace CodeProject
 
         protected void grid_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id = Session["CarritoUsu"].ToString();
+            ClaseCarrito carrito = Session["CarritoUsu"] as ClaseCarrito;
+            string id = carrito.CarritoID;
             string clave = GridView.Rows[GridView.SelectedRow.RowIndex].Cells[0].Text;
             EliminarPro(id, clave);
             

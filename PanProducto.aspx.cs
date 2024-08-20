@@ -19,7 +19,7 @@ namespace CodeProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ClaseCarrito carrito = Session["CarritoUsu"] as ClaseCarrito;
 
             if (Request.QueryString["id"] != null)
             {
@@ -82,13 +82,21 @@ namespace CodeProject
 
         protected void AgreCarrito_Click(object sender, EventArgs e)
         {
+
             Usuario usu = (Usuario)Session["User"];
+
             if (usu == null)
             {
                 Response.Redirect("Login.aspx");
             }
             else
             {
+
+                ClaseCarrito carrito = Session["CarritoUsu"] as ClaseCarrito;
+
+                   string carro = carrito.CarritoID;
+                
+
                 double cantidad = Convert.ToDouble(Pro_Cantidad.Text);
                 double precio = Convert.ToDouble(Pro_Precio.Text);
                 double descuento = 0;
@@ -109,11 +117,11 @@ namespace CodeProject
                     {
                         comando.CommandType = CommandType.StoredProcedure;
 
-                        comando.Parameters.Add("@LisCar_Cantidad", SqlDbType.Float).Value = cantidad;
-                        comando.Parameters.Add("@LisCar_Precio", SqlDbType.Money).Value = precio;
-                        comando.Parameters.Add("@LisCar_Descuento", SqlDbType.Money).Value = descuento;
-                        comando.Parameters.Add("@LisCar_ProID", SqlDbType.VarChar).Value = ProID;
-                        comando.Parameters.Add("@LisCar_CarritoID", SqlDbType.VarChar).Value = carritoid;
+                        comando.Parameters.AddWithValue("@Lis_CarCantidad", cantidad);
+                        comando.Parameters.AddWithValue("@LisCar_PrecioProducto", precio);
+                        comando.Parameters.AddWithValue("@LisCar_Descuento", descuento);
+                        comando.Parameters.AddWithValue("@LisCar_ProID", ProID);
+                        comando.Parameters.AddWithValue("@LisCar_carritoID", carro);
 
                         conn.Open();
                         comando.ExecuteNonQuery();

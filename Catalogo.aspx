@@ -63,7 +63,7 @@
         <span onclick="slideRight()" class="btn"></span>
         <div id="slider">
             <div class="slide">
-                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="imagenesProductos/bc9.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap1" />
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="imagenesProductos/bc9.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="1001123" />
             </div>
             <div class="slide">
                 <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="imagenesProductos/bp6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap2" />
