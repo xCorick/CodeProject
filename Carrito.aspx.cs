@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
@@ -13,7 +13,7 @@ namespace CodeProject
     public partial class Carrito : System.Web.UI.Page
     {
         //string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
-        public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
+        //public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
       
        
         //public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
@@ -50,7 +50,7 @@ namespace CodeProject
             */
            
 
-            SqlConnection conn = new SqlConnection(strConexion);
+            SqlConnection conn = new SqlConnection(Conector.strConexion);
             SqlCommand comando = new SqlCommand();
             SqlDataAdapter adaptador = new SqlDataAdapter();
             DataTable datos = new DataTable();
@@ -76,7 +76,7 @@ namespace CodeProject
 
         void EliminarPro(string CarritoID, string clave)
         {
-            SqlConnection conn = new SqlConnection(strConexion);
+            SqlConnection conn = new SqlConnection(Conector.strConexion);
 
 
             using (SqlCommand comando = new SqlCommand("Carrito", conn))
@@ -108,9 +108,7 @@ namespace CodeProject
             string id = Session["CarritoUsu"].ToString();
             string clave = GridView.Rows[GridView.SelectedRow.RowIndex].Cells[0].Text;
             EliminarPro(id, clave);
+            
         }
-
-
-      
     }
 }

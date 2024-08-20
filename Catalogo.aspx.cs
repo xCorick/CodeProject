@@ -16,17 +16,7 @@ namespace CodeProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario usu = (Usuario)Session["User"];
 
-            string correoUsuario = usu.Correo;
-
-            CargarCarrito(correoUsuario);
-
-
-            if (IsPostBack)
-            {
-
-            }
         }
 
         protected void ImageButton_Click(object sender, ImageClickEventArgs e)
