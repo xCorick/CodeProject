@@ -32,7 +32,7 @@ namespace CodeProject
                 
             }
 
-            string carritoID = Session["CarritoUsu"];
+            string carritoID = Session["CarritoUsu"] as string;
 
             LlenarGrid(carritoID);
 

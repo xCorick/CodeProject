@@ -87,7 +87,7 @@ namespace CodeProject
             double precio = Convert.ToDouble(Pro_Precio.Text);
             double descuento = 0;
             string ProID = Session["Pro_ID"] as string;
-            string carritoid = Session["CarritoUsu"].ToString();
+            string carritoid = Session["CarritoUsu"] as string; ;
 
             using (SqlConnection conn = new SqlConnection(strConexion))
             {
