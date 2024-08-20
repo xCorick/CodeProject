@@ -27,7 +27,10 @@ namespace CodeProject
             var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "Pa_CarritoID", "@Car_CliCorreo", correo);
             string idCarrito = datos.Rows[0].ItemArray[0].ToString();
 
-            Session["CarritoUsu"] = CarritoID;
+            ClaseCarrito carrito = new ClaseCarrito(datos.Rows[0].ItemArray[0].ToString());
+
+
+            Session["CarritoUsu"] = carrito;
         }
 
 
