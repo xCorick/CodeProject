@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -23,29 +24,8 @@ namespace CodeProject
 
         void CargarCarrito(string correo)
         {
-            SqlConnection conn = new SqlConnection(Conector.strConexion);
-            SqlCommand comando = new SqlCommand();
-            if (conn.State == 0)
-            {
-                conn.Open();
-            }
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "Pa_CarritoID";
-            comando.Parameters.AddWithValue("@Car_CliCorreo", correo);
-
-
-            SqlParameter outputParam = new SqlParameter("@CarritoID", SqlDbType.VarChar, 10)
-            {
-                Direction = ParameterDirection.Output
-            };
-            comando.Parameters.Add(outputParam);
-
-            conn.Open();
-            comando.ExecuteNonQuery();
-
-
-            string CarritoID = outputParam.Value.ToString();
-
+            var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "Pa_CarritoID", "@Car_CliCorreo", correo);
+            string idCarrito = datos.Rows[0].ItemArray[0].ToString();
 
             Session["CarritoUsu"] = CarritoID;
         }
