@@ -6,51 +6,75 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.Ajax.Utilities;
 
 namespace CodeProject
 {
     public partial class Carrito : System.Web.UI.Page
     {
         //string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
-        //public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
-        //string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
-
-        public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
+        public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
+      
+       
+        //public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            Usuario usuario = (Usuario)Session["user"];
-            if (usuario == null)
+
+
+            Usuario usu = (Usuario)Session["User"];
+            if (usu == null)
             {
                 Response.Redirect("Catalogo.aspx");
             }
-            */
+            else
+            {
+                string correoUsuario = usu.Correo;
+            }
 
-            LlenarGrid();
+            LlenarGrid(CarritoID);
+
         }
 
 
-        void LlenarGrid()
+        void LlenarGrid(string CarritoID)
         {
+            /*
             var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "LlenarListaCarrito", "@LisCar_carritoID", "7DB72A33-2");
 
             GridView.DataSource = datos;
             GridView.DataBind();
             conn.Close();
+            */
+           
+
+            SqlConnection conn = new SqlConnection(strConexion);
+            SqlCommand comando = new SqlCommand();
+            SqlDataAdapter adaptador = new SqlDataAdapter();
+            DataTable datos = new DataTable();
+
+            if (conn.State == 0)
+            {
+                conn.Open();
+                comando.Connection = conn;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("@LisCar_CarritoID", SqlDbType.VarChar).Value = CarritoID;
+                comando.CommandText = "LlenarListaCarrito";
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(datos);
+                GridView.DataSource = datos;
+                GridView.DataBind();
+                conn.Close();
+            }
         }
 
 
 
 
 
-
-
-        void EliminarPro(string clave)
+        void EliminarPro(string CarritoID, string clave)
         {
             SqlConnection conn = new SqlConnection(strConexion);
-
-            string carritoid = "7DB72A33-2";
 
 
             using (SqlCommand comando = new SqlCommand("Carrito", conn))
@@ -62,14 +86,14 @@ namespace CodeProject
 
 
 
-                comando.Parameters.Add("@LisCar_CarritoID", SqlDbType.VarChar).Value = carritoid;
+                comando.Parameters.Add("@LisCar_CarritoID", SqlDbType.VarChar).Value = CarritoID;
 
                 comando.Parameters.Add("@LisCar_ProID", SqlDbType.VarChar).Value = clave;
 
                 comando.ExecuteNonQuery();
                 conn.Close();
                 Response.Write("<script>alert('C fue')</script>");
-                LlenarGrid();
+                LlenarGrid(CarritoID);
 
             }
 
@@ -84,8 +108,9 @@ namespace CodeProject
         }
 
 
-        void CargarCarrito(string Correo)
+        void CargarCarrito(string CorreoUsuario)
         {
+           
             SqlConnection conn = new SqlConnection(strConexion);
             SqlCommand comando = new SqlCommand();
             if (conn.State == 0)
@@ -94,20 +119,29 @@ namespace CodeProject
             }
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "Pa_CarritoID";
-            comando.Parameters.AddWithValue("@Car_CliCorreo", Correo);
+            comando.Parameters.AddWithValue("@Car_CliCorreo", CorreoUsuario);
+
+
+            SqlParameter outputParam = new SqlParameter("@CarritoID", SqlDbType.VarChar, 10)
+            {
+                Direction = ParameterDirection.Output
+            };
+            comando.Parameters.Add(outputParam);
+
+            conn.Open();
             comando.ExecuteNonQuery();
 
-            conn.Close();
-
+           
+            string CarritoID = outputParam.Value.ToString();
         }
 
         public string CorreoUsuarioa()
         {
-            string Correo = "alexgrijalva@gmail.com";
-            return Correo;
+            Usuario usu = (Usuario)Session["User"];
 
-            //Variable de session user
+                string correoUsuario = usu.Correo;
+
+                return correoUsuario;
         }
-
     }
 }
