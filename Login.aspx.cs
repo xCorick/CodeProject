@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,6 +20,40 @@ namespace CodeProject
             }
         }
 
+
+        void CargarCarrito(string correo)
+        {
+            SqlConnection conn = new SqlConnection(Conector.strConexion);
+            SqlCommand comando = new SqlCommand();
+            if (conn.State == 0)
+            {
+                conn.Open();
+            }
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "Pa_CarritoID";
+            comando.Parameters.AddWithValue("@Car_CliCorreo", correo);
+
+
+            SqlParameter outputParam = new SqlParameter("@CarritoID", SqlDbType.VarChar, 10)
+            {
+                Direction = ParameterDirection.Output
+            };
+            comando.Parameters.Add(outputParam);
+
+            conn.Open();
+            comando.ExecuteNonQuery();
+
+
+            string CarritoID = outputParam.Value.ToString();
+
+
+            Session["CarritoUsu"] = CarritoID;
+        }
+
+
+
+
+
         protected void Entrar_Click(object sender, EventArgs e)
         {
             var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "Bus_Usuario", "@Usu_Correo", Convert.ToString(inputcorreo.Value));
@@ -29,16 +64,30 @@ namespace CodeProject
                     datos.Rows[0].ItemArray[1].ToString(),
                     Convert.ToBoolean(datos.Rows[0].ItemArray[2]), datos.Rows[0].ItemArray[3].ToString());
 
+                     
+
                 if (Convert.ToString(inputcorreo.Value) == usu.Correo && Convert.ToString(inputpassword.Value) == usu.PassworD)
                 {
                     //lb_mensaje.Text = "Todo un sigma";
                     Session["user"] = usu;
+
+                    string correo = usu.Correo.ToString();
+
+                    CargarCarrito(correo);
+
+
                     Response.Redirect("Default.aspx");
+
                 }
                 else
                 {
                     Response.Write("<script>alert('No existe el usuario')</script>");
                 }
+
+
+
+
+
             }
             else
             {
@@ -48,5 +97,7 @@ namespace CodeProject
 
  
         }
+
+
     }
 }
