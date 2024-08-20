@@ -14,7 +14,7 @@
 
    <script src="Scripts/CatalogoScript.js"></script>
 
-    
+    <!--
 	<div class="marco">
     <ul>
         <li>
@@ -31,18 +31,38 @@
         </li>
     </ul>
 </div>
+    -->
+    	<div class="marco">
+    <ul>
+        <li>
+            <img src="imagenes/1.png"/>
+        </li>
+        <li>
+            <img src="imagenes/5.png"/>
+       </li>
+        <li>
+            <img src="imagenes/3.png"/>
+        </li>
+        <li>
+            <img src="imagenes/4.png"/>
+        </li>
+    </ul>
+</div>
+        
+
+
 
 	<!--
 	<div>
 	<img  src="imagenes/InicioFoto.png"; style="position:absolute;margin:auto;margin-top:-15px;left:0px;width:100%;height:575px;"/>
 	</div>
-    -->
+    
 
 
 	<h1 class="letras">Equipando tus victorias, <br />vistiendo tus sueños</h1>
 
 
-	<!--
+	
 		<h2 class="anuncio">Entra en accion con los productos mas nuevos</h2>
 		
 			<button>Compra Ahora</button>
@@ -63,13 +83,13 @@
         <span onclick="slideRight()" class="btn"></span>
         <div id="slider">
             <div class="slide">
-                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="imagenesProductos/bc9.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="1001123" />
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="https://res.cloudinary.com/dj4vhebsj/image/upload/v1724177831/aavjumygsdqbxasc19ru.webp" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="1001123" />
             </div>
             <div class="slide">
-                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="imagenesProductos/bp6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="cap2" />
+                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="https://res.cloudinary.com/dj4vhebsj/image/upload/v1724177025/ospm5mzwncw0itiq1ny2.png" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="1003234" />
             </div>
             <div class="slide">
-                <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="imagenesProductos/bc1.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="taqFut" />
+                <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="https://res.cloudinary.com/dj4vhebsj/image/upload/v1724176666/xmwhmg2nb2iczuuyno6v.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="2023459" />
             </div>
             <div class="slide">
                 <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="imagenesProductos/PL6.jpg" CssClass="imagenButton" OnClick="ImageButton_Click" CommandArgument="Unifem" />
