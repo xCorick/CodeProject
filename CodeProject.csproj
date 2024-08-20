@@ -186,7 +186,9 @@
     <Content Include="AdminImages\papelera-de-reciclaje.png" />
     <Content Include="AdminPage.aspx" />
     <Content Include="AdminScripts\AdminScripts.js" />
+    <Content Include="Busqueda.aspx" />
     <Content Include="Carrito.aspx" />
+    <Content Include="Catalogo.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -216,6 +218,7 @@
     <Content Include="Estilos\MapStyle.css" />
     <Content Include="Estilos\styles.css" />
     <Content Include="Estilos\TermsStyle.css" />
+    <Content Include="Estilos\VerProducto.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background\About.png" />
@@ -367,10 +370,10 @@
     <Content Include="lib\twitter-bootstrap\scss\mixins\_visually-hidden.scss" />
     <Content Include="lib\twitter-bootstrap\scss\utilities\_api.scss" />
     <Content Include="lib\twitter-bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="PanProducto.aspx" />
     <Content Include="Privacity.aspx" />
     <Content Include="RecoveryPass.aspx" />
     <Content Include="Scripts\AlbumScript.js" />
-    <Content Include="Catalogo.aspx" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -380,6 +383,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\CatalogoScript.js" />
     <Content Include="WebForm2.aspx" />
+    <Content Include="Scripts\CatalogoScript2.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -435,12 +439,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="A_Conector.cs" />
+    <Compile Include="Busqueda.aspx.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Busqueda.aspx.designer.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Carrito.aspx.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo.aspx.cs">
+      <DependentUpon>Catalogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo.aspx.designer.cs">
+      <DependentUpon>Catalogo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Conector.cs" />
     <Compile Include="Contact.aspx.cs">
@@ -466,6 +484,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PanProducto.aspx.cs">
+      <DependentUpon>PanProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanProducto.aspx.designer.cs">
+      <DependentUpon>PanProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Privacity.aspx.cs">
       <DependentUpon>Privacity.aspx</DependentUpon>
@@ -511,13 +536,6 @@
       <DependentUpon>Terms.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
-    <Compile Include="Catalogo.aspx.cs">
-      <DependentUpon>Catalogo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Catalogo.aspx.designer.cs">
-      <DependentUpon>Catalogo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -599,7 +617,7 @@
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>

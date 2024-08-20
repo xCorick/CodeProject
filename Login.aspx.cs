@@ -45,6 +45,8 @@ namespace CodeProject
                 Response.Write("<script>alert('No existe el usuario')</script>");
             }
             conn.Close();
+
+ 
         }
     }
 }
