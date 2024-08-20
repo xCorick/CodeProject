@@ -9,7 +9,7 @@
     <meta name="description" content=""/>
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors"/>
     <meta name="generator" content="Hugo 0.84.0"/>
-    <title>Carousel Template · Bootstrap v5.0</title>
+    <title>Inicio</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/"/>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/"/>
       
@@ -44,6 +44,28 @@
           font-size: 3.5rem;
         }
       }
+.col-md-4 {
+    max-width: 33.33%; /* Ocupa un tercio del ancho total */
+    flex: 0 0 33.33%; /* Asegura que cada columna ocupe un tercio del ancho */
+}
+
+.card {
+    height: 500px; /* Aumenta la altura de la tarjeta si lo deseas */
+}
+
+.card-img-top {
+    height: 300px; /* Aumenta la altura de la imagen */
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 250px); /* Ajusta la altura del cuerpo de la tarjeta según la nueva altura de la imagen */
+}
+
+
     </style>
 
     
@@ -51,7 +73,6 @@
     <link href="carousel.css" rel="stylesheet"/>
   </head>
   <body>
-    
 <main>
 <div class="container-fluid">
    <div class="row">
@@ -106,9 +127,7 @@
       </div>
    </div>
 </div>
-
-</div>
-
+ </main>
     <br />
 
   <!-- Marketing messaging and featurettes
@@ -167,58 +186,11 @@
 
                 <div class="row">
                     <!-- Card 1 -->
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="https://i.pinimg.com/564x/81/12/7f/81127f158d257592f62f3a917112871b.jpg" alt="Card image cap" data-image="https://i.pinimg.com/564x/81/12/7f/81127f158d257592f62f3a917112871b.jpg"/>
-                            <div class="card-body">
-                                <p class="card-text">This is another card with different content.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161" alt="Card image cap" data-image="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161">
-                            <div class="card-body">
-                                <p class="card-text">This is another card with different content.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
-                                    </div>
-                                    <small class="text-muted">10 mins</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Card 3 -->
-                     <div class="col-md-4">
+                      <div class="col-md-4">
                          <div class="card mb-4 box-shadow">
-                             <img class="card-img-top" src="https://i.pinimg.com/564x/81/12/7f/81127f158d257592f62f3a917112871b.jpg" alt="Card image cap" data-image="https://i.pinimg.com/564x/81/12/7f/81127f158d257592f62f3a917112871b.jpg"/>
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
                              <div class="card-body">
-                                 <p class="card-text">This is another card with different content.</p>
-                                 <div class="d-flex justify-content-between align-items-center">
-                                     <div class="btn-group">
-                                         <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
-                                         <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
-                                     </div>
-                                     <small class="text-muted">9 mins</small>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <!-- Card 4 -->
-                     <div class="col-md-4">
-                         <div class="card mb-4 box-shadow">
-                             <img class="card-img-top" src="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161" alt="Card image cap" data-image="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161"/>
-                             <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField1" runat="server" />
                                  <p class="card-text">This is another card with different content.</p>
                                  <div class="d-flex justify-content-between align-items-center">
                                      <div class="btn-group">
@@ -229,28 +201,81 @@
                                  </div>
                              </div>
                          </div>
-                     </div>
+                        </div>
+                    <!-- Card 2 -->
+                         <div class="col-md-4">
+                             <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
+                                 <div class="card-body">
+                                     <asp:HiddenField ID="HiddenField2" runat="server" />
+                                     <p class="card-text">This is another card with different content.</p>
+                                     <div class="d-flex justify-content-between align-items-center">
+                                         <div class="btn-group">
+                                             <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
+                                             <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
+                                         </div>
+                                         <small class="text-muted">10 mins</small>
+                                     </div>
+                                 </div>
+                             </div>
+                           </div>
+                     <!-- Card 3 -->
+                         <div class="col-md-4">
+                             <div class="card mb-4 box-shadow">
+                                 <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
+                                 <div class="card-body">
+                                     <asp:HiddenField ID="HiddenField3" runat="server" />
+                                     <p class="card-text">This is another card with different content.</p>
+                                     <div class="d-flex justify-content-between align-items-center">
+                                         <div class="btn-group">
+                                             <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
+                                             <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
+                                         </div>
+                                         <small class="text-muted">10 mins</small>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                     <!-- Card 4 -->
+                          <div class="col-md-4">
+                             <div class="card mb-4 box-shadow">
+                                 <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
+                                 <div class="card-body">
+                                     <asp:HiddenField ID="HiddenField4" runat="server" />
+                                     <p class="card-text">This is another card with different content.</p>
+                                     <div class="d-flex justify-content-between align-items-center">
+                                         <div class="btn-group">
+                                             <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
+                                             <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
+                                         </div>
+                                         <small class="text-muted">10 mins</small>
+                                     </div>
+                                 </div>
+                             </div>
+                            </div>
                      <!-- Card 5 -->
                      <div class="col-md-4">
                          <div class="card mb-4 box-shadow">
-                             <img class="card-img-top" src="https://i.pinimg.com/564x/81/12/7f/81127f158d257592f62f3a917112871b.jpg" alt="Card image cap" data-image="https://i.pinimg.com/564x/81/12/7f/81127f158d257592f62f3a917112871b.jpg"/>
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
                              <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField5" runat="server" />
                                  <p class="card-text">This is another card with different content.</p>
                                  <div class="d-flex justify-content-between align-items-center">
                                      <div class="btn-group">
                                          <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
                                          <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
                                      </div>
-                                     <small class="text-muted">9 mins</small>
+                                     <small class="text-muted">10 mins</small>
                                  </div>
                              </div>
                          </div>
-                     </div>
+                        </div>
                      <!-- Card 6 -->
                      <div class="col-md-4">
                          <div class="card mb-4 box-shadow">
-                             <img class="card-img-top" src="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161" alt="Card image cap" data-image="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161"/>
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
                              <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField6" runat="server" />
                                  <p class="card-text">This is another card with different content.</p>
                                  <div class="d-flex justify-content-between align-items-center">
                                      <div class="btn-group">
@@ -265,8 +290,9 @@
                      <!-- Card 7 -->
                      <div class="col-md-4">
                          <div class="card mb-4 box-shadow">
-                             <img class="card-img-top" src="https://i.pinimg.com/564x/81/12/7f/81127f158d257592f62f3a917112871b.jpg" alt="Card image cap" data-image="https://i.pinimg.com/564x/81/12/7f/81127f158d257592f62f3a917112871b.jpg"/>
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
                              <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField7" runat="server" />
                                  <p class="card-text">This is another card with different content.</p>
                                  <div class="d-flex justify-content-between align-items-center">
                                      <div class="btn-group">
@@ -281,8 +307,9 @@
                      <!-- Card 8 -->
                      <div class="col-md-4">
                          <div class="card mb-4 box-shadow">
-                             <img class="card-img-top" src="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161" alt="Card image cap" data-image="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161"/>
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
                              <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField8" runat="server" />
                                  <p class="card-text">This is another card with different content.</p>
                                  <div class="d-flex justify-content-between align-items-center">
                                      <div class="btn-group">
@@ -295,21 +322,90 @@
                          </div>
                      </div>
                     <!-- Card 9 -->
-                    <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161" alt="Card image cap" data-image="https://www.united-vintage.com/cdn/shop/files/PPmemoire-Grande_1_1024x1024.jpg?v=1709202161"/>
-                        <div class="card-body">
-                            <p class="card-text">This is another card with different content.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
-                                </div>
-                                <small class="text-muted">10 mins</small>
+             <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
+                    <div class="card-body">
+                        <asp:HiddenField ID="HiddenField9" runat="server" />
+                        <p class="card-text">This is another card with different content.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
                             </div>
+                            <small class="text-muted">9 mins</small>
                         </div>
                     </div>
                 </div>
+            </div>
+
+                     <div class="col-md-4">
+                         <div class="card mb-4 box-shadow">
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
+                             <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField10" runat="server" />
+                                 <p class="card-text">This is another card with different content.</p>
+                                 <div class="d-flex justify-content-between align-items-center">
+                                     <div class="btn-group">
+                                         <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
+                                         <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
+                                     </div>
+                                     <small class="text-muted">10 mins</small>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                                         <div class="col-md-4">
+                         <div class="card mb-4 box-shadow">
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
+                             <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField11" runat="server" />
+                                 <p class="card-text">This is another card with different content.</p>
+                                 <div class="d-flex justify-content-between align-items-center">
+                                     <div class="btn-group">
+                                         <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
+                                         <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
+                                     </div>
+                                     <small class="text-muted">10 mins</small>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                                         <div class="col-md-4">
+                         <div class="card mb-4 box-shadow">
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
+                             <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField12" runat="server" />
+                                 <p class="card-text">This is another card with different content.</p>
+                                 <div class="d-flex justify-content-between align-items-center">
+                                     <div class="btn-group">
+                                         <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
+                                         <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
+                                     </div>
+                                     <small class="text-muted">10 mins</small>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                                         <div class="col-md-4">
+                         <div class="card mb-4 box-shadow">
+                             <img class="card-img-top" src="" alt="Card image cap" data-image=""/>
+                             <div class="card-body">
+                                 <asp:HiddenField ID="HiddenField13" runat="server" />
+                                 <p class="card-text">This is another card with different content.</p>
+                                 <div class="d-flex justify-content-between align-items-center">
+                                     <div class="btn-group">
+                                         <button type="button" class="btn btn-sm btn-outline-secondary showImageBtn">Ver</button>
+                                         <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carrito</button>
+                                     </div>
+                                     <small class="text-muted">10 mins</small>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
                 </div>
             </div>
         </div>
@@ -330,14 +426,44 @@
                 </div>
             </div>
         </div>
-
-    </main>
-
+</main>
+  
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+      <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              // Obtener todas las imágenes y los HiddenField
+              const images = document.querySelectorAll(".card-img-top");
+              const hiddenFields = document.querySelectorAll("input[type='hidden']");
+
+              // Iterar sobre las imágenes y actualizar sus src con los valores de los HiddenField
+              images.forEach((img, index) => {
+                  const hiddenField = hiddenFields[index];
+                  if (hiddenField && hiddenField.value) {
+                      img.src = hiddenField.value;
+                  }
+              });
+
+              // Añadir evento a los botones para mostrar las imágenes
+              const showImageBtns = document.querySelectorAll(".showImageBtn");
+              showImageBtns.forEach((button, index) => {
+                  button.addEventListener("click", function () {
+                      const hiddenField = hiddenFields[index];
+                      if (hiddenField && hiddenField.value) {
+                          img.src = hiddenField.value;
+                      }
+                  });
+              });
+          });
+
+
+      </script>
+
 
   </body>
 </html>
