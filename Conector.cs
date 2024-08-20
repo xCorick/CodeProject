@@ -15,12 +15,10 @@ namespace CodeProject
         //public static string strConnection = "user id=sa; password=DESKTOP-3A3O483\\SQLEXPRESS; server=.; database=CarrilloShop";
         //public static string strConexion = "user id=sa; password=uts; server=CORICKGS\\SQLEXPRESS; database=CarrilloShop";
         //public static string strConexion = "server=DESKTOP-3A3O483\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
-        public static string strConexion = "server=CORICKGS\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
+        //public static string strConexion = "server=CORICKGS\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
         //public static string strConexion = "server=CORICKGS\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
         //public static string strConexion = "user id=sa;password=Omega928117B312@;server=localhost,1433;database=CarrilloShop;Integrated Security=False;";
-
         //public static string strConexion = "server=DESKTOP-3A3O483\\SQLEXPRESS;database=CarrilloShop;Trusted_Connection=True";
-
        // public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
         public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
         
