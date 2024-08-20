@@ -9,12 +9,17 @@
             <div class ="ContenedorNavegacion">
                 <div class="tabla">
                     <div class="fila">
-                        <div class="celda2"><asp:Button ID="Produc" runat="server" AutoPostBack="True" type="button" OnClientClick="MostrarProductos();" class="botonfake" CausesValidation="false" Text="Productos" /></div>
+                        <div class="celda2">
+                            <asp:Button ID="Produc" runat="server" AutoPostBack="True" type="button" OnClientClick="MostrarProductos();" class="botonfake" CausesValidation="false" Text="Productos" OnClick="Produc_Click" /></div>
                         <!--<div-- class="celda2"><button type="button" onclick="MostrarProductos();" class="botonfake" id="Produ">Productos</button></div-->
                         <div class="celda2"><button type="button" onclick="MostrarUsuarios();" class="botonfake" id="Usuario">Usuarios</button></div>
                         <div class="celda2"><button type="button" onclick="MostrarPedidos();" class="botonfake" id="Pedidos">Pedidos</button></div>
                     </div>
                 </div>
+            </div>
+            <div style="justify-content:center;margin:0 auto">
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="Button" />
             </div>
             <div id ="formproductos">
                 <div class="Contenedor-Tabla">
@@ -174,7 +179,7 @@
                 </div>
             </div>
             <div id="formusuario" style="display:none">
-                
+
             </div>
             <div id="formpedidos" style="display:none">
 

@@ -12,7 +12,7 @@ namespace CodeProject
     public partial class PanProducto : System.Web.UI.Page
     {
         // public static string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
-        public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
+        //public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
 
         //public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
 
@@ -40,7 +40,7 @@ namespace CodeProject
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(strConexion))
+                using (SqlConnection conn = new SqlConnection(Conector.strConexion))
                 {
                     SqlCommand comando = new SqlCommand("Bus_Producto", conn);
                     comando.CommandType = CommandType.StoredProcedure;
@@ -89,7 +89,7 @@ namespace CodeProject
             string ProID = Session["Pro_ID"] as string;
             string carritoid = Session["CarritoUsu"].ToString();
 
-            using (SqlConnection conn = new SqlConnection(strConexion))
+            using (SqlConnection conn = new SqlConnection(Conector.strConexion))
             {
                 using (SqlCommand comando = new SqlCommand("Ins_ListaCarrito", conn))
                 {

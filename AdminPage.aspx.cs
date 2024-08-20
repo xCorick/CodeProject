@@ -520,5 +520,10 @@ namespace CodeProject
             }
             LlenarGridEliminados();
         }
+
+        protected void Produc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
