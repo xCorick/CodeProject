@@ -12,9 +12,9 @@ namespace CodeProject
     public partial class PanProducto : System.Web.UI.Page
     {
         // public static string strConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarrilloShop;Data Source=DESKTOP-V1FA3U3";
-        //public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
+        public static string strConexion = "Server=DESKTOP-V1FA3U3;Database=CarrilloShop;Integrated Security=True;";
 
-        public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
+        //public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
 
 
         protected void Page_Load(object sender, EventArgs e)
