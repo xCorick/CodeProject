@@ -1,0 +1,189 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+.tabla, .tabla2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Contenedor-Tabla, .Contenedor-Tabla2 {
+    flex: 1 0 auto;
+    min-width: 300px;
+    margin: auto;
+    margin-top: 0;
+}
+
+.fila {
+    display: flex;
+    width: 100%;
+}
+
+.celda {
+    padding: 10px;
+    width: 33.3%;
+    text-align: right;
+}
+
+.celda2 {
+    padding: 10px;
+    width: 33.3%;
+    text-align: center;
+}
+
+div#formusuario, div#formpedidos {
+    margin: auto;
+    background-color: white;
+    width: 65%;
+    border-radius: 2%;
+    padding: 20px;
+    display: none;
+    flex-wrap: wrap;
+}
+
+div#formborrados {
+    margin: auto;
+    background-color: white;
+    width: 65%;
+    border-radius: 2%;
+    padding: 20px;
+    display: none;
+    flex-wrap: wrap;
+}
+
+div#formproductos {
+    margin: auto;
+    background-color: rgba(240, 248, 255, 0.6);
+    width: 65%;
+    border-radius: 2%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.celdacolspan2 {
+    padding: 10px;
+    width: 66.6%;
+}
+
+.celdacolspan3 {
+    padding: 10px;
+    width: 100%;
+}
+
+    .celdacolspan3 img {
+        width: 35%;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+
+.gridinfo {
+    width: 100%;
+}
+
+.ContenedorNavegacion {
+    margin: auto;
+    background-color: rgba(240, 248, 255, 0.6);
+    width: 50%;
+    border-radius: 2%;
+    padding: 20px;
+    display: flex;
+}
+
+.botonfake {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 80%;
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+    input[type=file]::file-selector-button:hover {
+        background: #0d45a5;
+    }
+
+.grid-container {
+    width: 100%;
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+    overflow-y: auto;
+}
+
+    .grid-container table {
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+    }
+
+    .grid-container th, .grid-container td {
+        padding: 8px;
+        text-align: left;
+    }
+
+@media (max-width: 576px) {
+    .grid-container th, .grid-container td {
+        font-size: 12px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    }
+}
+
+div.loading-screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    align-items: center;
+}
+
+.loader {
+    display: flex;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+.loader-window {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 5px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: 0 auto !important;
+    align-content: center;
+    justify-content: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

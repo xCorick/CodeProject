@@ -4,22 +4,27 @@
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"/>
-
+    
+    <link href="Estilos/CarritoEstilo.css" rel="stylesheet" />
    
  <div style="font-family:Impact;left:580px">              <h1>Carrito</h1>          </div>
 
     <div>
         <center>
-			  <asp:GridView ID="GridView" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False" OnSelectedIndexChanged="grid_SelectedIndexChanged" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+                            <div class="container">
+                    <div class="grid-container">
+                        <div class="table-responsive">
+			  <asp:GridView ID="GridView" runat="server" HorizontalAlign="Center" CssClass="table table-bordered table-striped" AutoGenerateColumns="False" OnSelectedIndexChanged="grid_SelectedIndexChanged" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
                     <Columns>
                        <asp:BoundField DataField="LisCar_ProID" HeaderText="ID">
                             <ItemStyle Width="120px"></ItemStyle>
-                           <asp:ImageField DataImageUrlField="Pro_Imagen" HeaderText="Imagen" ControlStyle-Height="50px" ControlStyle-Width="50px"></asp:ImageField>
-                           <ItemStyle Width="300px"></ItemStyle>
                         </asp:BoundField>
+
+                           <asp:ImageField DataImageUrlField="Pro_Imagen" HeaderText="Imagen" ControlStyle-Height="100px" ControlStyle-Width="100px"></asp:ImageField>
+                        
                         <asp:BoundField DataField="Pro_Nombre" HeaderText="Producto">
-                            <ItemStyle Width="150px"></ItemStyle>
+                            <ItemStyle Width="50px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="Pro_Precio" DataFormatString="{0:c}" HeaderText="Precio">
                             <ItemStyle Width="90px"></ItemStyle>
@@ -41,6 +46,8 @@
                     <SortedDescendingCellStyle BackColor="#EAEAD3" />
                     <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
+                            </div></div></div>
+
             </center>
         </div>
 
