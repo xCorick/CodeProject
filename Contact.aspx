@@ -1,112 +1,179 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="CodeProject.Contact" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-   <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="utf-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-      <meta name="description" content=""/>
-      <meta name="author" content=""/>
-      <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"/>
+  <!DOCTYPE html>
+<html lang="es">
 
-      <title>Jumbotron Template for Bootstrap</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Contacto - CarrilloShop</title>
 
-      <!-- Bootstrap core CSS -->
-      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-      <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/"/>
-      <link href="lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-      <!-- Custom styles for this template -->
-      <link href="jumbotron.css" rel="stylesheet"/>
-      <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet"/>
-      <link href="blog.css" rel="stylesheet"/>
-      <link href="Estilos/MapStyle.css" rel="stylesheet" />
-  </head>
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-  <body>
-      <script src="Scripts/MapScript.js"></script>
-      <main role="main">
+    <!-- Custom styles -->
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
 
-          <!-- Main jumbotron for a primary marketing message or call to action -->
-                <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-                  <div class="row">
-                     <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-                        <main role="main" class="inner cover">
-                    <h1 class="display-4 font-italic"><strong><em>¡Contactate con nosotros!</em></strong></h1>
-                      <address>
-                          Encuentranos en calle Gregorio Payro #433, <br />
-                          código 85170, col. Constitución en Ciudad Obregón, Son.<br />
-                          <abbr title="Phone">Tel:</abbr>
-                          425.555.0100.
-                        </address>
-                        <address>
-                              <strong>Support:</strong>   <a href="mailto:uniformescarrillo@gmail.com">Uniformescarrillo@gmail.com</a><br />
-                              <strong>Marketing:</strong> <a href="mailto:carrilloshop@outlook.com">Carrilloshop@outlook.com</a>
-                        </address>
-                        <a href="About.aspx" class="btn btn-lg btn-secondary">Sobre nosotros</a>
-                         </main>
-                  </div>
-                      <div class="col-12 col-md-6" >
-                          <a href="Default.aspx"><img class="img-fluid rounded-start w-100 h-70 object-fit-cover" src="https://educacion.chihuahua.gob.mx/uig/sites/default/files/contact2_0.jpg" loading="lazy" alt="Welcome to Carrillo Shop!" /></a>
-                      </div>
-                    <hr />
-                  </div>
+        .contact-section {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            height: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 200px;
+            top: 8px;
+            left: -161px;
+        }
+
+        .contact-info {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            top: 49%;
+            left: 63%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            height: 46%;
+            max-height: 800px;
+            font-size:1.7rem;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .social-media {
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .social-media li {
+            margin: 0 10px;
+        }
+
+        .social-media img {
+            width: 50px; /* Ajusta el tamaño de las imágenes */
+            height: auto;
+        }
+
+        .social-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .embed-responsive {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main role="main">
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <!-- Contact Image and Info -->
+            <div class="contact-image">
+                <div class="contact-info">
+                    <h1 class="display-4 font-italic"><strong>¡Comunícate con nosotros!</strong></h1>
+                    <address>
+                        Encuéntranos en Calle Gregorio Payro #433 <br />
+                        código 85170, colonia Constitución, Ciudad Obregón, Sonora<br />
+                        <abbr title="Phone">Tel:</abbr> +52 6441503104
+                    </address>
+                    <address>
+                        <strong>Support:</strong> <a href="mailto:teamcarrillo388@gmail.com" style="color:blue">teamcarrillo388@gmail.com</a>
+                    </address>
                 </div>
-
-
-            
-          <div class="container">
-              <!-- Example row of columns -->
-              <div class="row" style="background-color:white;">
-                  <div><h1><strong>Puedes encontrarnos en:</strong></h1></div>
-                   <div class="col">
-                       <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="560" id="gmap_canvas"
-                           src="https://maps.google.com/maps?q=gregorio+payro&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                           <a href="https://online-timer.me/"></a><br />
-                           <a href="https://online.stopwatch-timer.net/"></a><br />
-                           <a href="https://www.embedmaps.co"></a> 
-                           </div>
-                       </div>
-                   </div>
-              </div>
-              <hr />
-      <!-- <div class="container">
-  <div class="row">
-     Primera columna 
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-    </div>
-
-    <!-- Tarjeta centrada horizontalmente en el contenedor de la fila 
-    <div class="col-md-4 d-flex justify-content-center align-items-center">
-      <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Visita nuestra sucursal</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-lg btn-secondary">Ir al inicio</a>
+            </div>
+            <!-- Carousel -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="flex: 1; max-width: 500px;">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="ImagenesProductos/1.png" class="d-block w-100" alt=" imagen  1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="ImagenesProductos/2.png" class="d-block w-100" alt=" imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="ImagenesProductos/3.png" class="d-block w-100" alt="Imagen 3">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
 
-    Tercera columna
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-    </div>
-    </div> 
-      </main> -->
+        <!-- Redes Sociales -->
+        <div class="social-container">
+            <h2>Redes Sociales</h2>
+            <ul class="social-media">
+                <li>
+                    <a href="https://www.instagram.com/uniformes.carrillo" target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8J6RoBDh902FuL0sWkZeakHjZcrDPj-L3Sg&s" alt="Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/carrillo.uniformes" target="_blank">
+                        <img src="https://store-images.s-microsoft.com/image/apps.30645.9007199266245907.cb06f1f9-9154-408e-b4ef-d19f2325893b.ac3b465e-4384-42a8-9142-901c0405e1bc" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/Carrillo_Uniformes" target="_blank">
+                        <img src="https://media.gq.com.mx/photos/64fc8ab0f03b3ff851536213/4:3/w_2668,h_2001,c_limit/Elon%20Musk%20Changes%20Twitter%20Name%20And%20Logo%20To%20X.jpg" alt="Twitter">
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-      <!-- Bootstrap core JavaScript 
-      ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-      <script src="../../assets/js/vendor/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
-  </html>
-    </div>
+        <!-- Mapa de Ubicación -->
+        <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41440.58812314238!2d-109.93711850259402!3d27.482769750185428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d3f45796ef2927%3A0x153ac4fbc2c4e105!2sCiudad%20Obreg%C3%B3n%2C%20Sonora!5e0!3m2!1ses!2smx!4v1692504605264!5m2!1ses!2smx"
+        allowfullscreen="" loading="lazy">
+    </iframe>
+</div>
+    </main>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
 </asp:Content>
 
