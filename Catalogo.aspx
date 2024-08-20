@@ -73,10 +73,10 @@
 
 
 
-	<h1 style="position:absolute;margin-top:400px;font-family: Arial;left:90px;">En tendencia:</h1>
+	<h1 style="position:absolute;margin-top:150px;font-family: Arial;left:90px;">En tendencia:</h1>
 
 
-	<!--div style="margin-top:300px;"-->
+	<div style="margin-top:-650px;">
 
 <div id="container">
     <div id="slider-container">
@@ -113,6 +113,7 @@
         <span onclick="slideLeft()" class="btn"></span>
     </div>
 </div>
+        </div>
 
 
    
@@ -155,6 +156,7 @@
 
 		<h1 style="position:absolute;margin-top:25px;font-family: Arial;left:90px;">Diseñado ti:</h1>
 
+    	<div style="margin-top:-775px;">
 
 	<div id="container2">
     <div id="slider-container2">
@@ -192,7 +194,7 @@
     </div>
         <script src="Scripts/CatalogoScript2.js"></script>     
 </div>
-
+            </div>
 
                                                 
 </asp:Content>

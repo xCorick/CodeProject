@@ -116,13 +116,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="C:\Users\cisco01\source\repos\CodeProject\ImagenesProductos\foto1.png" class="d-block w-100" alt=" imagen  1"/>
+                        <img src="ImagenesProductos/foto1.png" class="d-block w-100" alt=" imagen  1"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="imagenes/12(2).png" class="d-block w-100" alt=" imagen 2"/>
+                        <img src="imagenesProductos/foto2.png" class="d-block w-100" alt=" imagen 2"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="imagenes/12(3).png" class="d-block w-100" alt="Imagen 3"/>
+                        <img src="imagenesProductos/foto3.png" class="d-block w-100" alt="Imagen 3"/>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
