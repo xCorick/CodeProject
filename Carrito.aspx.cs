@@ -18,7 +18,7 @@ namespace CodeProject
        
         //public static string strConexion = "user id=sa; password=uts; server=.; database=CarrilloShop";
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e, string CarritoID)
         {
 
 
@@ -30,7 +30,11 @@ namespace CodeProject
             else
             {
                 string correoUsuario = usu.Correo;
+
+                CargarCarrito(correoUsuario);
             }
+
+
 
             LlenarGrid(CarritoID);
 
@@ -103,8 +107,9 @@ namespace CodeProject
 
         protected void grid_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string id = Session["CarritoUsu"].ToString();
             string clave = GridView.Rows[GridView.SelectedRow.RowIndex].Cells[0].Text;
-            EliminarPro(clave);
+            EliminarPro(id, clave);
         }
 
 
@@ -133,6 +138,9 @@ namespace CodeProject
 
            
             string CarritoID = outputParam.Value.ToString();
+    
+
+            Session["CarritoUsu"] = CarritoID;
         }
 
         public string CorreoUsuarioa()
@@ -142,6 +150,7 @@ namespace CodeProject
                 string correoUsuario = usu.Correo;
 
                 return correoUsuario;
+
         }
     }
 }
