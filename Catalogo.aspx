@@ -62,11 +62,11 @@
 	<h1 class="letras">Equipando tus victorias, <br />vistiendo tus sueños</h1>
 
 
-	
-		<h2 class="anuncio">Entra en accion con los productos mas nuevos</h2>
+	-->
+		<h2 class="anuncio">Descubre todo lo que <br/>ofrecemos para ti</h2>
 		
-			<button>Compra Ahora</button>
-	-->	
+			<a href="VerProducto.aspx"><button>Compra Ahora</button></a>
+	
 
 
 
@@ -123,13 +123,30 @@
 	 <h1 style="position:absolute;top:1405px;font-family: Arial;left:90px;">El deporte para ti:</h1>
 
 	<div>
-		<div>
-				<div><button  style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/futbol.png" class="imagenDep" style="right:65.5vw;border: 2px solid #333;" alt="img1"/></button></div>
+		<div>  <!--
+				<div><button style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/futbol.png" class="imagenDep" style="right:65.5vw;border: 2px solid #333;" alt="img1"/></button></div>
 				<div><button style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/basquet.png" class="imagenDep" style="right:33.5vw;border: 2px solid #333;" alt="img1"/></button></div>
-				<div"><button style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/beisbol.png" class="imagenDep" style="right:2vw;border: 2px solid #333;" alt="img1"/></button></div>
-			</div>
+				<div><button style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/beisbol.png" class="imagenDep" style="right:2vw;border: 2px solid #333;" alt="img1"/></button></div>
+			    -->
+<div>
+  <asp:Button ID="btnFutbol" runat="server" CssClass="imagenDep" ImageUrl="imagenes/futbol.png" 
+              Style="background-color: transparent; border: none; cursor: pointer; margin-top: 0px; right: 65.5vw; border: 2px solid #333;" 
+              OnClick="btnFutbol_Click" />
+</div>
+<div>
+  <asp:Button ID="btnBasquet" runat="server" CssClass="imagenDep" ImageUrl="imagenes/basquet.png" 
+              Style="background-color: transparent; border: none; cursor: pointer; margin-top: 0px; right: 33.5vw; border: 2px solid #333;" 
+              OnClick="btnBasquet_Click" />
+</div>
+<div>
+  <asp:Button ID="btnBeisbol" runat="server" CssClass="imagenDep" ImageUrl="imagenes/beisbol.png" 
+              Style="background-color: transparent; border: none; cursor: pointer; margin-top: 0px; right: 2vw; border: 2px solid #333;" 
+              OnClick="btnBeisbol_Click" />
+</div>
+
+            </div>
 		</div>
-		   
+    
 
 		<h1 style="position:absolute;margin-top:-250px;font-family: Arial;left:90px;">Hecho para ti:</h1>
 

@@ -3,7 +3,8 @@
 
 
 
-    <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,10 +12,10 @@
     <title>Productos</title>
     <style>
         .card-container {
-            display: flex;           /* Usa flexbox para alinear las cards */
-            flex-wrap: wrap;         /* Permite que las cards pasen a la siguiente línea si no caben */
-            gap: 20px;               /* Espacio entre las cards */
-            justify-content: flex-start; /* Alinea las cards al inicio de la fila */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
         }
 
         .card {
@@ -22,10 +23,10 @@
             border-radius: 8px;
             padding: 16px;
             text-align: center;
-            width: calc(25% - 20px); /* Ajusta el ancho para que quepan 4 cards por fila */
+            width: calc(25% - 20px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;     /* Espacio en la parte inferior para separación vertical */
-            box-sizing: border-box;  /* Asegura que el padding y border se incluyan en el ancho total */
+            margin-bottom: 20px;
+            box-sizing: border-box;
         }
 
         .card img {
@@ -55,21 +56,21 @@
 <body>
 
     <div class="card-container">
-        <!-- Aquí se generan las cards dinámicamente desde el servidor con ASP.NET -->
-        <asp:Repeater ID="ProductsRepeater" runat="server">
-            <ItemTemplate>
-                <div class="card">
-                    <img src='<%# Eval("Pro_Imagen") %>' alt='<%# Eval("Pro_Nombre") %>' />
-                    <h3><%# Eval("Pro_Nombre") %></h3>
-                    <p>Price: $<%# Eval("Pro_Precio") %></p>
-                    <a href="details.aspx?id=<%# Eval("Pro_ID") %>">Ver Detalles</a>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
+      <asp:Repeater ID="ProductsRepeater" runat="server">
+    <ItemTemplate>
+        <div class="card">
+            <img src='<%# Eval("Pro_Imagen") %>' alt='<%# Eval("Pro_Nombre") %>' />
+            <h3><%# Eval("Pro_Nombre") %></h3>
+            <p>Price: $<%# Eval("Pro_Precio") %></p>
+            <a href="details.aspx?id=<%# Eval("Pro_ID") %>">Ver Detalles</a>
+        </div>
+    </ItemTemplate>
+</asp:Repeater>
     </div>
 
 </body>
 </html>
+
 
 
 
