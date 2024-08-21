@@ -57,7 +57,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Acerca de</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/AdminPage">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/AdminPage" id="liAdmin">Admin</a></li>
                         <li class="nav-item">
                             <div class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -86,13 +86,14 @@
                     <div class="btn-group dropstart">
                         <button runat="server" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 style="background-color: transparent; border: none;">
-                            <img src="Images/Items/UserImage.png" width="40" height="40" alt="Imagen de usuario"/>
+                            <img src="Images/Items/UserImage.png" alt="Icono" id="IconoUsuario" style="width:40px;height:40px;border-radius:50%" />
+                            <asp:HiddenField ID="HDFIcono" runat="server" />
                             <asp:Label ID="lbUserName" runat="server" Text="" Font-Bold="true" Font-Size="small"></asp:Label>
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" id="alogin" runat="server" href="~/Login">Log in</a></li>
-                            <li><a class="dropdown-item" href="Profile.aspx">Perfil</a></li>
-                            <li><asp:LinkButton CssClass="dropdown-item" ID="logOut" runat="server" OnClick="logOut_Click">Log out</asp:LinkButton></li>
+                            <li><a class="dropdown-item" href="Perfil.aspx">Perfil</a></li>
+                            <li><asp:LinkButton CssClass="dropdown-item" ID="logOut" runat="server" OnClick="logOut_Click" CausesValidation="false">Log out</asp:LinkButton></li>
                         </ul>
                     </div>
                 </div>          
@@ -116,12 +117,21 @@
                 <p>&copy; <%: DateTime.Now.Year %> CodeCrafters Company, Inc. &middot; <a href="Privacity.aspx">Privacidad</a> &middot; <a href="Terms.aspx">Términos</a></p>
             </footer>
         </div>
-
         <!-- Scripts adicionales de Bootstrap -->
         <asp:PlaceHolder runat="server">
             <%: Scripts.Render("~/Scripts/bootstrap.js") %>
         </asp:PlaceHolder>
     </form>
-</body>
 
+</body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Script para actualizar la imagen de usuario en la Master Page
+            var iconoUsuarioSrc = document.getElementById('<%= HDFIcono.ClientID %>').value;
+            if (iconoUsuarioSrc) {
+                document.getElementById('IconoUsuario').src = iconoUsuarioSrc;
+            }
+        });
+
+    </script>
 </html>

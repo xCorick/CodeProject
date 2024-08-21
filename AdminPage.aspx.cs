@@ -19,6 +19,19 @@ namespace CodeProject
         public static string ruta2;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario usuario = (Usuario)Session["user"];
+            if (usuario == null)
+            {
+                    Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                if (!usuario.Tipo)
+                {
+                    Response.Redirect("Default.aspx");
+                }
+                
+            }
             if (!IsPostBack)
             {
                 DDLPublico.Items.Clear();
@@ -158,9 +171,10 @@ namespace CodeProject
             args.IsValid = !string.IsNullOrEmpty(HFProducto.Value.ToString());
         }
 
-        Cloudinary cloud;
+       
         public (string ruta, bool isInserted) CargarImagen()
         {
+            Cloudinary cloud;
             Account account = new Account(
            "dj4vhebsj",
            "229926379921624",
