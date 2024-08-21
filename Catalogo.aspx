@@ -65,7 +65,7 @@
 	-->
 		<h2 class="anuncio">Descubre todo lo que <br/>ofrecemos para ti</h2>
 		
-			<a href="VerProducto.aspx"><button>Compra Ahora</button></a>
+			<!--Aqui va un boton para ir a los productos-->
 	
 
 
