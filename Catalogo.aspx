@@ -76,7 +76,7 @@
 	<h1 style="position:absolute;margin-top:150px;font-family: Arial;left:90px;">En tendencia:</h1>
 
 
-	<div style="margin-top:-650px;">
+	<div style="margin-top:-900px;">
 
 <div id="container">
     <div id="slider-container">
@@ -129,34 +129,11 @@
 				<div"><button style="background-color: transparent; border: none; cursor: pointer;margin-top:0px;"><img src="imagenes/beisbol.png" class="imagenDep" style="right:2vw;border: 2px solid #333;" alt="img1"/></button></div>
 			</div>
 		</div>
-
-		<div style="position:absolute;top:2150px;left:110px;">
-
-	   <div class="contenedor">
-		   <img class="imagen" src="imagenes/dec.png" alt=""/>
-
-		   <div>
-			   <h2>Sobre nosotros</h2>
-			   <p>Uniformes Carrillo diseña ropa deportiva y tenis para atletas de todo tipo. 
-				   Creadores que disfrutan de cambiar las reglas del juego. Desafiar 
-				   las convenciones. Romper las normas y definir nuevas. Y volverlas 
-				   a romper. Confeccionamos la ropa que visten equipos y jugadores
-				   individuales en preparación para el partido. Para que no pierdan
-				   la concentración. Diseñamos indumentaria deportiva para que llegues
-				   a la meta. Para que ganes el partido. Nuestras tiendas deportivas 
-				   ofrecen atuendos para mujeres, con tops deportivos y mallas diseñados
-				   con un objetivo en mente. Para deportes de impacto bajo, medio o alto.
-				   Diseñamos, innovamos e iteramos. Ponemos a prueba nuevas tecnologías.
-				   En el campo, en la cancha, en la pista, en la alberca. La ropa deportiva
-				   retro inspira nuevos elementos esenciales de la ropa urbana y casual.</p>
-		   </div>
-		   </div>
-	   </div>
 		   
 
-		<h1 style="position:absolute;margin-top:25px;font-family: Arial;left:90px;">Diseñado ti:</h1>
+		<h1 style="position:absolute;margin-top:-250px;font-family: Arial;left:90px;">Hecho para ti:</h1>
 
-    	<div style="margin-top:-775px;">
+    	<div style="margin-top:-1225px;">
 
 	<div id="container2">
     <div id="slider-container2">
@@ -195,6 +172,32 @@
         <script src="Scripts/CatalogoScript2.js"></script>     
 </div>
             </div>
+
+
+
+    		<div style="position:absolute;top:2650px;left:110px;">
+
+	   <div class="contenedor">
+		   <img class="imagen" src="imagenes/dec.png" alt=""/>
+
+		   <div>
+			   <h2>Sobre nosotros</h2>
+			   <p>Uniformes Carrillo diseña ropa deportiva y tenis para atletas de todo tipo. 
+				   Creadores que disfrutan de cambiar las reglas del juego. Desafiar 
+				   las convenciones. Romper las normas y definir nuevas. Y volverlas 
+				   a romper. Confeccionamos la ropa que visten equipos y jugadores
+				   individuales en preparación para el partido. Para que no pierdan
+				   la concentración. Diseñamos indumentaria deportiva para que llegues
+				   a la meta. Para que ganes el partido. Nuestras tiendas deportivas 
+				   ofrecen atuendos para mujeres, con tops deportivos y mallas diseñados
+				   con un objetivo en mente. Para deportes de impacto bajo, medio o alto.
+				   Diseñamos, innovamos e iteramos. Ponemos a prueba nuevas tecnologías.
+				   En el campo, en la cancha, en la pista, en la alberca. La ropa deportiva
+				   retro inspira nuevos elementos esenciales de la ropa urbana y casual.</p>
+		   </div>
+		   </div>
+	   </div>
+
 
                                                 
 </asp:Content>

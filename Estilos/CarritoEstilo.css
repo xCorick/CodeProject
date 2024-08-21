@@ -101,3 +101,28 @@
                 background-color: #4CAF50;
                 color: #ffffff;
             }
+
+
+.total-container-lblTotal {
+    font-size: 1.5rem; /* Tamaño de fuente para que destaque */
+    color: #333; /* Color del texto que combine con el estilo de la página */
+    font-weight: bold; /* Texto en negrita */
+    margin-right: 20px; /* Espacio a la derecha del Label */
+    font-weight: bold;
+}
+
+.btn-comprar {
+    background-color: #3684d0; /* Mismo color que el encabezado */
+    color: #ffffff; /* Texto en blanco */
+    padding: 10px 20px; /* Relleno para hacerlo más grande */
+    font-size: 1.2rem; /* Tamaño de fuente mayor */
+    border: none; /* Eliminar bordes predeterminados */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+    .btn-comprar:hover {
+        background-color: #2c6db3; /* Color ligeramente más oscuro al pasar el ratón */
+    }
