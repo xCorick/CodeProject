@@ -464,6 +464,7 @@
       <DependentUpon>Catalogo.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClaseCarrito.cs" />
+    <Compile Include="ClsBuscar.cs" />
     <Compile Include="Compra.aspx.cs">
       <DependentUpon>Compra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

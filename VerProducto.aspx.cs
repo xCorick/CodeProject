@@ -14,17 +14,20 @@ namespace CodeProject
         {
             if (!IsPostBack)
             {
-                // Obtén el parámetro de categoría de la URL
-                string categoria = Request.QueryString["categoria"];
+                // Obtén el parámetro de categoría de la variable de sesión
+                string categoria = Session["Categoria"] as string;
 
-                // Debugging: Verifica el valor del parámetro en la salida
-                System.Diagnostics.Debug.WriteLine("Categoria recibida: " + categoria);
-
+                // Verifica si la variable de sesión es null o vacía
                 if (string.IsNullOrEmpty(categoria))
                 {
                     categoria = "Todos"; // Valor predeterminado para mostrar todos los productos
                 }
+
+                // Llama al método para enlazar los productos
                 BindProducts(categoria);
+
+                // Limpia la variable de sesión después de usarla
+                Session["Categoria"] = null;
             }
         }
 
@@ -59,6 +62,5 @@ namespace CodeProject
                 }
             }
         }
-
     }
 }
