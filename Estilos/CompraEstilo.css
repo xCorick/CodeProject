@@ -1,0 +1,57 @@
+﻿/* General Reset */
+body, h1, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos específicos para la página de compra */
+.compra-page {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Un fondo ligeramente más oscuro para el contenedor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 600px; /* Ancho máximo para que no se extienda demasiado */
+    margin: auto; /* Centrar el contenedor */
+}
+
+    /* Estilo del encabezado */
+    .compra-page h1 {
+        color: #28a745;
+        margin-bottom: 15px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    /* Estilo del párrafo */
+    .compra-page p {
+        color: #555;
+        margin-bottom: 25px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    /* Estilo del botón */
+    .compra-page .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .compra-page .btn:hover {
+            background-color: #0056b3;
+            transform:
