@@ -22,34 +22,34 @@
 
   <body>
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="row">
-            <div class="col-12 col-md-6" style="background-color:white">
-                <a href="Default.aspx">
-                    <img class="img-fluid rounded-start w-100 h-70 object-fit-cover" 
-                         src="Images/Background/Logo.png" 
-            <div class="col-12 col-md-6">
-                <a href="Default.aspx">
-                    <img class="img-fluid rounded-start w-100 h-70 object-fit-cover" 
-                         src="Images/Background/About.png" 
-                         loading="lazy" 
-                         alt="Welcome to Carrillo Shop!" />
-                </a>
+            <div class="row">
+                <!-- Imagen a la izquierda -->
+                <div class="col-md-6 px-0">
+                    <a href="Default.aspx">
+                        <img class="img-fluid rounded-start w-100 h-70 object-fit-cover" 
+                             src="Images/Background/About.png" 
+                             style="width:100%; height:auto;" 
+                             loading="lazy" 
+                             alt="Welcome to Carrillo Shop!" style="background-color:white" />
+                    </a>
+                </div>
+                <!-- Texto a la derecha -->
+                <div class="col-md-6 d-flex flex-column justify-content-center">
+                    <h1 class="display-4 font-italic">Uniformes Carrillo</h1>
+                    <p class="lead my-3">Uniformes Carrillo es una empresa local dedicada a la confección y venta de uniformes deportivos,
+                ubicada en Ciudad Obregón, Sonora. 
+                Situada específicamente en Calle Gregorio Payro #433, col Constitución en Ciudad Obregón, Sonora.
+                    </p>
+                    <hr />
+                    <p class="lead mb-0">
+                        <a href="Contact.aspx" class="btn btn-lg btn-secondary">¡Contáctanos!</a> 
+                    </p>
+                </div>
+
+                <hr />
             </div>
-            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-                <main role="main" class="inner cover">
-                    <h1 class="display-4 font-italic">
-                        <strong><em>UNIFORMES CARRILLO</em></strong>
-                    </h1>
-                    <p class="mb-0">Uniformes Carrillo es una empresa local dedicada a la confección y venta de uniformes deportivos,
-                    ubicada en Ciudad Obregón, Sonora. 
-                    Situada específicamente en Calle Gregorio Payro #433. col Constitución en Ciudad Obregón, Sonora.</p>
-                    <br />
-                    <a href="Contact.aspx" class="btn btn-lg btn-secondary" >¡Contáctanos!</a> 
-                </main>
-            </div>
-            <hr />
         </div>
-    </div>
+
       <br />
       <div class="row mb-2">
         <div class="col-md-6">
@@ -63,7 +63,7 @@
                   rendimiento en el ámbito deportivo. Nos esforzamos por ofrecer un servicio excepcional, mantener estándares de calidad impecables en nuestros productos y contribuir 
                    al desarrollo del deporte en nuestra comunidad.</p>
             </div>
-            <img class="card-img-right flex-auto d-none d-md-block" src="https://d1ih8jugeo2m5m.cloudfront.net/2022/09/imagenes-sin-copyright-gratis-1200x685.jpg" style="width:600px;height:300px;" alt="Card image cap"/>
+            <img class="card-img-right flex-auto d-none d-md-block" src="https://img.freepik.com/foto-gratis/equipo-preparandose-jugar-al-futbol_23-2148631451.jpg?t=st=1724225523~exp=1724229123~hmac=5889958ea003077a781f0ca47529fae8a4674468ed7ba42d688421087215ff9d&w=1380" style="width:600px;height:300px;" alt="Card image cap"/>
           </div>
         </div>
         <div class="col-md-6">
@@ -76,11 +76,13 @@
               <p class="card-text mb-auto">Nuestra visión es convertirnos en la principal opción para los equipos deportivos locales, para los aficionados al 
                   deporte en Ciudad Obregón y sus alrededores. Buscamos expandir nuestra presencia en el mercado, diversificar nuestra oferta de productos y brindar la mejor atención.</p>       
             </div>
-            <img class="card-img-right flex-auto d-none d-md-block" src="https://img.freepik.com/foto-gratis/hombre-mujer-corriendo-vista-lateral-pista_23-2149731293.jpg?t=st=1723426531~exp=1723430131~hmac=8dedcd1ef440df06477f992418aad1679b06fd9b93f5711ce708c70c53235dfb&w=1380" style="width:600px;height:300px;" alt="Card image cap"/>
+            <img class="card-img-right flex-auto d-none d-md-block" src="https://img.freepik.com/foto-gratis/hombre-afroamericano-posando-pelota-futbol-espacio-copia_23-2148767607.jpg?t=st=1724225625~exp=1724229225~hmac=9259e5675d347d7d3713f9e47c42eaa83711292beba8e88321e79ea313ef19f2&w=1800" style="width:600px;height:300px;" alt="Card image cap"/>
           <br />
           </div>
         </div>
       </div>
+
+      <hr />
  
    <!-- <main role="main" class="container">
       <div class="row">

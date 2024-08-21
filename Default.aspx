@@ -35,20 +35,20 @@
                                     <div class="carousel-caption text-start">
                                         <h1>Uniformes escolares, deportivos & más..</h1>
                                         <p>Ofertas exclusivas y promociones especiales. ¡Aprovecha antes de que acaben!</p>
-                                        <p><a class="btn btn-lg btn-info" href="#">Ver catálago</a></p>
+                                        <!--<p><a class="btn btn-lg btn-info" href="#">Ver catálago</a></p>-->
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="https://palermotextil.com/wp-content/uploads/2020/02/las-mejores-telas-para-uniformes-escolares-1.jpg" class="d-block w-100" alt="First slide" style="height: 800px;"/>
+                                <img src="Images/Background/35.png" class="d-block w-100" alt="First slide" style="height: 800px;"/>
                             </div>
                             <div class="carousel-item">
-                                <img src="https://e0.pxfuel.com/wallpapers/663/300/desktop-wallpaper-sport-top-36-quality-cool-sport-pics-cool-sports.jpg" class="d-block w-100" alt="Second slide" style="height: 800px;"/>          
+                                <img src="Images/Background/34.png" class="d-block w-100" alt="Second slide" style="height: 800px;"/>          
                                 <div class="container">
-                                    <div class="carousel-caption text-end">
+                                  <!--  <div class="carousel-caption text-end">
                                         <h1>Equipo deportivo</h1>
                                         <p>¡Encuentra todo lo que necesites para maximizar tu rendimiento y comodidad!</p>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
     <div class="container marketing">
         <div class="row" style="background-color: rgba(128, 128, 128, 0.5); padding: 20px; border: 1px solid #ccc;">
             <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://imgs.search.brave.com/jLL3ye29Opr5-C1MvA3vLORHJXV67gm6DAHaDnCg-ig/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50cy5tZWRpYWRl/Y2F0aGxvbi5jb20v/cDIxNTQwMzEvayRh/YzIyMzIyNzYzNWNh/MTU3OTgyZmM4YjJl/NzBmZTIwYy9iYWxvbi1kZS1mdXRib2wtZmlyc3Qta2ljay10YWxsYS0zLXBhcmEtbmlub3MtbWVub3Jlcy1kZS05LWFub3MtYXp1bC5qcGc_Zm9y/bWF0PWF1dG8mcXVh/bGl0eT00MCZmPTUy/MHg1MjA" role="img" aria-label="Placeholder: 140x140"/>
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://m.media-amazon.com/images/I/61mtnrRGWzL.jpg" role="img" aria-label="Placeholder: 140x140"/>
                 <h2>Equipo deportivo</h2>
                 <p><em>Encuentra lo necesario para practicar tus deportes favoritos, explora nuestro catálago de productos y obtén más información.</em></p>
             </div>
@@ -88,6 +88,7 @@
                 <p><a class="btn btn-secondary" href="Contact">¡Contáctanos! &raquo;</a></p>
             </div>
         </div> 
+     </div>
 
      <!-- Inicio de album -->
 

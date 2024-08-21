@@ -1,24 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Privacity.aspx.cs" Inherits="CodeProject.Privacity" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"/>
 
-    <title>Blog Template for Bootstrap</title>
+    <title>Políticas de privacidad</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/"/>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link href="blog.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet"/>
+    <link href="blog.css" rel="stylesheet"/>
       <link href="Estilos/TermsStyle.css" rel="stylesheet" />
   </head>
 
@@ -94,7 +94,7 @@
         <aside class="col-md-4 blog-sidebar">
           <div class="p-3 mb-3 bg-light rounded">
             <h4 class="font-italic">Contacto</h4>
-            <p class="mb-0">Si tiene alguna pregunta sobre estos Términos y Condiciones, puede contactarnos a través de <a href="#!">uniformescarrillo@gmail.com</a> o <a href="#!">6441463426</a>.</p>
+            <p class="mb-0">Si tiene alguna pregunta sobre estos términos y condiciones, puede contactarnos a través de <a href="#!">uniformescarrillo@gmail.com</a> o <a href="#!">6441463426</a>.</p>
               <br />
             <a><img id="content1" src="https://static.wixstatic.com/media/11062b_1cc774bf94324bc3a7ecd1c154047cc3f000.jpg/v1/fill/w_640,h_1296,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_1cc774bf94324bc3a7ecd1c154047cc3f000.jpg"/></a>
           </div>

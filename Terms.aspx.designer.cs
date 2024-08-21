@@ -11,7 +11,7 @@ namespace CodeProject
 {
 
 
-    public partial class Terms__Privacy
+    public partial class TermsCond
     {
     }
 }

@@ -225,6 +225,11 @@
     <Content Include="Estilos\VerProducto.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Background\2%281%29.png" />
+    <Content Include="Images\Background\34.png" />
+    <Content Include="Images\Background\35.png" />
+    <Content Include="Images\Background\messages1.jpg" />
+    <Content Include="Images\Background\Promo.png" />
     <Content Include="Images\Background\About.png" />
     <Content Include="Images\Background\Background.png" />
     <Content Include="Images\Background\Local.png" />
@@ -414,13 +419,13 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Terms.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="Scripts\CatalogoScript2.js" />
     <Content Include="Scripts\RecoveryPass.js" />
     <Content Include="SingUp.aspx" />
     <Content Include="Site.Master" />
-    <Content Include="Terms.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Views\web.config" />
