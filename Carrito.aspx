@@ -52,6 +52,12 @@
     </div>
 </div>
 
+  <div class="total-container" style="text-align:right; margin-top: 20px;">
+    <asp:Label ID="lblTotal" runat="server" CssClass="total-label" Text="Total: $0.00" style="margin-right: 20px;"></asp:Label>
+    <asp:Button ID="btnComprar" runat="server" Text="Comprar" CssClass="btn-comprar" OnClick="btnComprar_Click" />
+</div>
+
+
 
 
 </asp:Content>

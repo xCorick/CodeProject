@@ -68,6 +68,21 @@ namespace CodeProject
                 GridView.DataBind();
                 conn.Close();
             }
+            // Calcular el total
+            decimal total = 0;
+            foreach (DataRow row in datos.Rows)
+            {
+                decimal precio = Convert.ToDecimal(row["Pro_Precio"]);
+                int cantidad = Convert.ToInt32(row["LisCar_Cantidad"]);
+                decimal descuento = Convert.ToDecimal(row["LisCar_Descuento"]);
+
+                // Calcula el subtotal de este producto y lo suma al total
+                decimal subtotal = (precio * cantidad) - descuento;
+                total += subtotal;
+            }
+
+            // Mostrar el total en el Label
+            lblTotal.Text = "Total: " + total.ToString("C");
         }
 
 
@@ -111,5 +126,13 @@ namespace CodeProject
             EliminarPro(id, clave);
             
         }
+
+
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            // Mostrar un mensaje de confirmación
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "confirm", "if(confirm('¿Estás seguro de que deseas realizar la compra?')) { window.location='Catalogo.aspx'; }", true);
+        }
+
     }
 }
