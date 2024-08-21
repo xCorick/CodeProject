@@ -14,7 +14,7 @@ namespace CodeProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario usuario = (Usuario)Session["User"];
+            Usuario usuario = (Usuario)Session["user"];
             if (usuario != null)
             {
                 Response.Redirect("Default.aspx");
@@ -46,6 +46,7 @@ namespace CodeProject
                 Usuario usu = new Usuario(datos.Rows[0].ItemArray[0].ToString(),
                     datos.Rows[0].ItemArray[1].ToString(),
                     Convert.ToBoolean(datos.Rows[0].ItemArray[2]), datos.Rows[0].ItemArray[3].ToString());
+                    usu.UsuarioFoto = datos.Rows[0].ItemArray[9].ToString();
 
                      
 

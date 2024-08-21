@@ -373,6 +373,7 @@
     <Content Include="lib\twitter-bootstrap\scss\utilities\_api.scss" />
     <Content Include="lib\twitter-bootstrap\scss\vendor\_rfs.scss" />
     <Content Include="PanProducto.aspx" />
+    <Content Include="Perfil.aspx" />
     <Content Include="Privacity.aspx" />
     <Content Include="RecoveryPass.aspx" />
     <Content Include="Scripts\AlbumScript.js" />
@@ -495,6 +496,13 @@
     <Compile Include="PanProducto.aspx.designer.cs">
       <DependentUpon>PanProducto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Privacity.aspx.cs">
       <DependentUpon>Privacity.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -526,6 +534,7 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
@@ -540,6 +549,7 @@
     <Compile Include="Usuario.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

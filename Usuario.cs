@@ -11,11 +11,13 @@ namespace CodeProject
         private string usuarioPasword;
         private bool usuarioTipo;
         private string usuarioNombre;
+        private string usuarioFoto;
 
         public string Correo { get => usuarioCorreo; set => usuarioCorreo = value; }
         public string PassworD { get => usuarioPasword; set => usuarioPasword = value; }
         public bool Tipo { get => usuarioTipo; set => usuarioTipo = value; }
         public string UsuarioNombre { get => usuarioNombre; set => usuarioNombre = value; }
+        public string UsuarioFoto { get => usuarioFoto; set => usuarioFoto = value; }
 
         public Usuario(string usuarioCorreo, string usuarioPasword, bool usuarioTipo, string usuarioNombre)
         {

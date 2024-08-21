@@ -11,7 +11,22 @@ namespace CodeProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Usuario usuario = (Usuario)Session["user"];
+            if (usuario == null)
+            {
+                liAdmin.Visible = false;
+            }
+            else
+            {
+                if (!usuario.Tipo)
+                {
+                    liAdmin.Visible = false;
+                }
+                if (!String.IsNullOrEmpty(usuario.UsuarioFoto))
+                {
+                    HDFIcono.Value = usuario.UsuarioFoto;
+                }
+            }
         }
         protected void logOut_Click(object sender, EventArgs e)
         {
