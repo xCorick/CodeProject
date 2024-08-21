@@ -24,22 +24,31 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.Button Produc;
 
         /// <summary>
-        /// TextBox1 control.
+        /// TBBuscarPro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TBBuscarPro;
 
         /// <summary>
-        /// Button1 control.
+        /// BuscarPro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BuscarPro;
+
+        /// <summary>
+        /// LBOver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBOver;
 
         /// <summary>
         /// TBClave control.

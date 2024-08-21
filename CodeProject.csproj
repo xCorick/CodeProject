@@ -231,6 +231,7 @@
     <Content Include="Images\Background\Reg.png" />
     <Content Include="Images\Background\Tem1.png" />
     <Content Include="Images\Items\HomeIcon.png" />
+    <Content Include="Images\Items\search-icon-png-9969.png" />
     <Content Include="Images\Items\UserImage.png" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.css" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.min.css" />

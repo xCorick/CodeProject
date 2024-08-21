@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -524,6 +525,40 @@ namespace CodeProject
         protected void Produc_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void BuscarPro_Click(object sender, EventArgs e)
+        {
+            LBOver.Visible = false;
+            if (TBBuscarPro.Text.Length > 50)
+            {
+                LBOver.Text = "Texto muy largo";
+                LBOver.Visible = true;
+                return;
+            }
+            else
+            {
+                var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "Search_Producto", "@Busqueda", TBBuscarPro.Text);
+                if (datos.Rows.Count > 0)
+                {
+                    string clave = datos.Rows[0].ItemArray[0].ToString();
+                    LlenarForma(clave);
+                    LlenarGrid(datos);
+                    conn.Close();
+                }
+            }
+        }
+        public void LlenarGrid(DataTable datos)
+        {
+            try
+            {
+                grid.DataSource = datos;
+                grid.DataBind();
+            }
+            catch
+            {
+                Response.Write("<script>alert('No se pudo recuperar los datos de los productos, intente de nuevo')</script>");
+            }
         }
     }
 }

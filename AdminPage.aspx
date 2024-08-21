@@ -17,10 +17,14 @@
                     </div>
                 </div>
             </div>
-            <div style="justify-content:center;margin:0 auto">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                <asp:Button ID="Button1" runat="server" Text="Button" />
+            <div class="ContenedorNavegacion" style="display: flex; flex-direction: column; align-items: center;">
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <asp:TextBox ID="TBBuscarPro" runat="server"></asp:TextBox>
+                    <asp:Button ID="BuscarPro" runat="server" Text="Buscar" CausesValidation="false" OnClick="BuscarPro_Click" />
+                </div>
+                <asp:Label ID="LBOver" runat="server" Text="" Visible="false" ForeColor="Red" style="margin-top: 10px;"></asp:Label>
             </div>
+
             <div id ="formproductos">
                 <div class="Contenedor-Tabla">
                     <div class="tabla">
