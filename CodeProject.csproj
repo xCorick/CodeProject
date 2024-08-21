@@ -189,6 +189,7 @@
     <Content Include="Busqueda.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="Catalogo.aspx" />
+    <Content Include="Compra.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -214,6 +215,7 @@
     <Content Include="Estilos\CatalogoCarrusel2.css" />
     <Content Include="Estilos\CatalogoEstilo.css" />
     <Content Include="Estilos\CatalogoSlider.css" />
+    <Content Include="Estilos\CompraEstilo.css" />
     <Content Include="Estilos\Default.css" />
     <Content Include="Estilos\LoginStyle.css" />
     <Content Include="Estilos\MapStyle.css" />
@@ -463,6 +465,13 @@
       <DependentUpon>Catalogo.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClaseCarrito.cs" />
+    <Compile Include="Compra.aspx.cs">
+      <DependentUpon>Compra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compra.aspx.designer.cs">
+      <DependentUpon>Compra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Conector.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

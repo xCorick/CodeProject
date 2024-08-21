@@ -41,15 +41,6 @@ namespace CodeProject
 
         void LlenarGrid(string CarritoID)
         {
-            /*
-            var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "LlenarListaCarrito", "@LisCar_carritoID", "7DB72A33-2");
-
-            GridView.DataSource = datos;
-            GridView.DataBind();
-            conn.Close();
-            */
-           
-
             SqlConnection conn = new SqlConnection(Conector.strConexion);
             SqlCommand comando = new SqlCommand();
             SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -130,9 +121,43 @@ namespace CodeProject
 
         protected void btnComprar_Click(object sender, EventArgs e)
         {
-            // Mostrar un mensaje de confirmación
+            ClaseCarrito carrito = Session["CarritoUsu"] as ClaseCarrito;
+            string CarritoID = carrito.CarritoID;
+
+            VaciarCarrito(CarritoID);
+
             ScriptManager.RegisterStartupScript(this, this.GetType(), "confirm", "if(confirm('¿Estás seguro de que deseas realizar la compra?')) { window.location='Catalogo.aspx'; }", true);
         }
+
+        void VaciarCarrito(string CarritoID)
+        {
+            using (SqlConnection conn = new SqlConnection(Conector.strConexion))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand comando = new SqlCommand())
+                    {
+                        comando.Connection = conn;
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.CommandText = "VaciarCarrito";
+
+                        comando.Parameters.Add("@CarritoID", SqlDbType.VarChar).Value = CarritoID;
+
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al vaciar el carrito: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
 
     }
 }
