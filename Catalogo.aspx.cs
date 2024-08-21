@@ -33,6 +33,22 @@ namespace CodeProject
 
 
 
+        protected void btnFutbol_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerProducto.aspx?categoria=Niños y Niñas");
+        }
+
+        protected void btnBasquet_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerProducto.aspx?categoria=Hombres");
+            
+        }
+
+        protected void btnBeisbol_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerProducto.aspx?categoria=Mujeres");
+        }
+
 
 
 
