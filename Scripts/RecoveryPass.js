@@ -1,5 +1,5 @@
 ﻿function abrirVentanaEmergente() {
-    var ancho = 800;  // Ancho de la ventana
+    var ancho = 200;  // Anho de la ventana
     var alto = 600;   // Alto de la ventana
 
     // Obtener el tamaño de la ventana del navegador
