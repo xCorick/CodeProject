@@ -126,7 +126,7 @@ namespace CodeProject
 
             VaciarCarrito(CarritoID);
 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "confirm", "if(confirm('¿Estás seguro de que deseas realizar la compra?')) { window.location='Catalogo.aspx'; }", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "confirm", "if(confirm('¿Estás seguro de que deseas realizar la compra?')) { window.location='Compra.aspx'; }", true);
         }
 
         void VaciarCarrito(string CarritoID)
