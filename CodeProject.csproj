@@ -221,7 +221,6 @@
     <Content Include="Estilos\MapStyle.css" />
     <Content Include="Estilos\styles.css" />
     <Content Include="Estilos\TermsStyle.css" />
-    <Content Include="Estilos\VerProducto.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background\About.png" />
@@ -412,6 +411,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="VerProducto.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="Scripts\CatalogoScript2.js" />
@@ -547,6 +547,13 @@
       <DependentUpon>Terms.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="VerProducto.aspx.cs">
+      <DependentUpon>VerProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerProducto.aspx.designer.cs">
+      <DependentUpon>VerProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
