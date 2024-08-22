@@ -5,6 +5,7 @@
 
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="UTF-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
@@ -66,7 +67,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item" href="catalogo.aspx">VerCatalogo</a></li>
                                     <li><a class="dropdown-item" href="Carrito.aspx">Ver Carrito</a></li>
-                                    <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+                                    <li><a class="dropdown-item" href="VerProductos.aspx">Productos</a></li>
                                 </ul>
                             </div>
                         </li>

@@ -11,7 +11,7 @@ namespace CodeProject
 {
 
 
-    public partial class _Default
+    public partial class VerProductos
     {
     }
 }

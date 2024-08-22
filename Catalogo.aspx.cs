@@ -16,8 +16,17 @@ namespace CodeProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ClsBuscar busqueda = Session["bus"] as ClsBuscar;
         }
+
+        protected void CarProductos_click(object sender, EventArgs e)
+        {
+            Session["Categoria"] = null;
+            Response.Redirect("VerProducto.aspx");
+        }
+
+
+
 
         protected void ImageButton_Click(object sender, ImageClickEventArgs e)
         {
@@ -32,6 +41,24 @@ namespace CodeProject
         }
 
 
+
+        protected void btnFutbol_Click(object sender, EventArgs e)
+        {
+            Session["Categoria"] = "Niños";
+            Response.Redirect("VerProducto.aspx");
+        }
+
+        protected void btnBasquet_Click(object sender, EventArgs e)
+        {
+            Session["Categoria"] = "Hombres";
+            Response.Redirect("VerProducto.aspx");
+        }
+
+        protected void btnBeisbol_Click(object sender, EventArgs e)
+        {
+            Session["Categoria"] = "Mujeres";
+            Response.Redirect("VerProducto.aspx");
+        }
 
 
 

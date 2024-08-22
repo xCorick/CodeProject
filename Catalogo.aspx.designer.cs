@@ -96,6 +96,33 @@ namespace CodeProject
         protected global::System.Web.UI.WebControls.ImageButton ImageButton9;
 
         /// <summary>
+        /// Control btnFutbol.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFutbol;
+
+        /// <summary>
+        /// Control btnBasquet.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBasquet;
+
+        /// <summary>
+        /// Control btnBeisbol.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBeisbol;
+
+        /// <summary>
         /// Control ImageButton10.
         /// </summary>
         /// <remarks>

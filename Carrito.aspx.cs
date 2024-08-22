@@ -41,15 +41,6 @@ namespace CodeProject
 
         void LlenarGrid(string CarritoID)
         {
-            /*
-            var (conn, comando, adaptador, datos) = Conector.BuscarRegistro(Conector.strConexion, "LlenarListaCarrito", "@LisCar_carritoID", "7DB72A33-2");
-
-            GridView.DataSource = datos;
-            GridView.DataBind();
-            conn.Close();
-            */
-           
-
             SqlConnection conn = new SqlConnection(Conector.strConexion);
             SqlCommand comando = new SqlCommand();
             SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -68,6 +59,21 @@ namespace CodeProject
                 GridView.DataBind();
                 conn.Close();
             }
+            // Calcular el total
+            decimal total = 0;
+            foreach (DataRow row in datos.Rows)
+            {
+                decimal precio = Convert.ToDecimal(row["Pro_Precio"]);
+                int cantidad = Convert.ToInt32(row["LisCar_Cantidad"]);
+                decimal descuento = Convert.ToDecimal(row["LisCar_Descuento"]);
+
+                // Calcula el subtotal de este producto y lo suma al total
+                decimal subtotal = (precio * cantidad) - descuento;
+                total += subtotal;
+            }
+
+            // Mostrar el total en el Label
+            lblTotal.Text = "Total: " + total.ToString("C");
         }
 
 
@@ -111,5 +117,47 @@ namespace CodeProject
             EliminarPro(id, clave);
             
         }
+
+
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            ClaseCarrito carrito = Session["CarritoUsu"] as ClaseCarrito;
+            string CarritoID = carrito.CarritoID;
+
+            VaciarCarrito(CarritoID);
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "confirm", "if(confirm('¿Estás seguro de que deseas realizar la compra?')) { window.location='Compra.aspx'; }", true);
+        }
+
+        void VaciarCarrito(string CarritoID)
+        {
+            using (SqlConnection conn = new SqlConnection(Conector.strConexion))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand comando = new SqlCommand())
+                    {
+                        comando.Connection = conn;
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.CommandText = "VaciarCarrito";
+
+                        comando.Parameters.Add("@CarritoID", SqlDbType.VarChar).Value = CarritoID;
+
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al vaciar el carrito: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+
     }
 }

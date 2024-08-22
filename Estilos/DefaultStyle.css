@@ -1,0 +1,49 @@
+﻿
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.modal-lg {
+    max-width: 35%;
+}
+
+.card {
+    height: 600px;
+}
+
+.card-img-top {
+    width: auto; /* Ajusta el ancho según tu necesidad */
+    height: 300px; /* Ajusta la altura según tu necesidad */
+    object-fit: cover;
+}
+
+#modalImage {
+    width: 400px;
+    height: 400px;
+}
+
+#modalDescription {
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste al contenedor */
+}
+
+/* Ajustes adicionales para el espaciado */
+.modal-body {
+    padding: 2rem; /* Ajusta el espaciado dentro del modal */
+}
+
+.modal-header, .modal-footer {
+    padding: 1rem;
+}
+
